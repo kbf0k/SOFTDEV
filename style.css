@@ -1,5 +1,172 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #66257E, #6334B1, #B943E4)
+}
+
+.container {
+    width: 350px;
+    height: 530px;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.60);
+    border-radius: 8px;
+    background-color: #ffff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container img {
+    display: flex;
+    margin-left: 50px;
+    max-width: 150px;
+    animation: slidedown 1s ease-in-out;
+}
+
+.container h1 {
+    color: #66257E;
+    text-decoration: none;
+    font-family: "Poppins";
+}
+
+.container #voltar {
+    display: table;
+    color: #66257E;
+    text-decoration: none;
+    font-family: "Poppins";
+    font-size: 14px;
+}
+
+.container p {
+    font-family: "Poppins";
+    color: black;
+    font-size: 8px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada label {
+    margin-top: 10px;
+    color: #66257E;
+    font-size: 18px;
+    font-family: "Poppins";
+}
+
+.entrada input[type="email"],
+input[type="password"] {
+    padding: 8px;
+    border: 0.5px solid;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.entrada input[type="email"]:hover,
+input[type="password"]:hover {
+    border: solid 0.5px #66257E;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.entrada input[type="email"].focused {
+    border-color: #66257E;
+    outline: solid 0.5px #66257E;
+}
+
+.entrada input[type="password"].focused {
+    border-color: #66257E;
+    outline: solid 0.5px #66257E;
+}
+
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.lembrar label {
+    font-family: "Poppins";
+    color: black;
+    font-size: 8px;
+    margin-left: 3px;
+}
+
+.lembrar a {
+    color: #66257E;
+    font-family: "Poppins";
+    text-decoration: none;
+    font-size: 8px;
+    margin-left: 93px;
+    transition: color 0.3s ease;
+}
+
+.lembrar a:hover {
+    color: #B943E4;
+}
+
+.container button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: #66257E;
+    color: #ffff;
+    font-weight: 660;
+    box-shadow: 0 0 25px 1px #66257E;
+    transition: all 0.2s ease-in-out;
+}
+
+.container button:hover {
+    background-color: #B943E4;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px 2px #B943E4;
+}
+
+.cadastrar {
+    margin-top: 20px;
+}
+
+.cadastrar a {
+    color: #66257E;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cadastrar a:hover {
+    color: #B943E4;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes slidedown{
+    from{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

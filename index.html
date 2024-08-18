@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <main id="login">
+        <div class="container">
+            <img src="img/fun farra.jpeg" alt="Logo">
+            <a id="voltar" href="inicio.html">Voltar</a>
+            <h1>LOGIN</h1>
+            <p>Digite os seus dados de acesso no campo abaixo</p>
+            <form action="#">
+                <div class="entrada">
+                    <label for="email">Email</label>
+                    <input onclick="emailcor(this)" onblur="emailnormal(this)" type="email" name="email" id="email" placeholder="@email.com" required>
+                </div>
+                <div class="entrada">
+                    <label for="password">Senha</label>
+                    <input onclick="emailcor(this)" onblur="emailnormal(this)" type="password" name="password" id="password" placeholder="*****" required>
+                </div>
+                <div class="lembrar">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Lembrar de mim</label>
+                    <a href="#">Esqueceu senha?</a>
+                </div>
+                <button type="submit">ENTRAR</button>
+                <div class="cadastrar">
+                    <p>Não tem uma conta? <a href="cadastro.html">Inscrever-se</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
 </body>
 </html>

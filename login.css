@@ -20,6 +20,7 @@
     border-radius: 8px;
     background-color: #ffff;
     animation: fadeIn 1s ease-in-out;
+    z-index: 1;
 }
 
 .container img {
@@ -168,5 +169,90 @@ input[type="password"]:hover {
     to{
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+.baloes {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balao {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background: linear-gradient(to top, #66257E, #B943E4);
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.2);
+    animation: voar 10s infinite;
+    transform-origin: bottom center;
+}
+
+.balao::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background-color: #ffff;
+    transform: translateX(-50%);
+}
+
+.balao:nth-child(1) {
+    left: 10%;
+    background: linear-gradient(to top, #FF6B6B, #FF8C8C);
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.balao:nth-child(2) {
+    left: 25%;
+    background: linear-gradient(to top, #6BCB77, #8CE885);
+    animation-delay: 1s;
+    animation-duration: 9s;
+}
+
+.balao:nth-child(3) {
+    left: 40%;
+    background: linear-gradient(to top, #4D96FF, #82C0FF);
+    animation-delay: 2s;
+    animation-duration: 10s;
+}
+
+.balao:nth-child(4) {
+    left: 55%;
+    background: linear-gradient(to top, #FFD93D, #FFE066);
+    animation-delay: 3s;
+    animation-duration: 11s;
+}
+
+.balao:nth-child(5) {
+    left: 70%;
+    background: linear-gradient(to top, #FF6B6B, #FF8C8C);
+    animation-delay: 4s;
+    animation-duration: 12s;
+}
+
+.balao:nth-child(6) {
+    left: 85%;
+    background: linear-gradient(to top, #6BCB77, #8CE885);
+    animation-delay: 5s;
+    animation-duration: 13s;
+}
+
+@keyframes voar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.1);
+        opacity: 0;
     }
 }

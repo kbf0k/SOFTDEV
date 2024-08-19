@@ -20,3 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         passwordInput.classList.remove('focused');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const baloes = document.querySelectorAll('.balao');
+    baloes.forEach(balao => {
+        const randomPosition = Math.random() * 100; // Gera uma posição aleatória entre 0% e 100%
+        balao.style.left = `${randomPosition}%`; // Aplica a posição aleatória
+    });
+});

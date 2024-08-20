@@ -4,11 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cardapio.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header></header>
-    <main></main>
+    <header>
+        <nav>
+            <img id="logo-buffet" src="img/funfarrakids.png" alt="">
+            <ul>
+               <a href="inicio.html"><li>INÍCIO</li></a>
+                <a href="cardapio.html"><li>CARDÁPIO</li></a>
+                <a href="atracoes.html"><li>ATRAÇÕES</li></a>
+                <a href="orcamento.html"><li>ORÇAMENTO</li></a>
+                <a href="feedbacks.html"><li>FEEDBACKS</li></a>
+            </ul>
+            <div id="login-sign">
+                <a href="index.html">
+                    <button type="button" id="login-button">Entrar</button>
+                </a>
+                <button id="sign-button">Inscrever-se</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 id="title-cardapio">Cárdapio</h1>
+        <div class="carousel">
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-images">
+                <div class="carousel-image">
+                    <img src="img/cardapioitem1.jpg" alt="Imagem 1">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem2.jpg" alt="Imagem 2">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem3.jpg" alt="Imagem 3">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem4.jpg" alt="Imagem 4">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem5.jpg" alt="Imagem 5">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem6.jpg" alt="Imagem 6">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem7.jpg" alt="Imagem 7">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem8.webp" alt="Imagem 8">
+                </div>
+                <div class="carousel-image">
+                    <img src="img/cardapioitem9.jpg" alt="Imagem 9">
+                </div>
+            </div>
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </main>
     <footer></footer>
 </body>
 </html>

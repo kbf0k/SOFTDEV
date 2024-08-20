@@ -29,3 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
         balao.style.left = `${randomPosition}%`; // Aplica a posição aleatória
     });
 });
+
+
+// script.js
+let currentIndex = 0;
+const images = document.querySelector('.carousel-images');
+const totalImages = document.querySelectorAll('.carousel-image').length;
+
+function moveSlide(step) {
+    currentIndex = (currentIndex + step + totalImages) % totalImages;
+    const offset = -currentIndex * 100 / 3; 
+    images.style.transform = `translateX(${offset}%)`;
+}
+
+

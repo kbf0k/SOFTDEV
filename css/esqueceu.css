@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
+}
+
+.container {
+    max-width: 400px;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.60);
+    border-radius: 8px;
+    background-color: #ffff;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 1;
+}
+
+
+.container h1 {
+    color: #66257E;
+    text-decoration: none;
+    font-family: "Poppins";
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+.container p {
+    font-family: "Poppins";
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada label {
+    margin-top: 10px;
+    color: #66257E;
+    font-size: 18px;
+    font-family: "Poppins";
+}
+
+.entrada input[type="email"],
+input[type="password"] {
+    padding: 8px;
+    border: 0.5px solid;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.entrada input[type="email"]:hover,
+input[type="password"]:hover {
+    border: solid 0.5px #66257E;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.entrada input[type="email"].focused {
+    border-color: #66257E;
+    outline: solid 0.5px #66257E;
+}
+
+.entrada input[type="password"].focused {
+    border-color: #66257E;
+    outline: solid 0.5px #66257E;
+}
+
+.container button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: #66257E;
+    color: #ffff;
+    font-weight: 660;
+    box-shadow: 0 0 25px 1px #66257E;
+    transition: all 0.2s ease-in-out;
+    margin-top: 30px;
+}
+
+.container button:hover {
+    background-color: #B943E4;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px 2px #B943E4;
+}
+
+.cadastrar {
+    margin-top: 20px;
+}
+
+.cadastrar a {
+    color: #66257E;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cadastrar a:hover {
+    color: #B943E4;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.baloes {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balao {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background: linear-gradient(to top, #66257E, #B943E4);
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.2);
+    animation: voar 10s infinite;
+    transform-origin: bottom center;
+}
+
+.balao::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background-color: #ffff;
+    transform: translateX(-50%);
+}
+
+.balao:nth-child(1) {
+    left: 10%;
+    background: linear-gradient(to top, #FF6B6B, #FF8C8C);
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.balao:nth-child(2) {
+    left: 25%;
+    background: linear-gradient(to top, #6BCB77, #8CE885);
+    animation-delay: 1s;
+    animation-duration: 9s;
+}
+
+.balao:nth-child(3) {
+    left: 40%;
+    background: linear-gradient(to top, #4D96FF, #82C0FF);
+    animation-delay: 2s;
+    animation-duration: 10s;
+}
+
+.balao:nth-child(4) {
+    left: 55%;
+    background: linear-gradient(to top, #FFD93D, #FFE066);
+    animation-delay: 3s;
+    animation-duration: 11s;
+}
+
+.balao:nth-child(5) {
+    left: 70%;
+    background: linear-gradient(to top, #FF6B6B, #FF8C8C);
+    animation-delay: 4s;
+    animation-duration: 12s;
+}
+
+.balao:nth-child(6) {
+    left: 85%;
+    background: linear-gradient(to top, #6BCB77, #8CE885);
+    animation-delay: 5s;
+    animation-duration: 13s;
+}
+
+@keyframes voar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.1);
+        opacity: 0;
+    }
+}

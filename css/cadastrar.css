@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#login {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,35 +12,79 @@
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
 }
 
-.container {
-    width: 395px;
-    height: 570px;
-    padding: 40px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.60);
-    border-radius: 8px;
+.container{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.60);
+    background-color: #ffff;
+    border-radius: 10px;
+    z-index: 1;
+    
+}
+
+.box1{
+    width: 450px;
+    height: 600px;
+    padding: 60px;
+    border-radius: 10px;
     background-color: #ffff;
     animation: fadeIn 1s ease-in-out;
-    z-index: 1;
+}
+
+.box1 h1{
+    font-family: "Poppins";
+    text-align: center;
+    color: #66257E;
+    font-size: 30px;
+}
+
+.box1 p{
+    margin-top: 20px;
+    font-family: "Poppins";
+    text-align: center;
+    color: black;
+    font-size: 12px;
+}
+
+.box1 #p2{
+    margin-top: 20px;
+    font-family: "Poppins";
+    text-align: justify;
+    color: black;
+    font-size: 12px;
+}
+
+.box1 img{
+    margin-left: 100px;
+    margin: auto 0;
+}
+
+.box2 {
+    width: 450px;
+    height: 650px;
+    padding: 10px 40px 40px 40px;
+    border-radius: 10px;
+    background-color: #ffff;
+    animation: fadeIn 1s ease-in-out;
 }
 
 
-.container #voltar-icone, 
-.container #voltar {
+.box2 #voltar-icone, 
+.box2 #voltar {
     display: inline-flex;
     align-items: center;
     margin-top: 10px;
 }
-
-.container #voltar-container {
+.box2 #voltar-container {
     display: inline-flex;
 }
 
-.container #voltar-icone {
+.box2 #voltar-icone {
     max-width: 50px;
     margin-bottom: 10px;
 }
 
-.container #voltar {
+.box2 #voltar {
     color: #66257E;
     text-decoration: none;
     font-family: "Poppins";
@@ -50,21 +94,22 @@
     flex-direction: row-reverse;
 }
 
-.container #logo {
+.box2 #logo {
     margin: 0 auto;
     display: flex;
     max-width: 150px;
     animation: fadein 1s ease-in-out;
 }
 
-.container h1 {
+.box2 h1 {
     color: #66257E;
     text-decoration: none;
     font-family: "Poppins";
     animation: fadeIn 1s ease-in-out;
+    text-align: center;
 }
 
-.container #voltar {
+.box2 #voltar {
     color: #66257E;
     text-decoration: none;
     font-family: "Poppins";
@@ -72,7 +117,7 @@
     animation: fadeIn 1s ease-in-out;
 }
 
-.container p {
+.box2 p {
     font-family: "Poppins";
     color: black;
     font-size: 12px;
@@ -80,64 +125,64 @@
     animation: fadeIn 1s ease-in-out;
 }
 
-.container form {
+.box2 form {
     display: flex;
     flex-direction: column;
     animation: fadeIn 1s ease-in-out;
 }
 
-.entrada {
+.box2 .entrada {
     display: flex;
     flex-direction: column;
 }
 
-.entrada label {
+.box2 .entrada label {
     margin-top: 10px;
     color: #66257E;
     font-size: 18px;
     font-family: "Poppins";
 }
 
-.entrada input[type="email"],
-input[type="password"] {
+.box2 .entrada input[type="email"],
+input[type="password"],input[type="text"],input[type="date"] {
     padding: 8px;
     border: 0.5px solid;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
 }
 
-.entrada input[type="email"]:hover,
-input[type="password"]:hover {
+.box2 .entrada input[type="email"]:hover,
+input[type="password"]:hover,input[type="text"]:hover,input[type="date"]:hover {
     border: solid 0.5px #66257E;
     transition: all 0.2s ease-in-out;
 }
 
 
-.entrada input[type="email"].focused {
+.box2 .entrada input[type="email"].focused {
     border-color: #66257E;
     outline: solid 0.5px #66257E;
 }
 
-.entrada input[type="password"].focused {
+.box2 .entrada input[type="password"].focused {
     border-color: #66257E;
     outline: solid 0.5px #66257E;
 }
 
 
-.lembrar {
+.box2 .lembrar {
     display: flex;
     align-items: center;
     margin-top: 10px;
 }
 
-.lembrar label {
+.box2 .lembrar label {
     font-family: "Poppins";
     color: black;
     font-size: 12px;
     margin-left: 3px;
 }
 
-.lembrar a {
+.box2 .lembrar a {
     color: #66257E;
     font-family: "Poppins";
     text-decoration: none;
@@ -146,14 +191,15 @@ input[type="password"]:hover {
     transition: color 0.3s ease;
 }
 
-.lembrar a:hover {
+.box2 .lembrar a:hover {
     color: #B943E4;
 }
 
-.container button {
+.box2 button {
     width: 100%;
     margin-top: 15px;
     padding: 8px;
+    margin-top: 20px;
     border-radius: 15px;
     border: 1px solid black;
     background-color: #66257E;
@@ -163,23 +209,23 @@ input[type="password"]:hover {
     transition: all 0.2s ease-in-out;
 }
 
-.container button:hover {
+.box2 button:hover {
     background-color: #B943E4;
     transform: translateY(-2px);
     box-shadow: 0 0 30px 2px #B943E4;
 }
 
-.cadastrar {
+.box2 .cadastrar {
     margin-top: 20px;
 }
 
-.cadastrar a {
+.box2 .cadastrar a {
     color: #66257E;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.cadastrar a:hover {
+.box2 .cadastrar a:hover {
     color: #B943E4;
 }
 

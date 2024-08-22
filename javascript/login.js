@@ -25,21 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const baloes = document.querySelectorAll('.balao');
     baloes.forEach(balao => {
-        const randomPosition = Math.random() * 100; // Gera uma posição aleatória entre 0% e 100%
-        balao.style.left = `${randomPosition}%`; // Aplica a posição aleatória
+        const randomPosition = Math.random() * 100;
+        balao.style.left = `${randomPosition}%`;
     });
 });
-
-
-// script.js
-let currentIndex = 0;
-const images = document.querySelector('.carousel-images');
-const totalImages = document.querySelectorAll('.carousel-image').length;
-
-function moveSlide(step) {
-    currentIndex = (currentIndex + step + totalImages) % totalImages;
-    const offset = -currentIndex * 100 / 3; 
-    images.style.transform = `translateX(${offset}%)`;
-}
-
-

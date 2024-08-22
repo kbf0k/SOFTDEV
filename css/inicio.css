@@ -10,7 +10,6 @@ nav {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    padding: 10px;
 }
 
 #logo-buffet {

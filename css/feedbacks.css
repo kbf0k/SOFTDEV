@@ -10,7 +10,6 @@ nav {
     justify-content: space-evenly;
     text-align: center;
 }
-
 #logo-buffet {
     width: 100px;
     height: 100px;
@@ -50,3 +49,157 @@ li {
     border-radius: 6px;
     border: 0;
 }
+#pageTitle{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: -65px;
+}
+#caixas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 110px;
+    
+}
+.caixa {
+    background-color: rgb(252, 189, 219);
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    width: 450px;
+    height: 200px;
+    box-shadow: 0 0 10px rgba(11, 78, 5, 0.1);
+    transition: all 0.5s ease-in-out;
+}
+#caixa1{
+    margin-right: 50px;
+}
+
+.caixa h4 {
+    margin-bottom: 10px;
+    color:  #000000;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: -27px;
+}
+
+.caixa p {
+    line-height: 1.6;
+    padding-bottom: 5px;
+}
+#produto {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+#caixa2{
+    background-color: rgb(177, 222, 252);
+}
+#caixa3{
+    background-color: rgb(252, 252, 134);
+}
+#caixa4{
+    background-color: rgb(169, 252, 169);
+}
+#caixa1:hover{
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgb(252, 189, 219);
+    transform: translateY(-15px);
+}
+#caixa2:hover{
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgb(177, 222, 252);
+    transform: translateY(15px);
+}
+#caixa3:hover{
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgb(252, 252, 134);
+    transform: translateY(-15px);
+}
+#caixa4:hover{
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgb(147, 255, 147);
+    transform: translateY(15px);
+}
+#imagemcontato{
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10px;
+}
+#caixa4 p{
+    padding-bottom: 20px;
+}
+#caixa3 p{
+    padding-bottom: 20px;
+}
+#caixa1 p{
+    padding-bottom: 20px;
+}
+.depoimento-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+  }
+  
+  .depoimento-button {
+    background-color: #9b57c6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px; 
+    margin-top: -20px;
+    margin-left: 285px;
+  }
+  
+  .depoimento-button:hover {
+    background-color: rgb(226, 2, 211);
+  }
+  #faq {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .accordion-button {
+    background-color: rgb(252, 189, 219);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border-color: black;
+    border-radius: 15px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-button:hover {
+    background-color: rgb(244, 145, 193);
+  }
+  
+  .accordion-content {
+    padding: 0 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #f4dddd;
+  }
+  
+  .accordion-content p {
+    margin: 15px 0;
+  }
+  #titleDuvidas{
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+

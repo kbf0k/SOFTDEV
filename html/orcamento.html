@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento</title>
-    <link rel="stylesheet" href="orcamento.css">
+    <script src="../javascript/orçamento.js" defer></script>
+    <link rel="stylesheet" href="../css/orcamento.css">
 </head>
 <body>
     <header></header>
@@ -26,6 +27,91 @@
             </div>
         </nav>
     </main>
-    <footer></footer>
+<div id="tudomesmo">
+    <h1 id="titlePage">Faça seu Orçamento!</h1>
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
+
+            <div class="form-group">
+                <label for="convidados">Número de convidados:</label>
+                <input type="number" id="convidados" name="convidados">
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data">
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="aniversariante">Nome do aniversariante:</label>
+                <input type="text" id="aniversariante" name="aniversariante">
+            </div>
+
+            <div class="form-group">
+                <label for="horario">Horário:</label>
+                <input type="time" id="horario" name="horario">
+            </div>
+
+            <div class="form-group">
+                <label for="adicionais">Adicionais (lembrancinhas, etc.):</label>
+                <input type="text" id="adicionais" name="adicionais">
+            </div>
+
+            <div class="form-group">
+                <label for="unidade">Unidade:</label>
+                <input type="text" id="unidade" name="unidade">
+            </div>
+
+            <div class="form-group">
+                <label for="pagamento">Forma de pagamento:</label>
+                <input type="text" id="pagamento" name="pagamento">
+            </div>
+
+            <div class="form-group">
+                <label for="cardapio">Cardápio:</label>
+                <input type="text" id="cardapio" name="cardapio">
+            </div>
+
+            <div class="form-group">
+                <label for="playlist">Playlist:</label>
+                <input type="text" id="playlist" name="playlist">
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem"></textarea>
+            </div>
+            <div class="form-group termos">
+                <input type="checkbox" id="termos" name="termos">
+                <label for="termos">Concordo com os <a href="#">Termos e Condições</a></label>
+            </div>
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="footer-section">
+        <h3>Contato</h3>
+        <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
+            Caçapava - SP, 12285-050<br>
+            <strong>Email:</strong> <a href="tda.tecdevan@gmail.com" target="_blank">tda.tecdevan@gmail.com</a>
+            <br>
+            <strong>Telefone:</strong> (12) 1234-5678
+        </p>
+    </div>
+</footer>
 </body>
 </html>

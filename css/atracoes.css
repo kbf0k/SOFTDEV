@@ -109,6 +109,7 @@ i {
     right: 15px;
 }
 footer {
+    margin-top: 50px;
     position: relative;
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
     color: white;

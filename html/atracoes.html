@@ -1,31 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atrações</title>
-    <link rel="stylesheet" href="atracoes.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagina de atrações</title>
+    <link rel="stylesheet" href="../css/atracoes.css">
+    <script src="https://kit.fontawesome.com/6e028b1004.js" crossorigin="anonymous"></script>
+    <script src="../javascript/atracoes.js"></script>
+    
 </head>
-<body>
-    <header>
-        <nav>
-            <img id="logo-buffet" src="img/funfarrakids.png" alt="">
-            <ul>
-               <a href="inicio.html"><li>INÍCIO</li></a>
-                <a href="cardapio.html"><li>CARDÁPIO</li></a>
-                <a href="atracoes.html"><li>ATRAÇÕES</li></a>
-                <a href="orcamento.html"><li>ORÇAMENTO</li></a>
-                <a href="feedbacks.html"><li>FEEDBACKS</li></a>
-            </ul>
-            <div id="login-sign">
-                <a href="index.html">
-                    <button type="button" id="login-button">Entrar</button>
+  <body>
+    <nav>
+        <img id="logo-buffet" src="../img/fun farra.jpeg" alt="">
+        <ul>
+           <a href="../html/inicio.html"><li>INÍCIO</li></a>
+            <a href="../html/cardapio.html"><li>CARDÁPIO</li></a>
+            <a href="../html/atracoes.html"><li>ATRAÇÕES</li></a>
+            <a href="../html/orcamento.html"><li>ORÇAMENTO</li></a>
+            <a href="../html/feedbacks.html"><li>FEEDBACKS</li></a>
+        </ul>
+        <div id="login-sign">
+            <a href="../index.html">
+                <button type="button" id="login-button">Entrar</button>
+            </a>
+            <button id="sign-button">Inscrever-se</button>
+        </div>
+    </nav>
+    <h1 class="titulo">Nossas Atrações</h1>
+    <div class="carousel">
+        <div class="carousel-container">
+            <img src="../img/atração1.jpg" alt="Imagem 1">
+            <img src="../img/atração2.jpg" alt="Imagem 2">
+            <img src="../img/atração4.jpg" alt="Imagem 4">
+            <img src="../img/atração3.jpg" alt="Imagem 3">
+        </div>
+        <button class="setas" id="prev" onclick="prevSlide()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <button class="setas" id="next" onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-section">
+          <img src="../img/fun farra.jpeg" alt="TDA Logo" class="footer-logo">
+          
+      </div>
+        <div class="footer-section">
+            <h4>Buffet Fun Farra</h4>
+            <p>O Buffet Fun Farra convida você para realização de sua festa. Para completar a diversão o nosso buffet tem brinquedos 
+              incríveis que certamente vão fazer a alegria da criançada. Garantia aos pais de um serviço responsável, cuidadoso e de 
+              muita qualidade, o Fun Farra tem o compromisso em realizar festas com toda a praticidade para quem busca estes serviços.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
+                Caçapava - SP, 12285-050<br>
+                <strong>Email:</strong> <a href="tda.tecdevan@gmail.com" target="_blank">tda.tecdevan@gmail.com</a>
+                <br>
+                <strong>Telefone:</strong> (12) 1234-5678
+            </p>
+        </div>
+
+        <!-- <div class="footer-section">
+            <h3>Siga-nos</h3>
+            <div class="social">
+                <a href="https://linkedin.com/company/tdasmartlight" target="_blank">
+                    <img src="../img/linkedin.webp" alt="LinkedIn">
                 </a>
-                <button id="sign-button">Inscrever-se</button>
+                <a href="https://instagram.com/tdasmartlight" target="_blank">
+                    <img src="../img/insta 2.png" alt="Instagram">
+                </a>
             </div>
-        </nav>
-    </header>
-    <main></main>
-    <footer></footer>
-</body>
+        </div> -->
+    </div>
+
+    <div class="bottom">
+        &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
+    </div>
+    </footer>
+    
+    
+  </body>
 </html>

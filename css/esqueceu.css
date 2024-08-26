@@ -60,7 +60,7 @@ main {
 .entrada input[type="email"],
 input[type="password"] {
     padding: 8px;
-    border: 0.5px solid;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
 }

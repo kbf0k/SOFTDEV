@@ -45,6 +45,32 @@ main {
     animation: fadeIn 1s ease-in-out;
 }
 
+#voltar-icone,
+#voltar {
+    align-items: center;
+    margin-top: 10px;
+}
+
+#voltar-container {
+    cursor: pointer;
+}
+
+#voltar-icone {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+#voltar {
+    color: #66257E;
+    text-decoration: none;
+    font-family: "Poppins";
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+
 .entrada {
     display: flex;
     flex-direction: column;
@@ -57,29 +83,29 @@ main {
     font-family: "Poppins";
 }
 
-.entrada input[type="email"],
-input[type="password"] {
+.entrada input[type="email"] {
     padding: 8px;
     border: 0.5px solid rgba(0, 0, 0, 0.5);
+    ;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
 }
 
-.entrada input[type="email"]:hover,
-input[type="password"]:hover {
+.entrada input[type="email"]:focus {
     border: solid 0.5px #66257E;
+    outline: 0.5px solid #66257E;
     transition: all 0.2s ease-in-out;
 }
 
-
-.entrada input[type="email"].focused {
-    border-color: #66257E;
-    outline: solid 0.5px #66257E;
+.entrada input[type="email"]:not(:placeholder-shown) {
+    border: solid 0.5px #66257E;
+    outline: 0.5px solid #66257E;
+    transition: all 0.2s ease-in-out;
 }
 
-.entrada input[type="password"].focused {
-    border-color: #66257E;
-    outline: solid 0.5px #66257E;
+.entrada input[type="email"]:hover {
+    border: solid 0.5px #66257E;
+    transition: all 0.2s ease-in-out;
 }
 
 .container button {
@@ -116,11 +142,12 @@ input[type="password"]:hover {
     color: #B943E4;
 }
 
-@keyframes fadeIn{
-    from{
+@keyframes fadeIn {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
@@ -204,6 +231,7 @@ input[type="password"]:hover {
         transform: translateY(0) scale(1);
         opacity: 0.9;
     }
+
     100% {
         transform: translateY(-110vh) scale(1.1);
         opacity: 0;

@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pagina de atrações</title>
     <link rel="stylesheet" href="../css/atracoes.css">
     <script src="https://kit.fontawesome.com/6e028b1004.js" crossorigin="anonymous"></script>
     <script src="../javascript/atracoes.js"></script>
-    
+
 </head>
-  <body>
+
+<body>
     <nav>
         <img id="logo-buffet" src="../img/funfarrakids.png" alt="">
         <ul>
-           <a href="../html/inicio.html"><li>INÍCIO</li></a>
-            <a href="../html/cardapio.html"><li>CARDÁPIO</li></a>
-            <a href="../html/atracoes.html"><li>ATRAÇÕES</li></a>
-            <a href="../html/orcamento.html"><li>ORÇAMENTO</li></a>
-            <a href="../html/feedbacks.html"><li>FEEDBACKS</li></a>
+            <li><a href="inicio.html">INÍCIO</a></li>
+            <li><a href="cardapio.html">CARDÁPIO</a></li>
+            <li><a href="atracoes.html">ATRAÇÕES</a></li>
+            <li><a href="orcamento.html">ORÇAMENTO</a></li>
+            <li><a href="feedbacks.html">FEEDBACKS</a></li>
         </ul>
         <div id="login-sign">
             <a href="../index.html">
@@ -25,44 +27,49 @@
             </a>
             <a href="cadastrar.html">
                 <button id="sign-button">Inscrever-se</button>
-                </a>
+            </a>
         </div>
     </nav>
-    <h1 class="titulo">Nossas Atrações</h1>
-    <div class="carousel">
-        <div class="carousel-container">
-            <img src="../img/atração1.jpg" alt="Imagem 1">
-            <img src="../img/atração2.jpg" alt="Imagem 2">
-            <img src="../img/atração4.jpg" alt="Imagem 4">
-            <img src="../img/atração3.jpg" alt="Imagem 3">
+    <main>
+        <h1 class="titulo">Nossas Atrações</h1>
+        <div class="carousel">
+            <div class="carousel-container">
+                <img src="../img/atração1.jpg" alt="Imagem 1">
+                <img src="../img/atração2.jpg" alt="Imagem 2">
+                <img src="../img/atração4.jpg" alt="Imagem 4">
+                <img src="../img/atração3.jpg" alt="Imagem 3">
+            </div>
+            <button class="setas" id="prev" onclick="prevSlide()"><i class="fa fa-arrow-left"
+                    aria-hidden="true"></i></button>
+            <button class="setas" id="next" onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <button class="setas" id="prev" onclick="prevSlide()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-        <button class="setas" id="next" onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
-    </div>
+    </main>
     <footer>
-      <div class="container">
-        <div class="footer-section">
-          <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
-          
-      </div>
-        <div class="footer-section">
-            <h4>Buffet Fun Farra</h4>
-            <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que garantirão a 
-                diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável, cuidadoso 
-                e de alta qualidade, atendendo às suas expectativas com excelência.</p>
-        </div>
+        <div class="container">
+            <div class="footer-section">
+                <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
 
-        <div class="footer-section">
-            <h3>Contato</h3>
-            <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
-                Caçapava - SP, 12285-050<br>
-                <strong>Email:</strong> <a href="contato@funfarra.com" target="_blank">contato@funfarra.com</a>
-                <br>
-                <strong>Telefone:</strong> (12) 1234-5678
-            </p>
-        </div>
+            </div>
+            <div class="footer-section">
+                <h4>Buffet Fun Farra</h4>
+                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                    garantirão a
+                    diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável,
+                    cuidadoso
+                    e de alta qualidade, atendendo às suas expectativas com excelência.</p>
+            </div>
 
-        <!-- <div class="footer-section">
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
+                    Caçapava - SP, 12285-050<br>
+                    <strong>Email:</strong> <a href="contato@funfarra.com" target="_blank">contato@funfarra.com</a>
+                    <br>
+                    <strong>Telefone:</strong> (12) 1234-5678
+                </p>
+            </div>
+
+            <!-- <div class="footer-section">
             <h3>Siga-nos</h3>
             <div class="social">
                 <a href="https://linkedin.com/company/tdasmartlight" target="_blank">
@@ -73,13 +80,14 @@
                 </a>
             </div>
         </div> -->
-    </div>
+        </div>
 
-    <div class="bottom">
-        &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
-    </div>
+        <div class="bottom">
+            &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
+        </div>
     </footer>
-    
-    
-  </body>
+
+
+</body>
+
 </html>

@@ -29,6 +29,7 @@
     display: inline-flex;
     align-items: center;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .container #voltar-container {

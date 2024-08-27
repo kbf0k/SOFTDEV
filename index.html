@@ -19,7 +19,7 @@
         <div class="container">
             <img id="logo" src="img/fun farra.jpeg" alt="Logo">
             <div id="voltar-container">
-                <a id="voltar" href="html/cadastrar.html">Voltar
+                <a id="voltar" onclick="voltar()">Voltar
                     <img id="voltar-icone" src="img/voltar.png" alt="icone de voltar">
                 </a>
             </div>
@@ -28,12 +28,12 @@
             <form action="#">
                 <div class="entrada">
                     <label for="email">Email</label>
-                    <input onclick="inputcor(this)" onblur="inputnormal(this)" onmousedown="press(this)" type="email"
+                    <input  type="email"
                         name="email" id="email" placeholder="@email.com" required>
                 </div>
                 <div class="entrada">
                     <label for="password">Senha</label>
-                    <input onclick="inputcor(this)" onblur="inputnormal(this)" onmousedown="press(this)" type="password"
+                    <input  type="password"
                         name="password" id="password" placeholder="*****" required>
                 </div>
                 <div class="lembrar">

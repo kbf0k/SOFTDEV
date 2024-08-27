@@ -78,6 +78,7 @@ main {
 
 .box2 #voltar-container {
     display: inline-flex;
+    cursor: pointer;
 }
 
 .box2 #voltar-icone {

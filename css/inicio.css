@@ -47,48 +47,45 @@ li:hover {
 #login-sign {
     margin-top: 25px;
     display: flex;
-    justify-content: center; /* Alinha os botões horizontalmente no centro */
-    gap: 10px; /* Adiciona um espaço entre os botões */
+    justify-content: center;
+    gap: 10px;
 }
 
 #login-sign button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px; /* Tamanho da fonte mais legível */
-    border: none; /* Remove qualquer borda padrão */
-    cursor: pointer; /* Muda o cursor para um ponteiro para indicar que é clicável */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transições suaves */
-    position: relative; /* Necessário para o efeito de sombra interna */
-    font-weight: 550;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
 }
 
 #login-button {
     background-color: rgb(91, 214, 255);
-    width: 130px; /* Largura ajustada para mais espaço no texto */
-    height: 40px; /* Altura ajustada para um botão mais confortável */
-    border-radius: 8px; /* Borda um pouco mais arredondada */
-    color: rgb(255, 150, 0);
-    text-shadow: 1px 1px 5px black;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    color: black;
 }
 
 #login-button:hover {
-    background-color: rgb(67, 192, 237); /* Cor de fundo mais escura no hover */
-    box-shadow: 0 0 10px rgba(67, 192, 237, 0.8), 0 0 25px rgba(67, 192, 237, 0.5); /* Efeito neon mais forte no hover */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    background-color: rgb(67, 192, 237);
+    box-shadow: 0 0 10px rgba(67, 192, 237, 0.8), 0 0 25px rgba(67, 192, 237, 0.5);
+    transform: translateY(-2px);
 }
 
 #sign-button {
-    text-shadow: 1px 1px 5px black;
-    color: rgb(67, 192, 237);
+    color: black;
     background-color: rgb(255, 178, 71);
-    width: 120px; /* Largura ajustada para mais espaço no texto */
-    height: 40px; /* Altura ajustada para um botão mais confortável */
-    border-radius: 8px; /* Borda um pouco mais arredondada */
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
 }
 
 #sign-button:hover {
-    background-color: rgb(255, 150, 0); /* Cor de fundo mais escura no hover */
-    box-shadow: 0 0 10px rgba(255, 150, 0, 0.8), 0 0 25px rgba(255, 150, 0, 0.5); /* Efeito neon mais forte no hover */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    background-color: rgb(255, 150, 0);
+    box-shadow: 0 0 10px rgba(255, 150, 0, 0.8), 0 0 25px rgba(255, 150, 0, 0.5);
+    transform: translateY(-2px);
 }
 
 

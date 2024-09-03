@@ -87,7 +87,7 @@ transform: translateY(-2px);
 }
 
 main {
-height: calc(100vh - 80px);
+height: 130vh;
 animation: fadeIn 1s ease-in-out;
 }
 
@@ -101,22 +101,24 @@ animation: fadeIn 1s ease-in-out;
 }
 
 .menu-options {
-display: flex;
-justify-content: space-around;
-margin: 40px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens sejam quebrados em múltiplas linhas */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 80px;
 }
 
 .menu-card {
-background: linear-gradient(145deg, #f9f9f9, #e6e6e6);
-border: 2px solid #66257E;
-border-radius: 15px;
-padding: 20px;
-width: 30%;
-min-height: 350px;
-text-align: center;
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-transition: transform 0.2s, box-shadow 0.2s;
-position: relative;
+    background: linear-gradient(145deg, #f9f9f9, #e6e6e6);
+    border: 2px solid #66257E;
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(33.33% - 40px); /* Ajusta a largura para permitir três cardápios por linha */
+    min-height: 350px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
 }
 
 .menu-card h2 {

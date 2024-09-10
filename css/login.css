@@ -162,6 +162,7 @@ input[type="password"]:hover {
     color: black;
     font-size: 12px;
     margin-left: 3px;
+    margin-right: 35px;
 }
 
 .lembrar a {
@@ -169,7 +170,6 @@ input[type="password"]:hover {
     font-family: "Poppins";
     text-decoration: none;
     font-size: 12px;
-    margin-left: 93px;
     transition: color 0.3s ease;
 }
 
@@ -305,5 +305,13 @@ input[type="password"]:hover {
     100% {
         transform: translateY(-110vh) scale(1.1);
         opacity: 0;
+    }
+}
+
+@media (max-width:500px) {
+    .container {
+        width: 350px;
+        height: 600px;
+        padding: 40px;
     }
 }

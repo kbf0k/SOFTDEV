@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// calendario
 let currentIndex = 0;
 const images = document.querySelector('.carousel-images');
 const totalImages = document.querySelectorAll('.carousel-image').length;

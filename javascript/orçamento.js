@@ -195,4 +195,8 @@ const isLeapYear = (year) => {
       )}: ${`${timer.getSeconds()}`.padStart(2, '0')}`;
     todayShowTime.textContent = formateTimer;
   }, 1000);
-   
+           // Seleciona o botão pelo ID
+           document.getElementById('botao').addEventListener('click', function() {
+            // Redireciona para a página desejada
+            window.location.href = 'pagina-destino.html';
+        });

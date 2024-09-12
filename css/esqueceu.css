@@ -237,3 +237,10 @@ main {
         opacity: 0;
     }
 }
+
+@media (max-width:500px){
+    .container {
+        max-width: 330px;
+        padding: 20px;
+}
+}

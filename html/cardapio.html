@@ -7,6 +7,9 @@
     <title>Cardápio</title>
     <link rel="stylesheet" href="../css/cardapio.css">
     <script src="../javascript/cardapio.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +48,7 @@
                 </ul>
                 <button class="choose-menu">Escolher Cardápio</button>
             </div>
-    
+
             <!-- Cardápio 2 -->
             <div class="menu-card">
                 <h2>Cardápio Kids Gourmet</h2>
@@ -54,10 +57,11 @@
                     <li>Mini hambúrgueres artesanais</li>
                     <li>Refrigerantes</li>
                     <li>Milk-shake de chocolate e morango</li>
+                    <li>Nuggets</li>
                 </ul>
                 <button class="choose-menu">Escolher Cardápio</button>
             </div>
-    
+
             <!-- Cardápio 3 -->
             <div class="menu-card">
                 <h2>Cardápio Kids Diversão</h2>
@@ -70,6 +74,7 @@
                 </ul>
                 <button class="choose-menu">Escolher Cardápio</button>
             </div>
+
             <!-- Cardápio 4 -->
             <div class="menu-card">
                 <h2>Cardápio Kids Prime</h2>
@@ -82,18 +87,48 @@
                 </ul>
                 <button class="choose-menu">Escolher Cardápio</button>
             </div>
-
-            <!-- Cardápio 5 -->
             <div class="menu-card">
-                <h2>Cardápio Personalizado</h2>
-                <ul>
-                    <li>Pedaços de pizza</li>
-                    <li>Bolo de cenoura com cobertura de chocolate</li>
-                    <li>Mini churros</li>
-                    <li>Refrigerantes e sucos</li>
-                    <li>Pudim</li>
-                </ul>
-                <button class="choose-menu">Escolher Cardápio</button>
+                <!-- Botão para abrir o modal -->
+                <button id="open-modal" class="open-modal-btn">Personalizar Cardápio</button>
+            </div>
+
+            <!-- Modal para o cardápio personalizado -->
+            <div id="custom-menu-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Personalize seu Cardápio</h2>
+                    <form id="custom-menu-form">
+                        <label for="massas">Escolha uma Massa:</label>
+                        <select id="massas" name="massas">
+                            <option value="Coxinha">Coxinha</option>
+                            <option value="Bolinhas de queijo">Bolinhas de queijo</option>
+                            <option value="Risole">Risole</option>
+                        </select>
+
+                        <label for="sorvetes">Escolha um Sorvete:</label>
+                        <select id="sorvetes" name="sorvetes">
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Flocos">Flocos</option>
+                            <option value="Morango">Morango</option>
+                        </select>
+
+                        <label for="bebidas">Escolha uma Bebida:</label>
+                        <select id="bebidas" name="bebidas">
+                            <option value="Refrigerante">Refrigerante</option>
+                            <option value="Suco">Suco</option>
+                            <option value="Água">Água</option>
+                        </select>
+
+                        <label for="sobremesas">Escolha uma Sobremesa:</label>
+                        <select id="sobremesas" name="sobremesas">
+                            <option value="Pudim">Pudim</option>
+                            <option value="Bolo de Cenoura">Bolo de Cenoura</option>
+                            <option value="Mini-tortas">Mini-tortas</option>
+                        </select>
+
+                        <button type="button" class="choose-menu" id="save-custom-menu">Salvar Cardápio</button>
+                    </form>
+                </div>
             </div>
 
             <!-- Cardápio 6 -->
@@ -108,35 +143,29 @@
                 <button class="choose-menu">Escolher Cardápio</button>
             </div>
         </div>
-    </main>    
-    
+    </main>
+
     <footer>
         <div class="container">
             <div class="footer-section">
                 <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
-
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>
                 <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
-                    garantirão a
-                    diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável,
-                    cuidadoso
-                    e de alta qualidade, atendendo às suas expectativas com excelência.</p>
+                    garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável,
+                    cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
             </div>
-
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
                     Caçapava - SP, 12285-050<br>
-                    <strong>Email:</strong> <a href="contato@funfarra.com" target="_blank">contato@funfarra.com</a>
+                    <strong>Email:</strong> <a href="mailto:contato@funfarra.com" target="_blank">contato@funfarra.com</a>
                     <br>
                     <strong>Telefone:</strong> (12) 1234-5678
                 </p>
             </div>
-
         </div>
-
         <div class="bottom">
             &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
         </div>

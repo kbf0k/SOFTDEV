@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
 }
 
 nav {
@@ -225,6 +226,113 @@ font-size: 14px;
 .footer-logo {
 width: 150px;
 }
+
+/* Botão para abrir o modal */
+.open-modal-btn {
+    background-color: #66257E;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    height: 100%;
+}
+
+.open-modal-btn:hover {
+    background-color: #B943E4;
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto; /* Adiciona rolagem caso o conteúdo do modal seja maior que a tela */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    text-align: center;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilização dos selects */
+#custom-menu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#custom-menu-form label {
+    font-size: 16px;
+    color: #66257E;
+    font-weight: bold;
+}
+
+#custom-menu-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #B943E4;
+    background-color: #f9f9f9;
+    color: #66257E;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#custom-menu-form select:focus {
+    border-color: #66257E;
+    box-shadow: 0 0 8px rgba(185, 67, 228, 0.5);
+}
+
+/* Botão Salvar */
+#save-custom-menu {
+    margin-top: 20px;
+    background-color: #66257E;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#save-custom-menu:hover {
+    background-color: #B943E4;
+}
+
 
 @keyframes fadeIn {
 from {

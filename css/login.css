@@ -162,7 +162,7 @@ input[type="password"]:hover {
     color: black;
     font-size: 12px;
     margin-left: 3px;
-    margin-right: 35px;
+    margin-right: 94px;
 }
 
 .lembrar a {
@@ -310,8 +310,56 @@ input[type="password"]:hover {
 
 @media (max-width:500px) {
     .container {
-        width: 350px;
-        height: 600px;
-        padding: 40px;
+        width: 330px;
+        height: 530px;
+        padding: 30px;
+    }
+
+    .container #voltar-icone,
+    .container #voltar {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .container #voltar-container {
+        display: inline-flex;
+    }
+
+    .container #voltar {
+        color: #66257E;
+        text-decoration: none;
+        font-family: "Poppins";
+        font-size: 10px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .container #logo {
+        margin: 0 auto;
+        display: flex;
+        max-width: 120px;
+        animation: fadein 1s ease-in-out;
+    }
+
+    .container h1 {
+        color: #66257E;
+        text-decoration: none;
+        font-family: "Poppins";
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .container #voltar {
+        color: #66257E;
+        text-decoration: none;
+        font-family: "Poppins";
+        font-size: 14px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .lembrar label {
+        margin-right: 45px;
     }
 }

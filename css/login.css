@@ -309,6 +309,7 @@ input[type="password"]:hover {
 }
 
 @media (max-width:500px) {
+    
     .container {
         width: 330px;
         height: 530px;

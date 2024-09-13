@@ -1,21 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('custom-menu-modal');
     var openModalBtn = document.getElementById('open-modal');
     var closeModalBtn = document.getElementsByClassName('close')[0];
     var saveButton = document.getElementById('save-custom-menu');
 
     // Função para abrir o modal
-    openModalBtn.onclick = function() {
+    openModalBtn.onclick = function () {
         modal.style.display = 'block';
     }
 
     // Função para fechar o modal
-    closeModalBtn.onclick = function() {
+    closeModalBtn.onclick = function () {
         modal.style.display = 'none';
     }
 
     // Fechar o modal se o usuário clicar fora do conteúdo do modal
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
@@ -59,3 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Carregar o cardápio salvo quando a página for carregada
     loadCustomMenu();
 });
+
+
+function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open')) {
+        menuMobile.classList.remove('open')
+        document.querySelector('.icon').src = "../img/menu_white_36dp.svg"
+    }
+    else {
+        menuMobile.classList.add('open')
+        document.querySelector('.icon').src = "../img/close_white_36dp.svg"
+    }
+}

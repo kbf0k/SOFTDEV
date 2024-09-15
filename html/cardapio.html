@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
     <link rel="stylesheet" href="../css/cardapio.css">
+    <script src="https://kit.fontawesome.com/6e028b1004.js" crossorigin="anonymous"></script>
     <script src="../javascript/cardapio.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -140,6 +141,13 @@
                             <option value="Mini-tortas">Mini-tortas</option>
                         </select>
 
+                        <label for="acompanhamento">Escolha seu Acompanhamento:</label>
+                        <select id="acompanhamento" name="acompanhamento">
+                            <option value="Pipoca">Pipoca</option>
+                            <option value="Algodão Doce">Algodão Doce</option>
+                            <option value="Gelatina">Gelatina</option>
+                        </select>
+
                         <button type="button" id="save-custom-menu">Salvar Cardápio</button>
                     </form>
                 </div>
@@ -158,6 +166,38 @@
                 <button class="choose-menu">Escolher Cardápio</button>
             </div>
         </div>
+        <section class="carousel">
+            <h2>Cardápios</h2>
+            <p>Cardápios diferenciados, para atender diferentes tipos de clientes, com qualidade e excelência.</p>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <!-- Duplicado: Última imagem -->
+                    <img src="../img/cardapioitem9.jpg" alt="Comida 9">
+                    <!-- Imagens originais -->
+                    <img src="../img/cardapioitem1.jpg" alt="Comida 1">
+                    <img src="../img/cardapioitem2.jpg" alt="Comida 2">
+                    <img src="../img/cardapioitem3.jpg" alt="Comida 3">
+                    <img src="../img/cardapioitem4.jpg" alt="Comida 4">
+                    <img src="../img/cardapioitem5.jpg" alt="Comida 5">
+                    <img src="../img/cardapioitem6.jpg" alt="Comida 6">
+                    <img src="../img/cardapioitem7.jpg" alt="Comida 7">
+                    <img src="../img/cardapioitem8.webp" alt="Comida 8">
+                    <img src="../img/cardapioitem9.jpg" alt="Comida 9">
+                    <!-- Duplicado: Primeira imagem -->
+                    <img src="../img/cardapioitem1.jpg" alt="Comida 1">
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="controladores">
+                <button class="setas" id="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <button class="setas" id="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </section>
+        
     </main>
 
     <footer>

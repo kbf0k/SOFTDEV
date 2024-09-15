@@ -13,8 +13,20 @@ nav {
 }
 
 body {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/background.jpg)no-repeat center;
+}
+#primeira-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/background.jpg) no-repeat center;
     background-size: cover; 
+    padding-top: 50px; /* Adiciona espaçamento superior */
+}
+
+#titulo {
+    text-align: center;
+    font-family: 'Poppins';
+    color: #66257E;
+    font-size: 55px;
+    text-shadow: 2px 2px black;
+    padding-top: 15px; /* Substitui a margin-top por padding */
 }
 
 #logo-buffet {
@@ -105,14 +117,6 @@ li:hover {
     animation: fadeIn 1s ease-in-out;
  }
  
- #titulo {
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Poppins';
-    color: #66257E;
-    font-size: 55px;
-    text-shadow: 2px 2px black;
-}
 
 i {
     text-shadow: 2px 2px black;
@@ -124,7 +128,7 @@ i {
     height: 400px;
     overflow: hidden;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .carousel-container {
@@ -214,6 +218,21 @@ footer .bottom {
     width: 150px;
     
 }
+
+#section1, #section2 {
+    height: 100vh;
+    width: 100%;
+}
+
+#section1 {
+    background-color: #66257E;
+    margin-top: 35px;
+}
+
+#section2 {
+    background-color: chocolate;
+}
+
 
 @keyframes fadeIn {
     from {

@@ -72,3 +72,67 @@ function menuShow() {
         document.querySelector('.icon').src = "../img/close_white_36dp.svg"
     }
 }
+
+const carouselSlide = document.querySelector('.carousel-slide');
+const images = document.querySelectorAll('.carousel-slide img');
+
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const dots = document.querySelectorAll('.dot');
+
+let counter = 1; // Começamos em 1, já que a primeira imagem agora é a última duplicada
+const size = images[0].clientWidth;
+
+// Inicializa a posição correta
+carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+// Função que atualiza a posição do carrossel
+function updateCarousel() {
+    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+    // Atualiza os dots corretamente
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (counter >= 1 && counter <= dots.length) {
+        dots[counter - 1].classList.add('active');
+    }
+}
+
+// Função que remove a transição e teleporta para a imagem correta
+function teleportCarousel() {
+    carouselSlide.style.transition = 'none'; // Remove a animação
+    if (counter === images.length - 1) {
+        counter = 1; // Teleporta para a primeira imagem
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+    if (counter === 0) {
+        counter = images.length - 2; // Teleporta para a última imagem
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+}
+
+// Avançar no carrossel
+nextButton.addEventListener('click', () => {
+    if (counter >= images.length - 1) return;
+    counter++;
+    updateCarousel();
+});
+
+// Retroceder no carrossel
+prevButton.addEventListener('click', () => {
+    if (counter <= 0) return;
+    counter--;
+    updateCarousel();
+});
+
+// Checa quando a transição acaba para fazer o teleporte
+carouselSlide.addEventListener('transitionend', teleportCarousel);
+
+// Controle de dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        counter = index + 1; // Ajusta para a nova estrutura de imagens
+        updateCarousel();
+    });
+});
+

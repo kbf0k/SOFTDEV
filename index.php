@@ -25,7 +25,7 @@
             </div>
             <h1>LOGIN</h1>
             <p>Digite os seus dados de acesso no campo abaixo</p>
-            <form action="#">
+            <form action="testeLogin.php" method="post">
                 <div class="entrada">
                     <label for="email">Email</label>
                     <input  type="email"
@@ -34,16 +34,16 @@
                 <div class="entrada">
                     <label for="password">Senha</label>
                     <input  type="password"
-                        name="password" id="password" placeholder="*****" required>
+                        name="senha" id="password" placeholder="*****" required>
                 </div>
                 <div class="lembrar">
                     <input type="checkbox" name="checkbox" id="checkbox">
                     <label for="checkbox">Lembrar de mim</label>
                     <a href="html/esqueceu.html">Esqueceu senha?</a>
                 </div>
-                <button type="submit" formaction="html/inicio.html">ENTRAR</button>
+                <button type="submit" name="submit" value="enviar">ENTRAR</button>
                 <div class="cadastrar">
-                    <p>Não tem uma conta? <a href="cadastrar.html">Inscrever-se</a></p>
+                    <p>Não tem uma conta? <a href="cadastrar.php">Inscrever-se</a></p>
                 </div>
             </form>
         </div>

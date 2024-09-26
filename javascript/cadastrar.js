@@ -1,3 +1,3 @@
 function voltar(){
-    window.history.back(); return false;
+    window.history.back();
 }

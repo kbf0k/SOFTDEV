@@ -1,5 +1,36 @@
+<?php
+
+    if(isset($_POST['submit']))
+    {
+        // print_r('Nome: '.$_POST['nome']);
+        // print_r('<br>');
+        // print_r('Sobrenome: '.$_POST['sobrenome']);
+        // print_r('<br>');
+        // print_r('Data: '.$_POST['data']);
+        // print_r('<br>');
+        // print_r('Email: '.$_POST['email']);
+        // print_r('<br>');
+        // print_r('Password: '.$_POST['senha']);
+        // print_r('<br>');
+        // print_r('Repetir Password: '.$_POST['repetir-senha']);
+
+
+        include_once('config.php');
+
+        $nome = $_POST['nome'];
+        $sobrenome = $_POST['sobrenome'];
+        $data_nasc = $_POST['data'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $repetir_senha = $_POST['repetir-senha'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,data_nasc,email,senha,repetir_senha) 
+        VALUES ('$nome','$sobrenome','$data_nasc','$email','$senha','$repetir_senha')");
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -10,8 +41,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/cadastrar.css">
-    <script src="../javascript/cadastrar.js" defer></script>
+    <link rel="stylesheet" href="css/cadastrar.css">
+    <script src="javascript/cadastrar.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +51,7 @@
             <div class="box1">
                 <div id="voltar-container-mobile">
                     <a id="voltar2" onclick="voltar()">Voltar
-                        <img id="voltar-icone2" src="../img/voltar.png" alt="icone de voltar">
+                        <img id="voltar-icone2" src="img/voltar.png" alt="icone de voltar">
                     </a>
                 </div>
                 <h1>Bem vindo ao</h1>
@@ -33,17 +64,17 @@
                     perca
                     tempo, cadastre-se e comece a planejar a festa dos sonhos hoje mesmo!
                 </p>
-                <img id="logo" src="../img/fun farra.jpeg" alt="Logo">
+                <img id="logo" src="img/fun farra.jpeg" alt="Logo">
             </div>
             <div class="box2">
                 <div id="voltar-container">
                     <a id="voltar" onclick="voltar()">Voltar
-                        <img id="voltar-icone" src="../img/voltar.png" alt="icone de voltar">
+                        <img id="voltar-icone" src="img/voltar.png" alt="icone de voltar">
                     </a>
                 </div>
                 <h1>CADASTRAR</h1>
                 <p>Digite os seus dados de acesso no campo abaixo</p>
-                <form action="#">
+                <form action="cadastrar.php" method="POST">
                     <div class="entrada">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
@@ -62,13 +93,13 @@
                     </div>
                     <div class="entrada">
                         <label for="password">Criar Senha</label>
-                        <input type="password" name="password" id="password" placeholder="*****" required>
+                        <input type="password" name="senha" id="password" placeholder="*****" required>
                     </div>
                     <div class="entrada">
                         <label for="password">Repetir senha</label>
-                        <input type="password" name="password" id="password" placeholder="*****" required>
+                        <input type="password" name="repetir-senha" id="password" placeholder="*****" required>
                     </div>
-                    <button type="submit" formaction="../html/inicio.html">ENTRAR</button>
+                    <button type="submit" name="submit" id="submit">ENTRAR</button>
                 </form>
             </div>
         </div>

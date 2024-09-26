@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,38 +28,40 @@
         h2 {
             margin-top: 0;
         }
+
         .form-container {
-    background-color: #8A2BE2;
-    border-radius: 25px;
-    padding: 20px;
-    max-width: 700px;
-    width: 100%;
-}
+            background-color: #8A2BE2;
+            border-radius: 25px;
+            padding: 20px;
+            max-width: 700px;
+            width: 100%;
+        }
 
-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
 
-.form-group label {
-    color: white;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-.form-group input,
-.form-group textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-}
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
         button {
             width: 100%;
             padding: 10px;
@@ -76,6 +79,7 @@ form {
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Efetuar Pagamento</h2>
@@ -105,21 +109,21 @@ form {
     </div>
 
     <script>
-        document.getElementById('payment-form').addEventListener('submit', function(event) {
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
             event.preventDefault();
-            
+
             // Limpa mensagens de erro
             document.getElementById('card-number-error').textContent = '';
             document.getElementById('expiry-date-error').textContent = '';
             document.getElementById('cvv-error').textContent = '';
             document.getElementById('name_titular').textContent = '';
-            
+
             // Captura os valores dos campos
             var cardNumber = document.getElementById('card-number').value;
             var expiryDate = document.getElementById('expiry-date').value;
             var cvv = document.getElementById('cvv').value;
             var name_titular = document.getElementById('name_titular').value;
-            
+
             // Validação simples
             var valid = true;
 
@@ -150,4 +154,5 @@ form {
         });
     </script>
 </body>
+
 </html>

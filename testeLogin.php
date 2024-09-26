@@ -19,5 +19,7 @@
         else{
             header('Location: html/inicio.html');
         }
+
+        if(isset($_POST))
     }
 ?>

@@ -39,7 +39,7 @@
                 <div class="lembrar">
                     <input type="checkbox" name="checkbox" id="checkbox">
                     <label for="checkbox">Lembrar de mim</label>
-                    <a href="html/esqueceu.html">Esqueceu senha?</a>
+                    <a href="esqueceu.php">Esqueceu senha?</a>
                 </div>
                 <button type="submit" name="submit" value="enviar">ENTRAR</button>
                 <div class="cadastrar">

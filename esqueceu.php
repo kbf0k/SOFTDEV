@@ -10,25 +10,28 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/esqueceu.css">
-    <script src="../javascript/esqueceu.js" defer></script>
+    <link rel="stylesheet" href="css/esqueceu.css">
+    <script src="javascript/esqueceu.js" defer></script>
 </head>
 
 <body>
     <main>
         <div class="container">
             <a id="voltar" onclick="voltar()">Voltar
-                <img id="voltar-icone" src="../img/voltar.png" alt="icone de voltar">
+                <img id="voltar-icone" src="img/voltar.png" alt="icone de voltar">
             </a>
             <h1>Recuperar senha</h1>
-            <p>Digite o seu endereço de email abaixo, e nós enviaremos um link para redefinir a sua senha. Siga as
-                instruções no email e em poucos passos você poderá acessar sua conta novamente.</p>
-            <form action="#">
+            <p>Digite o seu endereço de email abaixo para redefinir a sua senha.</p>
+            <form action="testeLogin.php" method="post">
                 <div class="entrada">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="@email.com" required>
                 </div>
-                <button type="submit" formaction="html/inicio.html">ENVIAR</button>
+                <div class="entrada">
+                    <label for="senha">Redefinir Senha</label>
+                    <input type="password" name="redefinir_senha" id="redefinir_senha" placeholder="*****" required>
+                </div>
+                <button type="submit">ENVIAR</button>
             </form>
         </div>
         <div class="baloes">

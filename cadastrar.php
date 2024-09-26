@@ -99,7 +99,7 @@
                         <label for="password">Repetir senha</label>
                         <input type="password" name="repetir-senha" id="password" placeholder="*****" required>
                     </div>
-                    <button type="submit" name="submit" id="submit">ENTRAR</button>
+                    <button style="cursor:pointer" type="submit" name="submit" id="submit">ENTRAR</button>
                 </form>
             </div>
         </div>

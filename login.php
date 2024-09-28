@@ -18,8 +18,9 @@
     <main id="login">
         <div class="container">
             <img id="logo" src="img/fun farra.jpeg" alt="Logo">
+
             <div id="voltar-container">
-                <a id="voltar" onclick="voltar()">Voltar
+                <a id="voltar">Voltar
                     <img id="voltar-icone" src="img/voltar.png" alt="icone de voltar">
                 </a>
             </div>

@@ -14,12 +14,10 @@
         $result = $conexao -> query($sql);
 
         if(mysqli_num_rows($result) < 1){
-           header('Location: index.php');
+           header('Location: login.php');
         }
         else{
             header('Location: html/inicio.html');
         }
-
-        if(isset($_POST))
     }
 ?>

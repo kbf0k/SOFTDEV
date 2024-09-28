@@ -7,5 +7,5 @@
 
     $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 
-    header('Location: index.php')
+    header('Location: login.php')
 ?>

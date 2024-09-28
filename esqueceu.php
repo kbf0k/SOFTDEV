@@ -17,7 +17,7 @@
 <body>
     <main>
         <div class="container">
-            <a id="voltar" onclick="voltar()">Voltar
+            <a id="voltar" onclick="voltar()" >Voltar
                 <img id="voltar-icone" src="img/voltar.png" alt="icone de voltar">
             </a>
             <h1>Recuperar senha</h1>

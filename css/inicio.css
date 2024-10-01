@@ -10,6 +10,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    position: sticky;
 }
 
 #logo-buffet {
@@ -35,6 +36,7 @@ li a {
     text-decoration: none;
     color: yellow;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
 }
 
 li:hover {
@@ -99,21 +101,6 @@ li:hover {
 main {
     height: 130vh;
     animation: fadeIn 1s ease-in-out;
-}
-
-.wave-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    margin-top: -20px;
-}
-
-svg {
-    width: 100%;
-    height: 80px;
-    display: block;
-    margin: 0;
 }
 
 footer {

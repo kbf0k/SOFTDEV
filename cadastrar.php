@@ -1,20 +1,7 @@
 <?php
-
+    $mensagemErro = '';
     if(isset($_POST['submit']))
     {
-        // print_r('Nome: '.$_POST['nome']);
-        // print_r('<br>');
-        // print_r('Sobrenome: '.$_POST['sobrenome']);
-        // print_r('<br>');
-        // print_r('Data: '.$_POST['data']);
-        // print_r('<br>');
-        // print_r('Email: '.$_POST['email']);
-        // print_r('<br>');
-        // print_r('Password: '.$_POST['senha']);
-        // print_r('<br>');
-        // print_r('Repetir Password: '.$_POST['repetir-senha']);
-
-
         include_once('config.php');
 
         $nome = $_POST['nome'];
@@ -24,8 +11,14 @@
         $senha = $_POST['senha'];
         $repetir_senha = $_POST['repetir-senha'];
 
+        if($senha != $repetir_senha){
+           $mensagemErro = "As senhas não se coincidem";
+        }
+        else{
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,data_nasc,email,senha,repetir_senha) 
         VALUES ('$nome','$sobrenome','$data_nasc','$email','$senha','$repetir_senha')");
+            header('Location: index.php');
+        }
     }
 ?>
 
@@ -74,7 +67,7 @@
                 </div>
                 <h1>CADASTRAR</h1>
                 <p>Digite os seus dados de acesso no campo abaixo</p>
-                <form action="cadastrar.php" method="POST">
+                <form action="cadastrar.php" method="POST" onsubmit="return verificarsenha()">
                     <div class="entrada">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
@@ -93,13 +86,15 @@
                     </div>
                     <div class="entrada">
                         <label for="password">Criar Senha</label>
-                        <input type="password" name="senha" id="password" placeholder="*****" required>
+                        <input type="password" name="senha" id="senha" placeholder="*****" required>
                     </div>
+                    <p id="mensagem-erro" style="color: red; text-align:left;"><?php echo $mensagemErro?></p>
                     <div class="entrada">
-                        <label for="password">Repetir senha</label>
-                        <input type="password" name="repetir-senha" id="password" placeholder="*****" required>
+                        <label for="password" style="margin:0;">Repetir senha</label>
+                        <input type="password" name="repetir-senha" id="repetir=senha" placeholder="*****" required >
                     </div>
-                    <button style="cursor:pointer" type="submit" name="submit" id="submit">ENTRAR</button>
+                    <p id="mensagem-erro" style="color: red; text-align:left;"><?php echo $mensagemErro?></p>
+                    <button type="submit" name="submit" id="submit">ENTRAR</button>
                 </form>
             </div>
         </div>

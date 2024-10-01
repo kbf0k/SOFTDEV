@@ -22,16 +22,16 @@
             </a>
             <h1>Recuperar senha</h1>
             <p>Digite o seu endereço de email abaixo para redefinir a sua senha.</p>
-            <form action="testeLogin.php" method="post">
+            <form action="testeEsqueceu.php" method="post">
                 <div class="entrada">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="@email.com" required>
+                    <input type="email" name="email_digitado" id="email" placeholder="@email.com" required>
                 </div>
                 <div class="entrada">
                     <label for="senha">Redefinir Senha</label>
                     <input type="password" name="redefinir_senha" id="redefinir_senha" placeholder="*****" required>
                 </div>
-                <button type="submit">ENVIAR</button>
+                <button type="submit" name="submit">ENVIAR</button>
             </form>
         </div>
         <div class="baloes">

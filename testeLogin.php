@@ -14,7 +14,7 @@
         $result = $conexao -> query($sql);
 
         if(mysqli_num_rows($result) < 1){
-           header('Location: login.php');
+           header('Location: index.php');
         }
         else{
             header('Location: html/inicio.html');

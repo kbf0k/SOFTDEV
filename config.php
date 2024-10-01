@@ -1,5 +1,4 @@
 <?php
-
     $dbHost = 'LocalHost';
     $dbUsername = 'root';
     $dbPassword = '';
@@ -7,5 +6,17 @@
 
     $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 
-    header('Location: login.php')
+    if($conexao->connect_errno){
+        echo 'Erro na Conexão'. $conexao->connect_errno;
+    }
+    else{
+        echo 'Conectado com sucesso';
+    }
 ?>
+
+
+
+
+
+
+

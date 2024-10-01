@@ -199,7 +199,7 @@ main{
     flex-direction: column; 
   }
   
-  .depoimento-button {
+  #buttondepoiment{
     background-color: #9b57c6;
     color: white;
     padding: 10px 20px;
@@ -211,6 +211,14 @@ main{
     margin-top: -20px;
     margin-left: 285px;
   }
+  .modal-footer button{
+    background-color: #9b57c6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
   
   .depoimento-button:hover {
     background-color: rgb(226, 2, 211);
@@ -219,35 +227,6 @@ main{
     max-width: 800px;
     margin: auto;
     padding: 20px;
-  }
-  
-  .accordion-button {
-    background-color: rgb(252, 189, 219);
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-    border-color: black;
-    border-radius: 15px;
-    text-align: left;
-    outline: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .accordion-button:hover {
-    background-color: rgb(244, 145, 193);
-  }
-  
-  .accordion-content {
-    padding: 0 15px;
-    display: none;
-    overflow: hidden;
-    background-color: #f4dddd;
-  }
-  
-  .accordion-content p {
-    margin: 15px 0;
   }
   #titleDuvidas{
     margin-bottom: 20px;

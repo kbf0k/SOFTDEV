@@ -10,28 +10,12 @@ nav {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-}
-
-body {
-}
-#primeira-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/background.jpg) no-repeat center;
-    background-size: cover; 
-    padding-top: 50px; /* Adiciona espaçamento superior */
-}
-
-#titulo {
-    text-align: center;
-    font-family: 'Poppins';
-    color: #66257E;
-    font-size: 55px;
-    text-shadow: 2px 2px black;
-    padding-top: 15px; /* Substitui a margin-top por padding */
+    position: sticky;
 }
 
 #logo-buffet {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     margin-top: -5px;
 }
 
@@ -40,6 +24,7 @@ ul {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    margin-top: 5px;
 }
 
 li {
@@ -52,6 +37,7 @@ li a {
     text-decoration: none;
     color: yellow;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
 }
 
 li:hover {
@@ -65,24 +51,24 @@ li:hover {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 7px;
 }
 
 #login-sign button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     position: relative;
+    border-radius: 8px;
 }
 
 #login-button {
     background-color: rgb(91, 214, 255);
-    width: 100px;
+    width: 60px;
     height: 40px;
-    border-radius: 8px;
-    color: black;
+    color: rgba(0, 67, 91, 0.9);
+    border: 2px solid rgba(0, 67, 91, 0.603);
 }
 
 #login-button:hover {
@@ -94,9 +80,9 @@ li:hover {
 #sign-button {
     color: black;
     background-color: rgb(255, 178, 71);
-    width: 100px;
+    width: 90px;
     height: 40px;
-    border-radius: 8px;
+    border: 2px solid rgb(198, 109, 13);
 }
 
 #sign-button:hover {
@@ -113,7 +99,28 @@ li:hover {
     display: none;
 }
 
- main{
+body {
+}
+#primeira-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/background.jpg) no-repeat center;
+    background-size: cover; 
+    padding-top: 50px; /* Adiciona espaçamento superior */
+    /* margin-top: -120px; --> COLOCAR ALGO NESSE PIQUE AQUI, SÓ QUE AI VAI PRECISAR ARRUMAR A ANIMAÇÃO QUE TEM
+    NO MAIN, ACHO QUE CONSIGO FAZER ISSO.*/
+}
+
+#titulo {
+    text-align: center;
+    font-family: 'Poppins';
+    color: #66257E;
+    font-size: 55px;
+    text-shadow: 2px 2px black;
+    padding-top: 15px; /* Substitui a margin-top por padding */
+}
+
+
+
+ #main-real{
     animation: fadeIn 1s ease-in-out;
  }
  

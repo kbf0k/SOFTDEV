@@ -3,25 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 nav {
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
     height: 80px;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    position: sticky;
 }
-#tudomesmo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #f0f0f0;
-    animation: fadeIn 1s ease-in-out;
-}
+
 #logo-buffet {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     margin-top: -5px;
 }
 
@@ -30,6 +24,7 @@ ul {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    margin-top: 5px;
 }
 
 li {
@@ -42,6 +37,7 @@ li a {
     text-decoration: none;
     color: yellow;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
 }
 
 li:hover {
@@ -55,24 +51,24 @@ li:hover {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 7px;
 }
 
 #login-sign button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     position: relative;
+    border-radius: 8px;
 }
 
 #login-button {
     background-color: rgb(91, 214, 255);
-    width: 100px;
+    width: 60px;
     height: 40px;
-    border-radius: 8px;
-    color: black;
+    color: rgba(0, 67, 91, 0.9);
+    border: 2px solid rgba(0, 67, 91, 0.603);
 }
 
 #login-button:hover {
@@ -84,9 +80,9 @@ li:hover {
 #sign-button {
     color: black;
     background-color: rgb(255, 178, 71);
-    width: 100px;
+    width: 90px;
     height: 40px;
-    border-radius: 8px;
+    border: 2px solid rgb(198, 109, 13);
 }
 
 #sign-button:hover {
@@ -103,8 +99,21 @@ li:hover {
     display: none;
 }
 
+#tudomesmo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+#main-real {
+    animation: fadeIn 1s ease-in-out;
+}
+
 #titlePage{
-    margin-top: 20px;
+    margin-top: -30px;
     margin-bottom: 20px;
 
 }

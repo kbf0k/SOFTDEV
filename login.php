@@ -1,3 +1,23 @@
+<?php
+    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
+    {
+        include_once('config.php');
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
+
+        $result = $conexao -> query($sql);
+
+        if(mysqli_num_rows($result) < 1){
+           header('Location: index.php');
+        }
+        else{
+            header('Location: html/inicio.html');
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="Pt-BR">
 
@@ -26,7 +46,7 @@
             </div>
             <h1>LOGIN</h1>
             <p>Digite os seus dados de acesso no campo abaixo</p>
-            <form action="testeLogin.php" method="post">
+            <form action="" method="post">
                 <div class="entrada">
                     <label for="email">Email</label>
                     <input  type="email"
@@ -38,8 +58,6 @@
                         name="senha" id="password" placeholder="*****" required>
                 </div>
                 <div class="lembrar">
-                    <input type="checkbox" name="checkbox" id="checkbox">
-                    <label for="checkbox">Lembrar de mim</label>
                     <a href="esqueceu.php">Esqueceu senha?</a>
                 </div>
                 <button type="submit" name="submit" value="enviar">ENTRAR</button>

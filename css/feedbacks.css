@@ -100,7 +100,11 @@ li:hover {
 .mobile-menu {
     display: none;
 }
-
+main{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,120,1) 100%);
+    height: 200vh;
+}
 #main-real{
     animation: fadeIn 1s ease-in-out;
  }
@@ -109,56 +113,58 @@ li:hover {
     text-align: center;
     margin-top: -30px;
     margin-bottom: -65px;
+    color: white;
+}
+#pageSubtitle{
+    text-align: center;
+    margin-top:15px;
+    margin-bottom: -65px;
+    color: white;
 }
 #caixas {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start; /* Alinhar os itens na parte superior */
     padding-top: 110px;
-    
 }
+
 .caixa {
-    background-color: rgb(252, 189, 219);
-    border: 2px solid #000000;
+    background:linear-gradient(rgb(162, 41, 162), rgb(148, 57, 166) );
+    border: 3px solid #ffffff;
     border-radius: 8px;
+    color:white;
     padding: 20px;
     margin: 10px;
     flex: 1;
-    width: 450px;
-    height: 200px;
+    width: 450px;   
     box-shadow: 0 0 10px rgba(11, 78, 5, 0.1);
     transition: all 0.5s ease-in-out;
+    
 }
-#caixa1{
-    margin-right: 50px;
+
+#imagemcontato {
+    width: 50px;
+    height: auto; /* Ajuste automático da altura */
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
 }
 
 .caixa h4 {
-    margin-bottom: 10px;
-    color:  #000000;
-    font-size: 20px;
     margin-left: 40px;
-    margin-top: -27px;
+    margin-top: -39px;
+    margin-bottom: 10px;
+}
+
+.caixa h3 {
+    margin-top: 10px; 
+    color: #ffffff;
+    font-size: 16px;/* Tamanho da fonte da data */
 }
 
 .caixa p {
     line-height: 1.6;
     padding-bottom: 5px;
-}
-#produto {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 40px;
-}
-#caixa2{
-    background-color: rgb(177, 222, 252);
-}
-#caixa3{
-    background-color: rgb(252, 252, 134);
-}
-#caixa4{
-    background-color: rgb(169, 252, 169);
+    margin-top: 25px;
 }
 #caixa1:hover{
     transition: all 0.5s ease-in-out;
@@ -186,22 +192,14 @@ li:hover {
     justify-content: center;
     margin-left: -10px;
 }
-#caixa4 p{
-    padding-bottom: 20px;
-}
-#caixa3 p{
-    padding-bottom: 20px;
-}
-#caixa1 p{
-    padding-bottom: 20px;
-}
 .depoimento-container {
     text-align: center;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
+    border: 2px solid #6334B1; 
   }
   
   #buttondepoiment{
@@ -213,8 +211,8 @@ li:hover {
     cursor: pointer;
     font-size: 16px;
     margin-bottom: 20px; 
-    margin-top: -20px;
-    margin-left: 285px;
+    margin-top: 40px;
+    margin-left: 275px;
   }
   .modal-footer button{
     background-color: #9b57c6;
@@ -223,8 +221,7 @@ li:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-  }
-  
+  }  
   .depoimento-button:hover {
     background-color: rgb(226, 2, 211);
   }
@@ -233,10 +230,63 @@ li:hover {
     margin: auto;
     padding: 20px;
   }
-  #titleDuvidas{
+  body {
+    background-color: #f8f9fa; /* Cor de fundo da página */
+}
+.accordion {
+    max-width: 700px; /* Largura máxima do acordeão */
+    margin: 20px auto; /* Centraliza o acordeão na página */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o acordeão */
+    margin-bottom: -20px; /* Remove o espaçamento inferior do acordeão */
+}
+
+.accordion-item {
+    border: none; /* Remove bordas padrão do Bootstrap */
+}
+
+.accordion-button {
+    background-color: #6f42c1; /* Roxo */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Negrito para o texto */
+    border: none; /* Remove borda padrão do botão */
+    transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+.accordion-button:hover {
+    background-color: #9b59b6; /* Roxo mais claro ao passar o mouse */
+}
+
+/* Estilo para evitar o fundo azul quando clicado ou focado */
+.accordion-button:focus, 
+.accordion-button:focus-visible {
+    background-color: #6f42c1; /* Mantém o fundo roxo quando ativo */
+    color: white; /* Mantém a cor do texto branca */
+    outline: none; /* Remove a borda padrão ao focar */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #6f42c1; /* Mantém o fundo roxo quando ativo */
+    color: white; /* Mantém a cor do texto branca */
+}
+
+.accordion-collapse {
+    background-color: #f5c9e8; /* Rosa claro para o fundo do corpo do acordeão */
+}
+
+.accordion-body {
+    color: #333; /* Cor do texto do corpo */
+    padding: 1rem; /* Espaçamento interno do corpo */
+}
+
+#titleDuvidas{
     margin-bottom: 20px;
     margin-top: 10px;
-  }
+    color: white;
+    display: flex;
+    justify-content: center;
+  } 
+  
   footer {
     position: relative;
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);

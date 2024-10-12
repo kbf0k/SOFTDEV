@@ -60,45 +60,59 @@
             <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
         </svg>
         <div id="main-real">
-        <h1 id="pageTitle">Contato e Feedbacks</h1>
-        <section id="produto">
-            <div id="caixas">
-                <div id="caixas-superiores">
-                    <div class="caixa" id="caixa1">
-                        <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
-                        <h4 id="name-title">Juliana Souza</h4>
-                        <p id="depoimento-text">Foi tudo excelente desde o atendimento, pré venda, a festa, os monitores excelentes e minha
-                            filha amou!!! Parabéns pelo atendimento e cuidado de todos vocês!</p>
+            <div id="pageTitle">
+                <h1>Contato e Feedbacks</h1>
+                <h4>Avalie nosso espaço e confira nossas melhores avaliações!</h4>
+            </div>
+           <section id="feedbacks">
+    <div id="caixas">
+        <div id="caixas-superiores">
+            <div class="caixa" id="caixa1">
+                <div class="feedback-content">
+                    <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+                    <div class="feedback-text">
+                        <h4>Juliana Souza</h4>
+                        <p>Foi tudo excelente desde o atendimento, pré venda, a festa, os monitores excelentes e minha filha amou!!! Parabéns pelo atendimento e cuidado de todos vocês!</p>
                         <h3>15/08/2024</h3>
                     </div>
-                    <div class="caixa" id="caixa2">
-                        <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+                </div>
+            </div>
+            <div class="caixa" id="caixa2">
+                <div class="feedback-content">
+                    <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+                    <div class="feedback-text">
                         <h4>Maurício</h4>
-                        <p>Estou maravilhado com o serviço do buffetl! A decoração estava impecável, os animadores foram
-                            incríveis e a comida estava deliciosa! Meu filho e seus amiguinhos se divertiram muito.</p>
+                        <p>Estou maravilhado com o serviço do buffet! A decoração estava impecável, os animadores foram incríveis e a comida estava deliciosa! Meu filho e seus amiguinhos se divertiram muito.</p>
                         <h3>13/08/2024</h3>
                     </div>
                 </div>
-                <div id="caixas-inferiores">
-                    <div class="caixa" id="caixa3">
-                        <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+            </div>
+        </div>
+        <div id="caixas-inferiores">
+            <div class="caixa" id="caixa3">
+                <div class="feedback-content">
+                    <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+                    <div class="feedback-text">
                         <h4>Carla Gonçalves</h4>
-                        <p>Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se
-                            divertiram muito, a estrutura é perfeita e a comida estava deliciosa. Foi uma experiência
-                            incrível. Muito obrigado!</p>
+                        <p>Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se divertiram muito, a estrutura é perfeita e a comida estava deliciosa. Foi uma experiência incrível. Muito obrigado!</p>
                         <h3>10/07/2024</h3>
                     </div>
-                    <div class="caixa" id="caixa4">
-                        <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+                </div>
+            </div>
+            <div class="caixa" id="caixa4">
+                <div class="feedback-content">
+                    <img id="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
+                    <div class="feedback-text">
                         <h4>Ana Carolina</h4>
-                        <p>Gostaria de agradecer o carinho e a atenção na realização da festa do nosso filho, foi tudo
-                            impecável!!!
-                            Ficamos muito satisfeitos com a dedicação e empenho de todos!!</p>
+                        <p>Gostaria de agradecer o carinho e a atenção na realização da festa do nosso filho, foi tudo impecável!!! Ficamos muito satisfeitos com a dedicação e empenho de todos!!</p>
                         <h3>30/07/2024</h3>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+          
         <section id="faq">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="buttondepoiment">
               Faça seu Depoimento
@@ -134,46 +148,75 @@
               </div>
             </div>
           </section>
-          
+          <section>
+              <h2 id="titleDuvidas">Dúvidas Frequentes</h2> 
+              <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          O que é um buffet?
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          O buffet é um serviço que oferece alimentação e entretenimento para eventos, como festas e
+                          celebrações, garantindo uma experiência completa para os convidados.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Como faço para reservar um evento?
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          Para reservar um evento, você deve entrar em contato conosco através do nosso formulário de
+                          contato presente na página de <a href="orcamento.html">orçamento</a>. Estamos à disposição para ajudar com todos os detalhes.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Quais são os serviços inclusos?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Nossos serviços incluem alimentação, decoração, animação e muito mais. Para uma lista completa,
+                            consulte nossa página de <a href="orcamento.html">orçamento</a> ou <a href="cardapio.html">cardápio</a> entre em contato para mais informações.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Nosso cardápio é flexível?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Sim, você pode alterar e construir o seu próprio cardápio da festa através da nossa página <a href="cardapio.html">cardápios.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Como entrar em contato conosco?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Consulte nossa área de mensagem logo abaixo nessa mesma página, faça sua pergunta e receberá a resposta em poucos minutos.
+                        </div>
+                    </div>
+                </div>
+                
 
-            <h2 id="titleDuvidas">Dúvidas Frequentes</h2>
-
-            <div class="accordion">
-                <button class="accordion-button">O que é o buffet?</button>
-                <div class="accordion-content">
-                    <p>O buffet é um serviço que oferece alimentação e entretenimento para eventos, como festas e
-                        celebrações, garantindo uma experiência completa para os convidados.</p>
-                </div>
-
-                <button class="accordion-button">Como faço para reservar um evento?</button>
-                <div class="accordion-content">
-                    <p>Para reservar um evento, você deve entrar em contato conosco através do nosso formulário de
-                        contato ou telefone. Estamos à disposição para ajudar com todos os detalhes.</p>
-                </div>
-
-                <button class="accordion-button">Quais são os serviços inclusos?</button>
-                <div class="accordion-content">
-                    <p>Nossos serviços incluem alimentação, decoração, animação e muito mais. Para uma lista completa,
-                        consulte nossa página de serviços ou entre em contato para mais informações.</p>
-                </div>
-                <button class="accordion-button">Quais são os serviços inclusos?</button>
-                <div class="accordion-content">
-                    <p>Nossos serviços incluem alimentação, decoração, animação e muito mais. Para uma lista completa,
-                        consulte nossa página de serviços ou entre em contato para mais informações.</p>
-                </div>
-                <button class="accordion-button">Quais são os serviços inclusos?</button>
-                <div class="accordion-content">
-                    <p>Nossos serviços incluem alimentação, decoração, animação e muito mais. Para uma lista completa,
-                        consulte nossa página de serviços ou entre em contato para mais informações.</p>
-                </div>
-                <button class="accordion-button">Quais são os serviços inclusos?</button>
-                <div class="accordion-content">
-                    <p>Nossos serviços incluem alimentação, decoração, animação e muito mais. Para uma lista completa,
-                        consulte nossa página de serviços ou entre em contato para mais informações.</p>
-                </div>
-            </div>
-        </section>
-        </div>
+          </section>
     </main>
     <footer>
         <div class="container">

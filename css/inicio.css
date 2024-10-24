@@ -56,7 +56,7 @@ li:hover {
 }
 
 #login-sign button {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins';
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -66,7 +66,7 @@ li:hover {
 
 #login-button {
     background-color: rgb(91, 214, 255);
-    width: 100px;
+    width: 80px;
     height: 40px;
     border-radius: 8px;
     color: black;
@@ -81,7 +81,7 @@ li:hover {
 #sign-button {
     color: black;
     background-color: rgb(255, 178, 71);
-    width: 100px;
+    width: 120px;
     height: 40px;
     border-radius: 8px;
 }
@@ -199,15 +199,132 @@ main {
 #section-cardapio {
     display: flex;
     margin-top: 80px;
-}
-
-#textos-cardapio {
+    height: 50vh;
     background: linear-gradient(to bottom, #B943E4, #6334B1, #66257E);
 }
 
-#img-cardapio img {
-    height: 300px;
+#textos-cardapio {
+    padding: 20px;
 }
+
+#textos-cardapio h2 {
+    color: #000000;
+}
+
+#textos-cardapio p {
+    color: white
+}
+
+#textos-cardapio button {
+    background-color: rgb(255, 178, 71);
+    width: 140px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+#textos-cardapio button a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+
+#textos-cardapio button:hover {
+    cursor: pointer;
+}
+
+#img-cardapio {
+    margin: 30px;
+    background-color: #66257E;
+    border: 2px solid #66257E;
+    box-shadow: 0 4px 10px #B943E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 560px;
+    height: 280px;
+    border-radius: 7px;
+    margin-left: -5px;
+}
+
+#img-cardapio img {
+    height: 280px;
+    width: 560px;
+    border-radius: 5px;
+}
+
+
+#div-sections {
+    border-color: #B943E4;
+}
+
+
+
+
+#section-lazer {
+    display: flex;
+    margin-top: 50px;
+    height: 50vh;
+    background: linear-gradient(to bottom, #B943E4, #6334B1, #66257E);
+}
+
+#textos-lazer {
+    padding: 20px;
+}
+
+#textos-lazer h2 {
+    color: #000000;
+}
+
+#textos-lazer p {
+    color: white
+}
+
+#textos-lazer button {
+    background-color: rgb(255, 178, 71);
+    width: 140px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+#textos-lazer button a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+
+#textos-lazer button:hover {
+    cursor: pointer;
+}
+
+#img-lazer {
+    margin: 30px;
+    background-color: #66257E;
+    border: 2px solid #66257E;
+    box-shadow: 0 4px 10px #B943E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 560px;
+    height: 280px;
+    border-radius: 7px;
+    margin-left: -5px;
+}
+
+#img-lazer img {
+    height: 280px;
+    width: 560px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
 
 footer {
     position: relative;

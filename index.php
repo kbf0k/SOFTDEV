@@ -1,22 +1,34 @@
 <?php
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
-    {
-        include_once('config.php');
+session_start();
+include_once('config.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
         $email = $_POST['email'];
-        $senha = $_POST['senha'];
+        $senha_digitada = $_POST['senha']; 
 
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
+        $sql = "SELECT * FROM usuarios WHERE email = ?";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        $result = $conexao -> query($sql);
+        if ($result->num_rows == 1) {
+            $usuario_logado = $result->fetch_assoc();
 
-        if(mysqli_num_rows($result) < 1){
-           header('Location: index.php');
-        }
-        else{
-            header('Location: html/inicio.html');
+            $senha_hash = $usuario_logado['senha'];
+
+            if (password_verify($senha_digitada, $senha_hash)) {
+                
+                $_SESSION['nome_sessao'] = $usuario_logado['nome_sessao'];
+                $_SESSION['tipo_sessao'] = $usuario_logado['tipo_sessao'];
+                header('Location: ./html/inicio.html');
+                exit();
+            } 
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="Pt-BR">
@@ -60,7 +72,7 @@
                 <div class="lembrar">
                     <a href="esqueceu.php">Esqueceu senha?</a>
                 </div>
-                <button type="submit" name="submit" value="enviar">ENTRAR</button>
+                <button type="submit" name="submit">ENTRAR</button>
                 <div class="cadastrar">
                     <p>Não tem uma conta? <a href="cadastrar.php">Inscrever-se</a></p>
                 </div>

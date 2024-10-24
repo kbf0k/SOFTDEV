@@ -1,22 +1,32 @@
 <?php
+session_start();
+include_once('config.php');
+$mensagem ='';
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-if (isset($_POST['submit']) && !empty($_POST['email_digitado']) && !empty($_POST['redefinir_senha'])){
-    include_once('config.php');
+    $email_digitado = $_POST['email'];
+    $senha_digitado = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    $email_digitado = $_POST['email_digitado'];
-    $redefinir_senha = $_POST['redefinir_senha'];
-
-    $sql = "SELECT * FROM usuarios WHERE email = '$email_digitado'";
-    $result = $conexao->query($sql);
+    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $stmt->bind_param('s',$email_digitado);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0){
 
-        $sql_update = "UPDATE usuarios SET senha = '$redefinir_senha', repetir_senha = senha WHERE email = '$email_digitado'";
+        $sql_update = $conexao->prepare("UPDATE usuarios SET senha = ? WHERE email= ?");
+        $sql_update->bind_param('ss',$senha_digitado,$email_digitado);
 
-        if($conexao -> query($sql_update) === TRUE){
+        if($sql_update->execute()){
             header('Location: index.php');
-            exit;
+            exit();
         }
+        else{
+            echo 'Erro ao atualizar a senha';
+        }
+    }
+    else{
+        $mensagem = 'Email não encontrado';
     }
 }
 ?>
@@ -47,12 +57,12 @@ if (isset($_POST['submit']) && !empty($_POST['email_digitado']) && !empty($_POST
             <p>Digite o seu endereço de email abaixo para redefinir a sua senha.</p>
             <form action="" method="post">
                 <div class="entrada">
-                    <label for="email">Email</label>
-                    <input type="email" name="email_digitado" id="email" placeholder="@email.com" required>
+                    <label for="email">Email <p style="color:red;"><?php echo $mensagem;?></p></label>
+                    <input type="email" name="email" id="email" placeholder="@email.com" required>
                 </div>
                 <div class="entrada">
                     <label for="senha">Redefinir Senha</label>
-                    <input type="password" name="redefinir_senha" id="redefinir_senha" placeholder="*****" required>
+                    <input type="password" name="senha" id="redefinir_senha" placeholder="*****" required>
                 </div>
                 <button type="submit" name="submit">ENVIAR</button>
             </form>

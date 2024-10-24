@@ -1,22 +1,21 @@
 <?php
-    $mensagemErro = '';
-    if(isset($_POST['submit']))
-    {
-        include_once('config.php');
+session_start();
+include_once('config.php');
 
-        $nome = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
-        $data_nasc = $_POST['data'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $repetir_senha = $_POST['repetir-senha'];
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['data']) && isset($_POST['email']) && isset($_POST['senha'])){
+            
+            $nome = $_POST['nome'];
+            $sobrenome = $_POST['sobrenome'];
+            $data_nasc = $_POST['data'];
+            $email = $_POST['email'];
+            $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-        if($senha != $repetir_senha){
-           $mensagemErro = "As senhas não se coincidem";
-        }
-        else{
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,data_nasc,email,senha,repetir_senha) 
-        VALUES ('$nome','$sobrenome','$data_nasc','$email','$senha','$repetir_senha')");
+            $sql = "INSERT INTO usuarios(nome,sobrenome,data_nasc,email,senha) VALUES(?,?,?,?,?)";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bind_param('sssss',$nome,$sobrenome,$data_nasc,$email,$senha);
+            $stmt->execute();
+            $result = $stmt->get_result();
             header('Location: index.php');
         }
     }
@@ -67,7 +66,7 @@
                 </div>
                 <h1>CADASTRAR</h1>
                 <p>Digite os seus dados de acesso no campo abaixo</p>
-                <form action="cadastrar.php" method="POST" onsubmit="return verificarsenha()">
+                <form action="" method="POST" onsubmit="return verificarsenha()">
                     <div class="entrada">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
@@ -88,12 +87,10 @@
                         <label for="password">Criar Senha</label>
                         <input type="password" name="senha" id="senha" placeholder="*****" required>
                     </div>
-                    <p id="mensagem-erro" style="color: red; text-align:left;"><?php echo $mensagemErro?></p>
                     <div class="entrada">
                         <label for="password" style="margin:0;">Repetir senha</label>
                         <input type="password" name="repetir-senha" id="repetir=senha" placeholder="*****" required >
                     </div>
-                    <p id="mensagem-erro" style="color: red; text-align:left;"><?php echo $mensagemErro?></p>
                     <button type="submit" name="submit" id="submit">ENTRAR</button>
                 </form>
             </div>

@@ -8,6 +8,40 @@
     <link rel="stylesheet" href="../css/orcamento.css">
     <script src="../javascript/orçamento.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #qrcode {
+            margin-top: 20px;
+        }
+        
+        .container {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .form-group {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -32,7 +66,6 @@
                     <button id="sign-button">Inscrever-se</button>
                 </a>
             </div>
-
         </nav>
         <div class="mobile-menu">
             <ul>
@@ -56,90 +89,88 @@
             <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
         </svg>
         <div id="main-real">
-        <h1 id="titlePage">Faça seu Orçamento!</h1>
-        <div class="form-container">
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome">
-                </div>
+            <h1 id="titlePage">Faça seu Orçamento!</h1>
+            <div class="form-container">
+                <form id="orcamentoForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="convidados">Número de convidados:</label>
-                    <input type="number" id="convidados" name="convidados">
-                </div>
+                    <div class="form-group">
+                        <label for="convidados">Número de convidados:</label>
+                        <input type="number" id="convidados" name="convidados" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="data">Data:</label>
-                    <input type="date" id="data" name="data">
-                </div>
+                    <div class="form-group">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone">
-                </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email">
-                </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="aniversariante">Nome do aniversariante:</label>
-                    <input type="text" id="aniversariante" name="aniversariante">
-                </div>
+                    <div class="form-group">
+                        <label for="aniversariante">Nome do aniversariante:</label>
+                        <input type="text" id="aniversariante" name="aniversariante" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="horario">Horário:</label>
-                    <input type="time" id="horario" name="horario">
-                </div>
+                    <div class="form-group">
+                        <label for="horario">Horário:</label>
+                        <input type="time" id="horario" name="horario" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="adicionais">Adicionais (lembrancinhas, etc.):</label>
-                    <input type="text" id="adicionais" name="adicionais">
-                </div>
+                    <div class="form-group">
+                        <label for="adicionais">Adicionais (lembrancinhas, etc.):</label>
+                        <input type="text" id="adicionais" name="adicionais">
+                    </div>
 
-                <div class="form-group">
-                    <label for="pagamento">Forma de pagamento:</label>
-                    <select id="pagamento" name="pagamento" onchange="exibirBotaoCartao()">
-                        <option value="">Selecione...</option>
-                        <option value="boleto">Boleto</option>
-                        <option value="pix">PIX</option>
-                        <option value="cartao">Cartão de Crédito</option>
-                    </select>
-                </div>
-                
-                <div id="pix-container" style="display: none;">
-                    <button type="button" onclick="window.location.href='pix.html'">Gerar CODIGO QR</button>
-                </div>
-                <div id="cartao-container" style="display: none;">
-                    <button type="button" onclick="window.location.href='cartao.html'">Inserir Dados do Cartão</button>
-                </div>
-                
+                    <div class="form-group">
+                        <label for="valor">Valor: </label>
+                        <input type="text" id="valor" name="valor" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="playlist">Link da sua Playlist:</label>
-                    <input type="text" id="playlist" name="playlist">
-                </div>
+                    <div class="form-group">
+                        <label for="pagamento">Forma de pagamento:</label>
+                        <select id="pagamento" name="pagamento" onchange="exibirBotaoCartao()" required>
+                            <option value="">Selecione...</option>
+                            <option value="boleto">Boleto</option>
+                            <option value="pix">PIX</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem"></textarea>
-                </div>
-            </form>
-            <a class="redirect-link" href="./inicio.html">Enviar</a>
-            <div class="termos">
-                <input type="checkbox" id="termos" name="termos">
-                <label for="termos">Concordo com os <a href="#">Termos e Condições</a></label>
+                    <div class="form-group">
+                        <label for="playlist">Link da sua Playlist:</label>
+                        <input type="text" id="playlist" name="playlist">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem"></textarea>
+                    </div>
+
+                    <div class="termos">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">Concordo com os <a href="#">Termos e Condições</a></label>
+                    </div>
+                    
+                    <button class="redirect-link type="button" onclick="enviarFormulario()">Enviar</button>
+                </form>
             </div>
-        </div>
         </div>
     </div>
     <footer>
         <div class="container">
             <div class="footer-section">
                 <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
-
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>
@@ -154,18 +185,38 @@
                 <h3>Contato</h3>
                 <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
                     Caçapava - SP, 12285-050<br>
-                    <strong>Email:</strong> <a href="contato@funfarra.com" target="_blank">contato@funfarra.com</a>
+                    <strong>Email:</strong> <a href="mailto:contato@funfarra.com" target="_blank">contato@funfarra.com</a>
                     <br>
                     <strong>Telefone:</strong> (12) 1234-5678
                 </p>
             </div>
-
         </div>
 
         <div class="bottom">
             &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
         </div>
     </footer>
+
+    <script>
+        function exibirBotaoCartao() {
+            const pagamento = document.getElementById('pagamento').value;
+            // Exibir ou ocultar os contêineres de pagamento
+        }
+
+        function enviarFormulario() {
+            const pagamento = document.getElementById('pagamento').value;
+            const valor = document.getElementById('valor').value;
+            const descricao = "Pagamento Orçamento";
+
+            if (pagamento === 'pix') {
+                window.location.href = `pix.html?valor=${valor}&descricao=${descricao}`;
+            } else if (pagamento === 'cartao') {
+                window.location.href = 'cartao.html'; // Redirecionar para a página de cartão
+            } else {
+                alert('Por favor, selecione uma forma de pagamento válida.');
+            }
+        }
+    </script>
 </body>
 
 </html>

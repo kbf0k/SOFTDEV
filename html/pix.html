@@ -1,55 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento PIX</title>
-</head>
-<body>
-    <h1>Gerar Código PIX</h1>
-    <button id="gerarPix">Gerar Código PIX</button>
-    <p id="codigoPix"></p>
-
-    <!-- Elemento para exibir o QR Code -->
-    <div id="qrcode"></div>
-
-    <!-- Link para a biblioteca de QR Code -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script>
-        // Função para gerar o código PIX
-        function gerarCodigoPIX() {
-            // Aqui você coloca os dados do seu PIX estático (como chave, valor, etc.)
-            const chavePix = 'timao.alenda@gmail.com'; 
-            const valorPix = '100.00'; // Valor em reais
-            const descricao = 'Pagamento de evento';
-
-            // Gerar uma string simples do código PIX (simulação)
-            const codigoPix = `00020126580014BR.GOV.BCB.PIX0114${chavePix}5204000053039865405${valorPix.replace('.', '')}5802BR5910Fulano de Tal6009SAO PAULO62070503***6304ABCD`;
-
-            // Exibir o código gerado
-            document.getElementById('codigoPix').innerText = codigoPix;
-
-            // Gerar o QR Code no div com id="qrcode"
-            const qrcode = new QRCode(document.getElementById('qrcode'), {
-                text: codigoPix,
-                width: 128,
-                height: 128
-            });
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #qrcode {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .container {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #333;
         }
 
-        // Adicionando o evento de clique no botão
-        document.getElementById('gerarPix').addEventListener('click', gerarCodigoPIX);
-    </script>
-</body>
-</html>
+        .redirect-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: green;
+            border-radius: 10px;
+            margin-top: 40px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pagamento via PIX</h2>
+        <p id="codigoPix"></p>
+        <div id="qrcode"></div>
 
+        <h3>Ou use a chave PIX manualmente:</h3>
+        <p id="chavePix">timao.alenda@gmail.com</p> <!-- Sua chave PIX fixa aqui -->
+
+        <script>
+            // Função para pegar o valor e descrição da URL
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            function gerarCodigoPIX() {
+                // Pegando os valores da URL
+                const valor = getQueryParam('valor');
+                const descricao = getQueryParam('descricao');
+                const chavePix = 'timao.alenda@gmail.com'; // Sua chave PIX fixa
+
+                // Validações simples
+                if (!valor || !descricao) {
+                    alert("Erro ao gerar código PIX. Verifique as informações.");
+                    return;
+                }
+
+                // Formatando o valor para duas casas decimais
+                const valorFormatado = parseFloat(valor).toFixed(2).replace('.', '');
+
+                // Gerando o código PIX
+                const codigoPix = `00020101021126370014BR.GOV.BCB.PIX0114${chavePix}5204000053039865405${valorFormatado}5802BR5916009CaçapavaSP62070503***6304ABCD`;
+
+                // Exibindo o código PIX no HTML
+                document.getElementById('codigoPix').innerText = "Código PIX: " + codigoPix;
+
+                // URL da página de pagamento
+                const urlPagamento = "pagamento.html"; // Link para a sua página de pagamento
+
+                // Gerando o QR Code que redireciona para a página de pagamento
+                new QRCode(document.getElementById('qrcode'), {
+                    text: urlPagamento, // Aqui é onde o QR Code contém o link para a página de pagamento
+                    width: 256,
+                    height: 256
+                });
+            }
+
+            // Chamando a função ao carregar a página
+            window.onload = gerarCodigoPIX;
+        </script>
+    </div>
+    <h3>Clique em Enviar APÓS o pagamento!</h3>
+    <a class="redirect-link" href="confirmacao.html">Enviar</a>
 </body>
 </html>

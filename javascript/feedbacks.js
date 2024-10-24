@@ -1,31 +1,32 @@
-function doDepoiment() {
-  var depoimento = prompt("Escreva seu depoimento:")
-  var novoNome = prompt("Escreva seu Nome:");
+var depoimentoForm = document.getElementById('depoimentoForm');
+var nomeExibido = document.getElementById('nomeExibido');
+var mensagemExibida = document.getElementById('mensagemExibida');
+var dataExibida = document.getElementById('dataExibida');
+var exampleModal = document.getElementById('exampleModal'); // Referência ao modal
 
-  if (depoimento !== null && depoimento.trim() !== "") {
-    document.getElementById("depoimento-text").textContent = depoimento;
-    document.getElementById("name-title").textContent = novoNome;
+// Função para capturar o envio do formulário e atualizar os campos na caixa de feedback
+depoimentoForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Impede o envio tradicional do formulário
+
+  // Captura os valores do formulário
+  var nome = document.getElementById('recipient-name').value;
+  var mensagem = document.getElementById('message-text').value;
+  var data = document.getElementById('data').value;
+
+  // Verifica se todos os campos estão preenchidos
+  if (nome.trim() !== '' && mensagem.trim() !== '' && data !== '') {
+    // Atualiza o conteúdo exibido na caixa de feedback
+    nomeExibido.textContent = nome;
+    mensagemExibida.textContent = mensagem;
+    dataExibida.textContent = data;
+
+    // Fecha o modal após o envio
+    var modalInstance = bootstrap.Modal.getInstance(exampleModal);
+    modalInstance.hide();
+
+    // Limpa os campos do formulário (opcional)
+    depoimentoForm.reset();
   } else {
-    alert("Por favor, escreva algo antes de enviar.");
+    alert('Por favor, preencha todos os campos.');
   }
-}
-function menuShow() {
-  let menuMobile = document.querySelector('.mobile-menu');
-  if (menuMobile.classList.contains('open')) {
-      menuMobile.classList.remove('open')
-      document.querySelector('.icon').src = "../img/menu_white_36dp.svg"
-  } else {
-      menuMobile.classList.add('open')
-      document.querySelector('.icon').src = "../img/close_white_36dp.svg"
-  }
-}
-
-var exampleModal = document.getElementById('exampleModal')
-exampleModal.addEventListener('show.bs.modal', function (event) {
-
-  var modalTitle = exampleModal.querySelector('.modal-title')
-  var modalBodyInput = exampleModal.querySelector('.modal-body input')
-
-  modalTitle.textContent = 'Faça seu Depoimento'
-  modalBodyInput.value = ''
-})
+});

@@ -130,7 +130,7 @@ main{
 }
 
 .caixa {
-    background:linear-gradient(rgb(162, 41, 162), rgb(148, 57, 166) );
+    background:linear-gradient(rgb(186, 106, 186), rgb(148, 57, 166) );
     border: 3px solid #ffffff;
     border-radius: 8px;
     color:white;
@@ -143,10 +143,11 @@ main{
     
 }
 
-#imagemcontato {
+.imagemcontato {
     width: 50px;
     height: auto; /* Ajuste automático da altura */
     margin-bottom: 10px; /* Espaço abaixo da imagem */
+    margin-left: -10px;
 }
 
 .caixa h4 {

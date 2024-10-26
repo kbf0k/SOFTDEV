@@ -105,8 +105,9 @@ body {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/background.jpg) no-repeat center;
     background-size: cover; 
     padding-top: 50px; /* Adiciona espaçamento superior */
-    /* margin-top: -120px; --> COLOCAR ALGO NESSE PIQUE AQUI, SÓ QUE AI VAI PRECISAR ARRUMAR A ANIMAÇÃO QUE TEM
-    NO MAIN, ACHO QUE CONSIGO FAZER ISSO.*/
+    /* margin-top: -120px; --> COLOCAR AQUI, SÓ QUE AI VAI PRECISAR ARRUMAR A ANIMAÇÃO QUE TEM
+    NO MAIN. ACHO QUE É SÓ MOVER O 'MAIN-REAL' NO HTML PARA BAIXO DA PRIMEIRA SEÇÃO.
+    (HTML TÁ TODO BIZARRO ENTÃO POR ISSO NÃO FIZ, MAS PARECE COMPLETAMENTE TRANQUILO).*/
 }
 
 #titulo {
@@ -122,6 +123,12 @@ body {
 
  #main-real{
     animation: fadeIn 1s ease-in-out;
+ }
+
+ #margem-negativa {
+    height: 20px;
+    min-height: 20px;
+    overflow: hidden;
  }
  
 

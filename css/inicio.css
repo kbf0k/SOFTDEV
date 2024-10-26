@@ -196,23 +196,45 @@ main {
     margin-top: 10px;
 }
 
+#resumos-outras-pags {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background:linear-gradient(rgb(186, 106, 186), rgb(148, 57, 166) );
+    margin-top: 80px;
+}
+
+.hr-gradiente {
+    height: 4px;
+    min-height: 4px;
+    width: 100%;
+    background-color: #66257E;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
 #section-cardapio {
     display: flex;
-    margin-top: 80px;
+    justify-content: center;
     height: 50vh;
-    background: linear-gradient(to bottom, #B943E4, #6334B1, #66257E);
+    gap: 50px;
 }
 
 #textos-cardapio {
-    padding: 20px;
+    padding: 50px;
+    width: 700px;
+    margin-left: -50px;
 }
 
 #textos-cardapio h2 {
-    color: #000000;
+    color: #66257E;
 }
 
 #textos-cardapio p {
-    color: white
+    color: white;
+    width: 105%;
 }
 
 #textos-cardapio button {
@@ -237,48 +259,48 @@ main {
 #img-cardapio {
     margin: 30px;
     background-color: #66257E;
-    border: 2px solid #66257E;
+    border: 2px solid #B943E4;
     box-shadow: 0 4px 10px #B943E4;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 560px;
-    height: 280px;
+    width: 600px;
+    height: 300px;
     border-radius: 7px;
     margin-left: -5px;
 }
 
 #img-cardapio img {
-    height: 280px;
-    width: 560px;
+    height: 300px;
+    width: 600px;
     border-radius: 5px;
 }
 
 
-#div-sections {
-    border-color: #B943E4;
-}
 
 
 
 
 #section-lazer {
     display: flex;
-    margin-top: 50px;
+    justify-content: center;
     height: 50vh;
-    background: linear-gradient(to bottom, #B943E4, #6334B1, #66257E);
+    gap: 50px;
 }
 
 #textos-lazer {
-    padding: 20px;
+    padding: 50px;
+    width: 700px;
+    margin-left: -50px;
 }
 
 #textos-lazer h2 {
-    color: #000000;
+    color: #66257E;
 }
 
 #textos-lazer p {
-    color: white
+    color: white;
+    width: 105%;
 }
 
 #textos-lazer button {
@@ -303,28 +325,22 @@ main {
 #img-lazer {
     margin: 30px;
     background-color: #66257E;
-    border: 2px solid #66257E;
+    border: 2px solid #B943E4;
     box-shadow: 0 4px 10px #B943E4;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 560px;
-    height: 280px;
+    width: 600px;
+    height: 300px;
     border-radius: 7px;
     margin-left: -5px;
 }
 
 #img-lazer img {
-    height: 280px;
-    width: 560px;
+    height: 300px;
+    width: 600px;
     border-radius: 5px;
 }
-
-
-
-
-
-
 
 footer {
     position: relative;

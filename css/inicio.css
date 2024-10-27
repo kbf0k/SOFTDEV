@@ -101,7 +101,7 @@ li:hover {
 }
 
 main {
-    height: 300vh;
+    height: 350vh;
 }
 
 #main-real {
@@ -199,7 +199,7 @@ main {
 #resumos-outras-pags {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 150vh;
     background:linear-gradient(rgb(186, 106, 186), rgb(148, 57, 166) );
     margin-top: 80px;
 }

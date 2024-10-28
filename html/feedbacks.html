@@ -65,16 +65,15 @@
                     <div id="caixas-superiores">
                         <div class="caixa" id="caixa1">
                             <div class="feedback-content">
-                                <img class="imagemcontato" src="../IMG/image-removebg-preview (9).png"
-                                    alt="Imagem de contato">
+                                <img class="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="Imagem de contato">
                                 <div class="feedback-text">
-                                    <h4 id="nomeExibido">Juliana Souza</h4>
-                                    <p id="mensagemExibida">
+                                    <h4 id="nomeExibido1">Juliana Souza</h4>
+                                    <p id="mensagemExibida1">
                                         Foi tudo excelente desde o atendimento, pré venda, a festa, os monitores
                                         excelentes e minha filha amou!!! Parabéns pelo atendimento e cuidado de todos
                                         vocês!
                                     </p>
-                                    <h3 id="dataExibida">15/08/2024</h3>
+                                    <h3 id="dataExibida1">15/08/2024</h3>
                                 </div>
                             </div>
                         </div>
@@ -82,11 +81,11 @@
                             <div class="feedback-content">
                                 <img class="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
                                 <div class="feedback-text">
-                                    <h4>Maurício</h4>
-                                    <p>Estou maravilhado com o serviço do buffet! A decoração estava impecável, os
+                                    <h4 id="nomeExibido2">Maurício</h4>
+                                    <p id="mensagemExibida2">Estou maravilhado com o serviço do buffet! A decoração estava impecável, os
                                         animadores foram incríveis e a comida estava deliciosa! Meu filho e seus
                                         amiguinhos se divertiram muito.</p>
-                                    <h3>13/08/2024</h3>
+                                    <h3 id="dataExibida2">13/08/2024</h3>
                                 </div>
                             </div>
                         </div>
@@ -96,11 +95,11 @@
                             <div class="feedback-content">
                                 <img class="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
                                 <div class="feedback-text">
-                                    <h4>Carla Gonçalves</h4>
-                                    <p>Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se divertiram
+                                    <h4 id="nomeExibido3">Carla Gonçalves</h4>
+                                    <p id="mensagemExibida3">Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se divertiram
                                         muito, a estrutura é perfeita e a comida estava deliciosa. Foi uma experiência
                                         incrível. Muito obrigado!</p>
-                                    <h3>10/07/2024</h3>
+                                    <h3 id="dataExibida3">10/07/2024</h3>
                                 </div>
                             </div>
                         </div>
@@ -108,17 +107,18 @@
                             <div class="feedback-content">
                                 <img class="imagemcontato" src="../IMG/image-removebg-preview (9).png" alt="">
                                 <div class="feedback-text">
-                                    <h4>Ana Carolina</h4>
-                                    <p>Gostaria de agradecer o carinho e a atenção na realização da festa do nosso
+                                    <h4 id="nomeExibido4">Ana Carolina</h4>
+                                    <p id="mensagemExibida4">Gostaria de agradecer o carinho e a atenção na realização da festa do nosso
                                         filho, foi tudo impecável!!! Ficamos muito satisfeitos com a dedicação e empenho
                                         de todos!!</p>
-                                    <h3>30/07/2024</h3>
+                                    <h3 id="dataExibida4">30/07/2024</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
 
             <section id="faq">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -141,20 +141,21 @@
                                         <input type="text" class="form-control" id="recipient-name" maxlength="25"
                                             placeholder="Escreva seu primeiro nome" required>
                                     </div>
-
+                                
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Mensagem:</label>
                                         <textarea class="form-control" id="message-text"
                                             placeholder="Escreva aqui seu depoimento" required></textarea>
+                                        <small id="message-warning" class="text-danger"></small> <!-- Mensagem de aviso -->
                                     </div>
-
+                                
                                     <div class="form-group mb-3">
                                         <label for="data">Data:</label>
                                         <input type="date" class="form-control" id="data" name="data" required>
                                     </div>
+                                    
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                                         <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
                                     </div>
                                 </form>

@@ -104,7 +104,7 @@ li:hover {
 }
 
 main {
-    background-image: url(../img/decoracao2.png);
+    background-image: url(../img/parte2.svg);
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -115,8 +115,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transition: all 0.5s ease-in-out;
-    animation: fadeIn 1s ease-in-out;
+    /* transition: all 0.5s ease-in-out;
+    animation: fadeIn 1s ease-in-out; */
 }
 
 .titulo-atracoes{
@@ -157,74 +157,139 @@ main {
     background-color: #B843E4;
 }
 
-#atracoes1{
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    height: 120vh;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+section button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #66257E;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #B943E4;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#atracoes1, #atracoes2, #atracoes3, #atracoes4 {
+    background: linear-gradient(135deg, #66257E, #6334B1, #B943E4);
+    color: #fff;
+}
+
+.destaque {
+    margin-bottom: 20px;
+}
+
+.img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.img img {
+    max-width: 180px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+#atracoes1 {
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
 }
 
-.img img{
-    max-width: 200px;
-    border-radius: 20px;
+#atracoes2 {
+    background: linear-gradient(90deg, #6334B1, #B943E4, #66257E);
 }
 
-#atracoes2{
-    background: linear-gradient(90deg, #66257E, #B943E4);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
+#atracoes3 {
+    background: linear-gradient(90deg, #B943E4, #66257E, #6334B1);
 }
 
-.img img{
-    max-width: 200px;
-    border-radius: 20px;
+#atracoes4 {
+    background: linear-gradient(135deg, rgba(203,146,255,1) 0%, rgba(107,0,247,1) 100%);
 }
 
-#atracoes3{
-    background: linear-gradient(90deg, #66257E, #6334B1);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
+
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
 }
 
-.img img{
-    max-width: 200px;
-    border-radius: 20px;
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#atracoes4{
-    background: rgb(203,146,255);
-    background: linear-gradient(rgba(203,146,255,1) 0%, rgba(107,0,247,1) 100%,rgba(107,0,247,1) 100%);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .img img {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
-.img img{
-    max-width: 200px;
-    border-radius: 20px;
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.95em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
 }
+
 
 
 /* FOOTER CABEÇALHO */

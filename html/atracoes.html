@@ -13,10 +13,10 @@
 <body>
     <header>
         <nav>
-            <div onclick="menuShow()" class="mobile-icon">
-                <button><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
+            <div class="mobile-icon" onclick="menuShow()">
+                <button><img class="icon" src="../img/menu_white_36dp.svg" alt="Menu"></button>
             </div>
-            <a href="inicio.html"><img id="logo-buffet" src="../img/funfarrakids.png" alt=""></a>
+            <a href="inicio.html"><img id="logo-buffet" src="../img/funfarrakids.png" alt="Fun Farra Kids"></a>
             <ul>
                 <li><a href="inicio.html">INÍCIO</a></li>
                 <li><a href="cardapio.html">CARDÁPIO</a></li>
@@ -47,8 +47,21 @@
     <main>
         <div class="titulo-atracoes">
             <h1>Nossas Atrações</h1>
-            <p>Venha conhecer as nossas principais atrações e despertar a festa do seu filho</p>
+            <p>Venha conhecer as nossas principais atrações e despertar a festa do seu filho.</p>
             <a href="#atracoes1"><button type="button">Clique Aqui</button></a>
+        </div>
+
+        <div class="carrossel-container">
+            <div class="carrossel">
+                <div class="item"><img src="../img/onda-certa-para atraçoes.svg" alt="Imagem 1"></div>
+                <div class="item"><img src="../img/atracao2.svg" alt="Imagem 2"></div>
+                <div class="item"><img src="../img/atracao3.svg" alt="Imagem 3"></div>
+                <div class="item"><img src="../img/atracao4.svg" alt="Imagem 4"></div>
+            </div>
+            <div class="controladores">
+                <button class="setas" onclick="move(-1)" id="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <button class="setas" onclick="move(1)" id="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
         </div>
     </main>
 
@@ -56,73 +69,53 @@
         <div class="destaque">
             <h2>Atrações em Destaque</h2>
             <p>Desfrute de uma experiência completa com as melhores atrações para todas as idades!</p>
-            <p>No Buffet Infantil Fun Farra, cada atração é pensada para oferecer momentos inesquecíveis de diversão e
-                alegria para as crianças e tranquilidade para os pais. Com espaços cuidadosamente planejados, o Fun
-                Farra conta com uma variedade de brinquedos e atividades que garantem entretenimento para todas as
-                idades. Entre as atrações, temos:</p>
+            <p>No Buffet Infantil Fun Farra, cada atração é pensada para oferecer momentos inesquecíveis de diversão e alegria para as crianças. Entre as atrações, temos:</p>
         </div>
         <a href="#atracoes2"><button type="button">Clique Aqui</button></a>
-
         <div class="img">
             <img src="../img/atração1.jpg" alt="Atração 1">
             <img src="../img/atração2.jpg" alt="Atração 2">
             <img src="../img/atração3.jpg" alt="Atração 3">
             <img src="../img/atração4.jpg" alt="Atração 4">
-            <img src="../img/atração1.jpg" alt="Atração 5">
-            <img src="../img/atração2.jpg" alt="Atração 6">
         </div>
     </section>
 
     <section id="atracoes2">
         <div class="destaque">
-            <h2>Playground Completo:</h2>
-            <p>Com brinquedos como escorregadores, balanços, túneis e obstáculos, o playground é perfeito para as
-                crianças explorarem e gastarem energia.</p>
+            <h2>Playground Completo</h2>
+            <p>Com brinquedos como escorregadores, balanços, túneis e obstáculos, o playground é perfeito para as crianças explorarem.</p>
             <a href="#atracoes3"><button type="button">Clique Aqui</button></a>
         </div>
-
         <div class="img">
             <img src="../img/atração1.jpg" alt="Atração 1">
             <img src="../img/atração2.jpg" alt="Atração 2">
         </div>
-
     </section>
-    
+
     <section id="atracoes3">
         <div class="destaque">
-            <h2>Piscina de Bolinhas:</h2>
-            <p>Um dos favoritos das crianças, a piscina de bolinhas é segura, colorida e cheia de
-                diversão! Ideal para os pequenos se divertirem enquanto interagem com os amigos.</p>
+            <h2>Piscina de Bolinhas</h2>
+            <p>Um dos favoritos das crianças, a piscina de bolinhas é segura, colorida e cheia de diversão!</p>
+            <a href="#atracoes4"><button type="button">Clique Aqui</button></a>
         </div>
-        <a href="#atracoes4"><button type="button">Clique Aqui</button></a>
-
         <div class="img">
             <img src="../img/atração1.jpg" alt="Atração 1">
             <img src="../img/atração2.jpg" alt="Atração 2">
             <img src="../img/atração3.jpg" alt="Atração 3">
-            <img src="../img/atração4.jpg" alt="Atração 4">
-            <img src="../img/atração1.jpg" alt="Atração 5">
-            <img src="../img/atração2.jpg" alt="Atração 6">
         </div>
-
     </section>
-    
+
     <section id="atracoes4">
         <div class="destaque">
-            <h2>Pula-Pula e Infláveis Gigantes:</h2>
-            <p>Para os amantes de adrenalina, os brinquedos infláveis gigantes e o pula-pula são ideais, promovendo
-                muita emoção em cada salto.</p>
+            <h2>Pula-Pula e Infláveis Gigantes</h2>
+            <p>Para os amantes de adrenalina, os brinquedos infláveis gigantes e o pula-pula são ideais.</p>
         </div>
         <div class="img">
             <img src="../img/atração1.jpg" alt="Atração 1">
             <img src="../img/atração2.jpg" alt="Atração 2">
             <img src="../img/atração3.jpg" alt="Atração 3">
-            <img src="../img/atração4.jpg" alt="Atração 4">
-            <img src="../img/atração1.jpg" alt="Atração 5">
-            <img src="../img/atração2.jpg" alt="Atração 6">
         </div>
     </section>
-
 
     <footer>
         <div class="container">
@@ -131,23 +124,16 @@
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>
-                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
-                    garantirão a
-                    diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável,
-                    cuidadoso
-                    e de alta qualidade, atendendo às suas expectativas com excelência.</p>
+                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que garantirão a diversão da criançada.</p>
             </div>
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
-                    Caçapava - SP, 12285-050<br>
-                    <strong>Email:</strong> <a href="contato@funfarra.com" target="_blank">contato@funfarra.com</a>
-                    <br>
+                <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira, Caçapava - SP, 12285-050<br>
+                    <strong>Email:</strong> <a href="mailto:contato@funfarra.com">contato@funfarra.com</a><br>
                     <strong>Telefone:</strong> (12) 1234-5678
                 </p>
             </div>
         </div>
-
         <div class="bottom">
             &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
         </div>

@@ -104,9 +104,9 @@ li:hover {
 }
 
 main {
-    background-image: url(../img/onda-certa-para\ atraçoes.svg);
+    /* background-image: url(../img/onda-certa-para\ atraçoes.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -114,12 +114,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    /* transition: all 0.5s ease-in-out;
-    animation: fadeIn 1s ease-in-out; */
+    flex-direction: column;    
 }
 
-.titulo-atracoes{
+
+.titulo-atracoes {
     background-color: rgba(0, 0, 0, 0.644);
     border-radius: 20px;
     max-width: 800px;
@@ -129,6 +128,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 .titulo-atracoes h1 {
@@ -155,6 +156,53 @@ main {
 
 .titulo-atracoes button:hover {
     background-color: #B843E4;
+}
+
+.carrossel-container {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: calc(100% * 4);
+}
+
+.item {
+    transition: opacity 0.3s ease;
+}
+
+.item img {
+    margin-top: 110px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.setas {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s ease-in-out all;
+}
+
+#prev {
+    left: 30px;
+}
+
+#next {
+    right: 30px;
 }
 
 section {
@@ -200,7 +248,10 @@ button:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-#atracoes1, #atracoes2, #atracoes3, #atracoes4 {
+#atracoes1,
+#atracoes2,
+#atracoes3,
+#atracoes4 {
     background: linear-gradient(135deg, #66257E, #6334B1, #B943E4);
     color: #fff;
 }
@@ -243,7 +294,7 @@ button:hover {
 }
 
 #atracoes4 {
-    background: linear-gradient(135deg, rgba(203,146,255,1) 0%, rgba(107,0,247,1) 100%);
+    background: linear-gradient(135deg, rgba(203, 146, 255, 1) 0%, rgba(107, 0, 247, 1) 100%);
 }
 
 

@@ -45,125 +45,138 @@
         </div>
 
     </header>
-    <main>
-        <h1 id="titulo">Cardápios</h1>
-        <div class="menu-options">
-            <!-- Cardápio 1 -->
-            <div class="menu-card">
-                <h2>Cardápio Kids Clássico</h2>
-                <ul>
-                    <li>Salgadinhos variados (coxinha, quibe, bolinha de queijo)</li>
-                    <li>Mini pizzas e mini hot dogs</li>
-                    <li>Suco de frutas naturais</li>
-                    <li>Sorvete com cobertura e granulado</li>
-                    <li>Batata Frita</li>
-                </ul>
-                <button class="choose-menu">Escolher Cardápio</button>
-            </div>
-
-            <!-- Cardápio 2 -->
-            <div class="menu-card">
-                <h2>Cardápio Kids Gourmet</h2>
-                <ul>
-                    <li>Salgadinhos variados (coxinha, quibe, bolinha de queijo)</li>
-                    <li>Mini hambúrgueres artesanais</li>
-                    <li>Refrigerantes</li>
-                    <li>Milk-shake de chocolate e morango</li>
-                    <li>Nuggets</li>
-                </ul>
-                <button class="choose-menu">Escolher Cardápio</button>
-            </div>
-
-            <!-- Cardápio 3 -->
-            <div class="menu-card">
-                <h2>Cardápio Kids Diversão</h2>
-                <ul>
-                    <li>Pedaços de pizza</li>
-                    <li>Bolo de cenoura com cobertura de chocolate</li>
-                    <li>Mini churros</li>
-                    <li>Refrigerantes e sucos</li>
-                    <li>Pudim</li>
-                </ul>
-                <button class="choose-menu">Escolher Cardápio</button>
-            </div>
-
-            <!-- Cardápio 4 -->
-            <div class="menu-card">
-                <h2>Cardápio Kids Prime</h2>
-                <ul>
-                    <li>Salgadinhos variados (coxinha, quibe, bolinha de queijo)</li>
-                    <li>Lanches</li>
-                    <li>Refrigerante</li>
-                    <li>Milk-shake</li>
-                    <li>Doces</li>
-                </ul>
-                <button class="choose-menu">Escolher Cardápio</button>
-            </div>
-            <div class="menu-card">
-                <!-- Botão para abrir o modal -->
-                <button id="open-modal" class="open-modal-btn">Personalizar Cardápio</button>
-            </div>
-
-            <!-- Modal para o cardápio personalizado -->
-            <div id="custom-menu-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Personalize seu Cardápio</h2>
-                    <form id="custom-menu-form">
-                        <label for="massas">Escolha uma Massa:</label>
-                        <select id="massas" name="massas">
-                            <option value="Coxinha">Coxinha</option>
-                            <option value="Bolinhas de queijo">Bolinhas de queijo</option>
-                            <option value="Risole">Risole</option>
-                        </select>
-
-                        <label for="sorvetes">Escolha um Sorvete:</label>
-                        <select id="sorvetes" name="sorvetes">
-                            <option value="Chocolate">Chocolate</option>
-                            <option value="Flocos">Flocos</option>
-                            <option value="Morango">Morango</option>
-                        </select>
-
-                        <label for="bebidas">Escolha uma Bebida:</label>
-                        <select id="bebidas" name="bebidas">
-                            <option value="Refrigerante">Refrigerante</option>
-                            <option value="Suco">Suco</option>
-                            <option value="Água">Água</option>
-                        </select>
-
-                        <label for="sobremesas">Escolha uma Sobremesa:</label>
-                        <select id="sobremesas" name="sobremesas">
-                            <option value="Pudim">Pudim</option>
-                            <option value="Bolo de Cenoura">Bolo de Cenoura</option>
-                            <option value="Mini-tortas">Mini-tortas</option>
-                        </select>
-
-                        <label for="acompanhamento">Escolha seu Acompanhamento:</label>
-                        <select id="acompanhamento" name="acompanhamento">
-                            <option value="Pipoca">Pipoca</option>
-                            <option value="Algodão Doce">Algodão Doce</option>
-                            <option value="Gelatina">Gelatina</option>
-                        </select>
-
-                        <button type="button" id="save-custom-menu">Salvar Cardápio</button>
-                    </form>
+    
+    
+            <main>
+                <h1 id="titulo">Cardápios</h1>
+                <div class="menu-options">
+                    <!-- Cardápio 1 -->
+                    <div class="menu-card">
+                        <h2>Cardápio Kids Clássico</h2>
+                        <ul>
+                            <li>Salgadinhos variados (coxinha, quibe, bolinha de queijo)</li>
+                            <li>Mini pizzas e mini hot dogs</li>
+                            <li>Suco de frutas naturais</li>
+                            <li>Sorvete com cobertura e granulado</li>
+                            <li>Batata Frita</li>
+                        </ul>
+                        <img src="../img/cardapioitem1.jpg" alt="Cardápio" class="menu-image">
+                        <p class="menu-price">R$ 45,00</p>
+                        <button class="choose-menu">Escolher Cardápio</button>
+                    </div>
+            
+                    <!-- Cardápio 2 -->
+                    <div class="menu-card">
+                        <h2>Cardápio Kids Gourmet</h2>
+                        <ul>
+                            <li>Salgadinhos variados (coxinha, quibe, bolinha de queijo)</li>
+                            <li>Mini hambúrgueres artesanais</li>
+                            <li>Refrigerantes</li>
+                            <li>Milk-shake de chocolate e morango</li>
+                            <li>Nuggets</li>
+                        </ul>
+                        <img src="../img/cardapioitem2.jpg" alt="Cardápio" class="menu-image">
+                        <p class="menu-price">R$ 55,00</p>
+                        <button class="choose-menu">Escolher Cardápio</button>
+                    </div>
+            
+                    <!-- Cardápio 3 -->
+                    <div class="menu-card">
+                        <h2>Cardápio Kids Diversão</h2>
+                        <ul>
+                            <li>Pedaços de pizza</li>
+                            <li>Bolo de cenoura com cobertura de chocolate</li>
+                            <li>Mini churros</li>
+                            <li>Refrigerantes e sucos</li>
+                            <li>Pudim</li>
+                        </ul>
+                        <img src="img/cardapio-kids-diversao.jpg" alt="Cardápio" class="menu-image">
+                        <p class="menu-price">R$ 50,00</p>
+                        <button class="choose-menu">Escolher Cardápio</button>
+                    </div>
+            
+                    <!-- Cardápio 4 -->
+                    <div class="menu-card">
+                        <h2>Cardápio Kids Prime</h2>
+                        <ul>
+                            <li>Salgadinhos variados (coxinha, quibe, bolinha de queijo)</li>
+                            <li>Lanches</li>
+                            <li>Refrigerante</li>
+                            <li>Milk-shake</li>
+                            <li>Doces</li>
+                        </ul>
+                        <img src="img/cardapio-kids-prime.jpg" alt="Cardápio" class="menu-image">
+                        <p class="menu-price">R$ 60,00</p>
+                        <button class="choose-menu">Escolher Cardápio</button>
+                    </div>
+            
+                    <!-- Cardápio 5: Personalizado -->
+                    <div class="menu-card">
+                        <!-- Botão para abrir o modal -->
+                        <button id="open-modal" class="open-modal-btn">Personalizar Cardápio</button>
+                    </div>
+        
+                    <!-- Modal para o cardápio personalizado -->
+                    <div id="custom-menu-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Personalize seu Cardápio</h2>
+                            <form id="custom-menu-form">
+                                <label for="massas">Escolha uma Massa:</label>
+                                <select id="massas" name="massas">
+                                    <option value="Coxinha">Coxinha</option>
+                                    <option value="Bolinhas de queijo">Bolinhas de queijo</option>
+                                    <option value="Risole">Risole</option>
+                                </select>
+        
+                                <label for="sorvetes">Escolha um Sorvete:</label>
+                                <select id="sorvetes" name="sorvetes">
+                                    <option value="Chocolate">Chocolate</option>
+                                    <option value="Flocos">Flocos</option>
+                                    <option value="Morango">Morango</option>
+                                </select>
+        
+                                <label for="bebidas">Escolha uma Bebida:</label>
+                                <select id="bebidas" name="bebidas">
+                                    <option value="Refrigerante">Refrigerante</option>
+                                    <option value="Suco">Suco</option>
+                                    <option value="Água">Água</option>
+                                </select>
+        
+                                <label for="sobremesas">Escolha uma Sobremesa:</label>
+                                <select id="sobremesas" name="sobremesas">
+                                    <option value="Pudim">Pudim</option>
+                                    <option value="Bolo de Cenoura">Bolo de Cenoura</option>
+                                    <option value="Mini-tortas">Mini-tortas</option>
+                                </select>
+        
+                                <label for="acompanhamento">Escolha seu Acompanhamento:</label>
+                                <select id="acompanhamento" name="acompanhamento">
+                                    <option value="Pipoca">Pipoca</option>
+                                    <option value="Algodão Doce">Algodão Doce</option>
+                                    <option value="Gelatina">Gelatina</option>
+                                </select>
+        
+                                <button type="button" id="save-custom-menu">Salvar Cardápio</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Cardápio 6 -->
+                    <div class="menu-card">
+                        <h2>Cardápio Kids Festa</h2>
+                        <ul>
+                            <li>Mini salgados diversos</li>
+                            <li>Mini sanduíches de presunto e queijo</li>
+                            <li>Batatas fritas</li>
+                            <li>Milk-shake de baunilha</li>
+                            <li>Refrigerante</li>
+                        </ul>
+                        <img src="img/cardapio-kids-festa.jpg" alt="Cardápioa" class="menu-image">
+                        <p class="menu-price">R$ 65,00</p>
+                        <button class="choose-menu">Escolher Cardápio</button>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Cardápio 6 -->
-            <div class="menu-card">
-                <h2>Cardápio Kids Festa</h2>
-                <ul>
-                    <li>Mini salgados diversos</li>
-                    <li>Mini sanduíches de presunto e queijo</li>
-                    <li>Batatas fritas</li>
-                    <li>Milk-shake de baunilha</li>
-                    <li>Refrigerante</li>
-                </ul>
-                <button class="choose-menu">Escolher Cardápio</button>
-            </div>
-        </div>
-        <div class="carousel">
+    <div class="carousel">
             <h2>Cardápios</h2>
             <p>Cardápios diferenciados, para atender diferentes tipos de clientes, com qualidade e excelência.</p>
             <div class="carousel-container">

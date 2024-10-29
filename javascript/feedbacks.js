@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   var depoimentoForm = document.getElementById('depoimentoForm');
-  var nomeExibido1 = document.getElementById('nomeExibido1'); // Atualizado para corresponder ao ID
-  var mensagemExibida1 = document.getElementById('mensagemExibida1'); // Atualizado para corresponder ao ID
-  var dataExibida1 = document.getElementById('dataExibida1'); // Atualizado para corresponder ao ID
-  var nomeExibido2 = document.getElementById('nomeExibido2'); // Adicionando os IDs dos depoimentos
+  var nomeExibido1 = document.getElementById('nomeExibido1'); 
+  var mensagemExibida1 = document.getElementById('mensagemExibida1');
+  var dataExibida1 = document.getElementById('dataExibida1');
+  var nomeExibido2 = document.getElementById('nomeExibido2'); 
   var mensagemExibida2 = document.getElementById('mensagemExibida2');
   var dataExibida2 = document.getElementById('dataExibida2');
   var nomeExibido3 = document.getElementById('nomeExibido3');
@@ -12,39 +12,36 @@ document.addEventListener('DOMContentLoaded', function() {
   var nomeExibido4 = document.getElementById('nomeExibido4');
   var mensagemExibida4 = document.getElementById('mensagemExibida4');
   var dataExibida4 = document.getElementById('dataExibida4');
-  var exampleModal = document.getElementById('exampleModal'); // Referência ao modal
-  var messageWarning = document.getElementById('message-warning'); // Referência à mensagem de aviso
+  var exampleModal = document.getElementById('exampleModal'); 
+  var messageWarning = document.getElementById('message-warning'); 
 
-  // Função para capturar o envio do formulário e atualizar os campos na caixa de feedback
   depoimentoForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Impede o envio tradicional do formulário
+      event.preventDefault(); 
 
       // Captura os valores do formulário
       var nome = document.getElementById('recipient-name').value;
       var mensagem = document.getElementById('message-text').value;
       var data = document.getElementById('data').value;
 
-      // Verifica se todos os campos estão preenchidos
       if (nome.trim() !== '' && mensagem.trim() !== '' && data !== '') {
-          // Verifica o comprimento da mensagem
-          const minLength = 40; // Altere aqui para 40 caracteres
+          const minLength = 70;
           const maxLength = 200;
 
           if (mensagem.length < minLength || mensagem.length > maxLength) {
               messageWarning.textContent = `O depoimento deve ter entre ${minLength} e ${maxLength} caracteres.`;
-              return; // Interrompe a execução se a validação falhar
+              return; 
           } else {
-              messageWarning.textContent = ""; // Limpa a mensagem de erro
+              messageWarning.textContent = ""; 
           }
 
-          // Regex para permitir letras, números, espaços e pontuação
-          const regex = /^[A-Za-zÀ-ÖØ-ÿ0-9\s,.?!'";:-]+$/; // Permite letras, números, espaços e pontuações comuns
+        
+          const regex = /^[A-Za-zÀ-ÖØ-ÿ0-9\s,.?!'";:-]+$/;
 
           if (!regex.test(mensagem)) {
               messageWarning.textContent = "Por favor, insira apenas letras, números e espaços.";
-              return; // Interrompe a execução se a validação falhar
+              return; 
           } else {
-              messageWarning.textContent = ""; // Limpa a mensagem de erro
+              messageWarning.textContent = ""; 
           }
 
           // Verifica se há uma palavra com mais de 20 caracteres consecutivos
@@ -52,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
           if (longWordRegex.test(mensagem)) {
               messageWarning.textContent = "Nenhuma palavra pode ter mais de 20 caracteres consecutivos.";
-              return; // Interrompe a execução se a validação falhar
+              return; 
           } else {
-              messageWarning.textContent = ""; // Limpa a mensagem de erro
+              messageWarning.textContent = ""; 
           }
 
           // Formata a data para o formato desejado
@@ -75,19 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
           mensagemExibida2.textContent = mensagemExibida1.textContent;
           dataExibida2.textContent = dataExibida1.textContent;
 
-          // Atualiza o conteúdo exibido na caixa de feedback
           nomeExibido1.textContent = nome;
           mensagemExibida1.textContent = mensagem;
-          dataExibida1.textContent = dataString; // Usando a data formatada
+          dataExibida1.textContent = dataString;
 
-          // Fecha o modal após o envio
           var modalInstance = bootstrap.Modal.getInstance(exampleModal);
           modalInstance.hide();
 
-          // Limpa os campos do formulário (opcional)
           depoimentoForm.reset();
       } else {
           alert('Por favor, preencha todos os campos.');
       }
   });
 });
+

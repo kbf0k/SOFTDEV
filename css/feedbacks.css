@@ -233,8 +233,8 @@ main {
     cursor: pointer;
     font-size: 16px;
     margin-bottom: 20px;
-    margin-top: 40px;
-    margin-left: 275px;
+    margin-top: 30px;
+    margin-left: 652px;
 }
 
 .modal-footer button {
@@ -254,92 +254,127 @@ main {
     background-color: rgb(226, 2, 211);
 }
 
-
-#faq {
-    max-width: 800px;
-    margin: auto;
+#duvidas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+    max-width: 1200px;
     padding: 20px;
-}
-
-body {
-    background-color: #f8f9fa;
-    /* Cor de fundo da página */
-}
-
-.accordion {
-    max-width: 700px;
-    /* Largura máxima do acordeão */
-    margin: 20px auto;
-    /* Centraliza o acordeão na página */
-    border-radius: 8px;
-    /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra para o acordeão */
-    margin-bottom: -20px;
-    /* Remove o espaçamento inferior do acordeão */
-}
-
-.accordion-item {
-    border: none;
-    /* Remove bordas padrão do Bootstrap */
-}
-
-.accordion-button {
-    background-color: #6f42c1;
-    /* Roxo */
-    color: white;
-    /* Cor do texto */
-    font-weight: bold;
-    /* Negrito para o texto */
-    border: none;
-    /* Remove borda padrão do botão */
-    transition: background-color 0.3s ease;
-    /* Efeito de transição */
-}
-
-.accordion-button:hover {
-    background-color: #9b59b6;
-    /* Roxo mais claro ao passar o mouse */
-}
-
-/* Estilo para evitar o fundo azul quando clicado ou focado */
-.accordion-button:focus,
-.accordion-button:focus-visible {
-    background-color: #6f42c1;
-    /* Mantém o fundo roxo quando ativo */
-    color: white;
-    /* Mantém a cor do texto branca */
-    outline: none;
-    /* Remove a borda padrão ao focar */
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: #6f42c1;
-    /* Mantém o fundo roxo quando ativo */
-    color: white;
-    /* Mantém a cor do texto branca */
-}
-
-.accordion-collapse {
-    background-color: #f5c9e8;
-    /* Rosa claro para o fundo do corpo do acordeão */
-}
-
-.accordion-body {
-    color: #333;
-    /* Cor do texto do corpo */
-    padding: 1rem;
-    /* Espaçamento interno do corpo */
+    margin-bottom: 20px;
 }
 
 #titleDuvidas {
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
     color: white;
-    display: flex;
-    justify-content: center;
+    margin-right: 580px;
 }
 
+.duvidas-comentarios {
+    display: flex;
+    gap: 110px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.accordion {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.comment-section{
+    flex: 1;
+    width: 575px;
+    height: 265px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #fff;
+    margin-top: -182px;
+}
+.comment-section h3 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.comment-section textarea {
+    width: 100%;             /* Largura total do contêiner */
+    max-width: 600px;       /* Largura máxima do textarea */
+    min-height: 140px;      /* Altura mínima */
+    padding: 10px;          /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px;     /* Bordas arredondadas */
+    resize: vertical;       /* Permite redimensionar verticalmente */
+    font-size: 16px;        /* Tamanho da fonte */
+    color: #333;            /* Cor do texto */
+    background-color: #f9f9f9; /* Cor de fundo clara */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.comment-section button {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #6334B1;
+    border: 1px solid black;
+}
+.comment-section button:hover{
+    background-color: #490961;
+    cursor: pointer;
+}
+.comment-section button:active{
+    color: black;
+}
+#contato{
+   margin-right:-270px ;
+   width: 650px;
+}
+#contatotitle{
+    color: white;
+    margin-bottom: 200px;
+    margin-top: -53px;
+    margin-left: 170px;
+}
+
+/* Estilos específicos do acordeão */
+.accordion-item {
+    border: none;
+}
+
+.accordion-button {
+    background-color: #6f42c1;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #9b59b6;
+}
+
+.accordion-button:focus,
+.accordion-button:focus-visible {
+    background-color: #6f42c1;
+    color: white;
+    outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.accordion-collapse {
+    background-color: #f5c9e8;
+}
+
+.accordion-body {
+    color: #333;
+    padding: 1rem;
+}
 footer {
     position: relative;
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);

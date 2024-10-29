@@ -60,11 +60,42 @@
             <h3>Criando Memórias Incríveis com Muita Alegria, Segurança e Momentos Mágicos!</h3>
         </div>
         
-        <div id="grid-imgs">
-            <div id="img1"></div>
-            <div id="img2"></div>
-            <div id="img3"></div>
+        <div class="container">
+            <div class="carrossel">
+                <div class="slides">
+                    <div class="slide">
+                        <div id="grid-imgs">
+                            <div id="img1"></div>
+                            <div id="img2"></div>
+                            <div id="img3"></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div id="grid-imgs">
+                            <div id="img4"></div>
+                            <div id="img5"></div>
+                            <div id="img6"></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div id="grid-imgs">
+                            <div id="img7"></div>
+                            <div id="img8"></div>
+                            <div id="img9"></div>
+                        </div>
+                    </div>
+                    <!-- Repita o slide ou use conteúdo dinâmico para adicionar outros slides conforme necessário -->
+                </div>
+                <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+                <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+            </div>
+            <div class="indicadores">
+                <span class="indicador" onclick="mudarParaSlide(0)"></span>
+                <span class="indicador" onclick="mudarParaSlide(1)"></span>
+                <span class="indicador" onclick="mudarParaSlide(2)"></span>
+            </div>
         </div>
+
         <section id="section-pos-grid">
             <div id="caixa-qs">
                 <h1>Quem somos?</h1>
@@ -85,7 +116,7 @@
             <div class="hr-gradiente"></div>
         <section id="section-cardapio">
             <div id="textos-cardapio">
-            <h2>Nosso Cardápio</h2>
+            <h2>Cardápio Saboroso</h2>
                 <p>No Fun Farra Kids, a diversão não para nem na hora de comer! Oferecemos um cardápio delicioso e variado,
                     pensado especialmente para agradar o paladar dos pequenos e encantar os adultos. De lanches divertidos a
                     opções mais saudáveis, cada prato é preparado com carinho e ingredientes de qualidade, garantindo uma
@@ -102,28 +133,32 @@
                 <img src="../img/atração2.jpg" alt="">
             </div>
             <div id="textos-lazer">
-            <h2>Lazer</h2>
-                <p>No Fun Farra Kids, a diversão não para nem na hora de comer! Oferecemos um cardápio delicioso e variado,
-                    pensado especialmente para agradar o paladar dos pequenos e encantar os adultos. De lanches divertidos a
-                    opções mais saudáveis, cada prato é preparado com carinho e ingredientes de qualidade, garantindo uma
-                    experiência saborosa para toda a família. Conheça nossas opções e escolha o que mais combina com sua festa!</p>
+            <h2>Lazer e Diversão Garantida</h2>
+                <p>Na Fun Farra Kids, o lazer é garantido com diversão para todas as idades! Nossos ambientes são preparados com brinquedos
+                     seguros, modernos e atrações interativas, pensados para transformar o seu evento em um momento inesquecível. De áreas de
+                      jogos a espaços criativos, cada detalhe é planejado para que as crianças aproveitem ao máximo, enquanto os adultos podem
+                       relaxar e curtir junto. Venha viver momentos mágicos e surpreender seus convidados com uma experiência de lazer única!</p>
                     <a href="atracoes.html"><button>Visitar Atrações</button></a>
             </div>
         </section>
         <div class="hr-gradiente"></div>
-        <section id="section-lazer">
-            <div id="img-lazer">
-                <img src="../img/atração2.jpg" alt="">
+        <section id="section-orcfeed">
+            <div id="textos-orc">
+            <h2>Custo Benefício</h2>
+                <p>Solicitar um orçamento é o primeiro passo para tornar sua festa inesquecível! Na Fun Farra Kids, oferecemos pacotes 
+                    personalizados que se ajustam ao seu estilo e ao tema dos sonhos da criançada. Preencha o formulário e ajudaremos você a
+                     planejar cada detalhe dessa data tão especial!</p>
+                    <a href="orcamento.html"><button>Visitar Orçamento</button></a>
             </div>
-            <div id="textos-lazer">
-            <h2>Lazer</h2>
-                <p>No Fun Farra Kids, a diversão não para nem na hora de comer! Oferecemos um cardápio delicioso e variado,
-                    pensado especialmente para agradar o paladar dos pequenos e encantar os adultos. De lanches divertidos a
-                    opções mais saudáveis, cada prato é preparado com carinho e ingredientes de qualidade, garantindo uma
-                    experiência saborosa para toda a família. Conheça nossas opções e escolha o que mais combina com sua festa!</p>
-                    <a href="atracoes.html"><button>Visitar Atrações</button></a>
-            </div>
+            <div id="textos-feed">
+                <h2>Avaliações Positivas</h2>
+                    <p>Nosso compromisso é oferecer momentos inesquecíveis e a melhor experiência possível. Sua opinião é essencial para
+                         continuarmos aprimorando nossos serviços e garantindo sempre clientes satisfeitos. Compartilhe suas impressões e 
+                         ajude-nos a fazer cada festa ainda mais mágica e divertida!</p>
+                        <a href="feedbacks.html"><button>Visitar Feedbacks</button></a>
+                </div>
         </section>
+        <div class="hr-gradiente"></div>
         </section>
         </div>
     </main>

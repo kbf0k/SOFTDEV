@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+.carousel {
+    max-width: 500px;
+    height: 300px;
+}
+#img {
+    max-width: 50px;
+    height: 30px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -418,100 +428,6 @@ footer .bottom {
 }
 #save-custom-menu:hover {
     background-color: #B943E4;
-}
-
-.carousel {
-    position: relative;
-    max-width: 80%;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: 70px;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-}
-
-.carousel h2 {
-    text-align: center;
-    color: #414141;
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.carousel p {
-    text-align: center;
-    color: #5c5c5c;
-    font-size: 1.3em;
-    margin-bottom: 30px;
-}
-
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.carousel-slide {
-    display: flex;
-    text-align: center;
-    transition: transform 0.5s ease-in-out;
-    gap: 8px;
-}
-
-.carousel-slide img {
-    width: 32.45%; /* Ajuste para 3 imagens visíveis */
-    border-radius: 15px;
-}
-
-.setas {
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-}
-
-#setas:focus {
-    outline: none;
-}
-
-#setas:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-#prev {
-    left: 30px;
-}
-
-#next {
-    right: 30px;
-}
-
-.carousel-indicators {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.carousel-indicators .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.6s ease;
-}
-
-.carousel-indicators .active {
-    background-color: #717171;
 }
 
 

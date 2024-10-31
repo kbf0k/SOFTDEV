@@ -22,7 +22,7 @@ let slideIndex = 0;
             indicadores.forEach((indicador, index) => {
                 indicador.classList.toggle('ativo', index === slideIndex);
             });
-        }
+        }   
 
         function mudarSlide(n) {
             slideIndex += n;

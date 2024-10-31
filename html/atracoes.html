@@ -26,7 +26,7 @@
             </ul>
             <div id="login-sign">
                 <a href="../index.php">
-                    <button type="button" id="login-button">Login</button>
+                    <button type="button" id="login-button">Entrar</button>
                 </a>
                 <a href="../cadastrar.php">
                     <button id="sign-button">Inscrever-se</button>
@@ -42,6 +42,16 @@
                 <li><a href="feedbacks.html">FEEDBACKS</a></li>
             </ul>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+            <defs>
+                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#66257E;" />
+                    <stop offset="50%" style="stop-color:#6334B1;" />
+                    <stop offset="100%" style="stop-color:#B843E4;" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
+        </svg>
     </header>
 
     <main>
@@ -53,10 +63,10 @@
 
         <div class="carrossel-container">
             <div class="carrossel">
-                <div class="item"><img src="../img/onda-certa-para atraçoes.svg" alt="Imagem 1"></div>
-                <div class="item"><img src="../img/atracao2.svg" alt="Imagem 2"></div>
-                <div class="item"><img src="../img/atracao3.svg" alt="Imagem 3"></div>
-                <div class="item"><img src="../img/atracao4.svg" alt="Imagem 4"></div>
+                <div class="item"><img src="../img/atracao1.png" alt="Imagem 2"></div>
+                <div class="item"><img src="../img/atracao2.png" alt="Imagem 1"></div>
+                <div class="item"><img src="../img/atracao3.png" alt="Imagem 3"></div>
+                <div class="item"><img src="../img/atracao4.png" alt="Imagem 4"></div>
             </div>
             <div class="controladores">
                 <button class="setas" onclick="move(-1)" id="prev"><i class="fa fa-arrow-left"
@@ -77,31 +87,65 @@
                 <a href="#atracoes2"><button type="button">Clique Aqui</button></a>
             </div>
             <div class="img">
-                <img src="../img/atração1.jpg" alt="Atração 1" class="imagem-grande">
-                <img src="../img/atração2.jpg" alt="Atração 2" class="imagem-pequena">
-                <img src="../img/atraçao3.webp" alt="Atração 3" class="imagem-pequena">
+                <img src="../img/atracao1.png" alt="Atração 1" class="imagem-grande">
+                <img src="../img/atracao2.png" alt="Atração 2" class="imagem-pequena">
+                <img src="../img/atracao3.png" alt="Atração 3" class="imagem-pequena">
             </div>
         </div>
     </section>
-
 
     <section id="atracoes2">
-        <div class="container_atracoes2">
-            <div class="destaque">
-                <h2>Playground Completo</h2>
-                <p>Com brinquedos como escorregadores, balanços, túneis e obstáculos, o playground é perfeito para as
-                    crianças explorarem.</p>
-                <a href="#atracoes3"><button type="button">Clique Aqui</button></a>
+        <div class="titulo">
+            <h1>ATRAÇÕES PRINCIPAIS</h1>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="conteudo">
+                    <div class="fronteira">
+                        <img src="../img/brinquedo.png" alt="">
+                        <h1>Brinquedos Infantis</h1>
+                    </div>
+                    <div class="trazeira">
+                        <img src="../img/atracao2.png" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
+                            quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
+                            esse
+                            quidem fuga quas architecto suscipit vitae.</p>
+                    </div>
+                </div>
             </div>
-            <div class="img">
-                <img src="../img/atração1.jpg" alt="Atração 1" class="imagem-grande">
-                <img src="../img/atração2.jpg" alt="Atração 2" class="imagem-pequena">
-                <img src="../img/atraçao3.webp" alt="Atração 3" class="imagem-pequena">
+            <div class="card">
+                <div class="conteudo">
+                    <div class="fronteira">
+                        <img src="../img/fliperama.png " alt="">
+                        <h1>Fliperama e Danças</h1>
+                    </div>
+                    <div class="trazeira">
+                        <img src="../img/atracao2.png" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
+                            quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
+                            esse
+                            quidem fuga quas architecto suscipit vitae.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <div class="fronteira">
+                        <img src="../img/radical.png" alt="">
+                        <h1>Radical</h1>
+                    </div>
+                    <div class="trazeira">
+                        <img src="../img/atracao2.png" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
+                            quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
+                            esse
+                            quidem fuga quas architecto suscipit vitae.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-
 
     <section id="atracoes3">
         <div class="container_atracoes3">
@@ -111,27 +155,14 @@
                 <a href="#atracoes4"><button type="button">Clique Aqui</button></a>
             </div>
             <div class="img">
-                <img src="../img/atração1.jpg" alt="Atração 1" class="imagem-grande">
-                <img src="../img/atração2.jpg" alt="Atração 2" class="imagem-pequena">
-                <img src="../img/atraçao3.webp" alt="Atração 3" class="imagem-pequena">
+                <img src="../img/atracao1.png" alt="Atração 1" class="imagem-grande">
+                <img src="../img/atracao2.png" alt="Atração 2" class="imagem-pequena">
+                <img src="../img/atracao3.png" alt="Atração 3" class="imagem-pequena">
             </div>
         </div>
     </section>
 
-    <section id="atracoes4">
-        <div class="container_atracoes4">
-            <div class="destaque">
-                <h2>Pula-Pula e Infláveis Gigantes</h2>
-                <p>Para os amantes de adrenalina, os brinquedos infláveis gigantes e o pula-pula são ideais.</p>
-                <a href="#nav"><button type="button">Clique Aqui</button></a>
-            </div>
-            <div class="img">
-                <img src="../img/atração1.jpg" alt="Atração 1" class="imagem-grande">
-                <img src="../img/atração2.jpg" alt="Atração 2" class="imagem-pequena">
-                <img src="../img/atraçao3.webp" alt="Atração 3" class="imagem-pequena">
-            </div>
-        </div>
-    </section>
+    <!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer -->
 
     <footer>
         <div class="container">

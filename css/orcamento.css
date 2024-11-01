@@ -363,14 +363,38 @@ footer .bottom {
     border-radius: 10px;
     margin-top: 40px;
 }
-button {
-    display: inline-flex;          /* Para centralizar o texto dentro do link */
-    align-items: center;           /* Alinha o texto dentro do link */
-    background-color: green;       /* Cor de fundo */
-    border-radius: 10px;           /* Bordas arredondadas */
-    color: white;                  /* Cor do texto */
-    text-decoration: none;         /* Remove o sublinhado */
-    padding: 10px 20px;           /* Preenchimento interno */
-    font-size: 16px;              /* Tamanho da fonte */
-    width: 100%;
+.form-container {
+    background-color: #8A2BE2;
+    border-radius: 25px;
+    padding: 20px;
+    width: 900px;
+    margin-bottom: 100px;
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+}
+
+.form-container {
+    background-color: #8A2BE2;
+    border-radius: 25px;
+    padding: 20px;
+    width: 900px;
+    margin-bottom: 50px;
+    text-align: center; /* Adiciona centralização para o botão */
+}
+
+.submit-btn {
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+.submit-btn:hover {
+    background-color: darkgreen;
+    transform: translateY(-2px);
 }

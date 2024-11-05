@@ -305,88 +305,136 @@ main {
     }
 }
 
+/* ATRAÇOES PRINCIPAIS */
+/* ATRAÇOES PRINCIPAIS */
+/* ATRAÇOES PRINCIPAIS */
+/* ATRAÇOES PRINCIPAIS */
+/* ATRAÇOES PRINCIPAIS */
+
 #atracoes2 {
     height: 100vh;
+    background: linear-gradient(#b943e4, #6434b1);
 }
 
 .titulo h1 {
     text-align: center;
-    padding-top: 35px;
+    padding-top: 30px;
+    margin-bottom: 50px;
     font-size: 50px;
+    color: white;
 }
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 20px;
+    gap: 20px;
+    perspective: 1000px;
 }
 
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    overflow: hidden;
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    cursor: pointer;
 }
 
-.card:hover{
+.card:hover {
     transform: rotateY(180deg);
 }
 
 .conteudo {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    max-width: 390px;
-    height: 500px;
-    padding: 40px;
-    background-color: #61107e;
-    border-radius: 20px;
-    color: white;
-}
-
-.fronteira{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 80px;
-}
-
-.fronteira img {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 150px;
-    transition: .3s ease-in-out;
-    cursor: pointer;
-}
-
-.fronteira img:hover{
-    filter: drop-shadow(5px 5px 15px #bb00ff );
-}
-
-.fronteira .trazeira {
-    background-color: #151515;
+    position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fronteira,
+.trazeira {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    backface-visibility: visible;
+    transition: opacity 0.5s ease;
+}
+
+.fronteira {
+    background: linear-gradient(80deg, #66257e, #6434b1);
 }
 
 .trazeira {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #151515;
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.card:hover .trazeira {
+    opacity: 1;
+}
+
+.card:hover .fronteira {
+    opacity: 0;
+}
+
+.fronteira img {
+    width: 120px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.fronteira img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #ff00ff);
+}
+
+.fronteira h1 {
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
 }
 
 .trazeira img {
-    max-width: 50px;
-    box-shadow: 0 0 55px rgba(0, 0, 0, 0.463);
-    background-color: white;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.trazeira p {
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px;
+    animation: fadeInText 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .container_atracoes3 {

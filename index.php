@@ -49,15 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <main id="login">
         <div class="container">
-            <img id="logo" src="../img/partynet_img.png" alt="Logo">
-
-            <div id="voltar-container">
-                <a id="voltar">Voltar
-                    <img id="voltar-icone" src="img/voltar.png" alt="icone de voltar">
-                </a>
-            </div>
-            <h1>LOGIN</h1>
-            <p>Digite os seus dados de acesso no campo abaixo</p>
+            <img id="logo" src="img/partynet_img.png" alt="Logo">
+            <h1>ENTRAR</h1>
             <form action="" method="post">
                 <div class="entrada">
                     <label for="email">Email</label>

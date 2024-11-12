@@ -57,8 +57,7 @@ main {
 }
 
 .box1 img {
-    margin-left: 100px;
-    margin: auto 0;
+    max-width: 300px;
 }
 
 .box2 {

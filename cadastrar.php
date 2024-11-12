@@ -47,7 +47,7 @@ include_once('config.php');
                     </a>
                 </div>
                 <h1>Bem vindo ao</h1>
-                <h1>FUN FARRA KIDS</h1>
+                <h1>PARTY NET</h1>
                 <p><b>Cadastre-se agora para criar momentos mágicos e inesquecíveis.</b></p>
                 <p id="p2">Ao se cadastrar, você terá acesso exclusivo às nossas promoções, poderá agendar festas com
                     facilidade e
@@ -56,7 +56,7 @@ include_once('config.php');
                     perca
                     tempo, cadastre-se e comece a planejar a festa dos sonhos hoje mesmo!
                 </p>
-                <img id="logo" src="../img/partynet_img.png" alt="Logo">
+                <img id="logo" src="img/partynet_img.png" alt="Logo">
             </div>
             <div class="box2">
                 <div id="voltar-container">

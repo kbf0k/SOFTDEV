@@ -56,7 +56,7 @@ include_once('config.php');
                     perca
                     tempo, cadastre-se e comece a planejar a festa dos sonhos hoje mesmo!
                 </p>
-                <img id="logo" src="img/fun farra.jpeg" alt="Logo">
+                <img id="logo" src="../img/partynet_img.png" alt="Logo">
             </div>
             <div class="box2">
                 <div id="voltar-container">

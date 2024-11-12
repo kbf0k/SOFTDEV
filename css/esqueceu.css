@@ -40,13 +40,11 @@ main {
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
-
 .container form {
     display: flex;
     flex-direction: column;
     animation: fadeIn 1s ease-in-out;
 }
-
 #voltar-icone,
 #voltar {
     align-items: center;

@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <main id="login">
         <div class="container">
-            <img id="logo" src="img/fun farra.jpeg" alt="Logo">
+            <img id="logo" src="../img/partynet_img.png" alt="Logo">
 
             <div id="voltar-container">
                 <a id="voltar">Voltar

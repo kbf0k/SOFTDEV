@@ -19,6 +19,7 @@ nav {
 #logo-buffet {
     width: 130px;
     height: 130px;
+    margin-top: 10px;
     z-index: 5;
     position: sticky;
 }

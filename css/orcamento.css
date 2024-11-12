@@ -19,6 +19,8 @@ nav {
 #logo-buffet {
     width: 130px;
     height: 130px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 ul {

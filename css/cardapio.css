@@ -9,7 +9,6 @@
     max-width: 50px;
     height: 30px;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +18,7 @@
 
 nav {
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
-    height: 90px;
+    height: 80px;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -29,9 +28,11 @@ nav {
 #logo-buffet {
     width: 130px;
     height: 130px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-nav ul {
+ul {
     padding: 30px;
     display: flex;
     justify-content: space-around;
@@ -39,20 +40,20 @@ nav ul {
     margin-top: 10px;
 }
 
-nav ul li {
+li {
     margin-left: 30px;
     margin-right: 30px;
     transition: transform 0.2s ease, text-shadow 0.2s ease;
 }
 
-nav li a {
+li a {
     text-decoration: none;
     color: yellow;
     font-family: 'Poppins';
     font-size: 16px;
 }
 
-nav li:hover {
+li:hover {
     text-shadow:
         0 0 10px rgba(255, 255, 0, 0.8),
         0 0 20px rgba(255, 255, 0, 0.6);
@@ -111,7 +112,13 @@ nav li:hover {
     display: none;
 }
 
+main {
+    height: 350vh;
+}
 
+#main-real {
+    animation: fadeIn 1s ease-in-out;
+}
 main {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,120,1) 100%);

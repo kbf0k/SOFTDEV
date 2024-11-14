@@ -2,23 +2,19 @@
 session_start();
 include_once('config.php');
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['data']) && isset($_POST['email']) && isset($_POST['senha'])){
-            
-            $nome = $_POST['nome'];
-            $sobrenome = $_POST['sobrenome'];
-            $data_nasc = $_POST['data'];
-            $email = $_POST['email'];
-            $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome_digitado = $_POST['nome_cadastro'];
+    $sobrenome_digitado = $_POST['sobrenome_cadastro'];
+    $data_nasc_digitado = $_POST['data_cadastro'];
+    $email_digitado = $_POST['email_cadastro'];
+    $senha_digitado = md5(($_POST['senha_cadastro']));
 
-            $sql = "INSERT INTO usuarios(nome,sobrenome,data_nasc,email,senha) VALUES(?,?,?,?,?)";
-            $stmt = $conexao->prepare($sql);
-            $stmt->bind_param('sssss',$nome,$sobrenome,$data_nasc,$email,$senha);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            header('Location: index.php');
-        }
-    }
+    $stmt = $conexao->prepare("INSERT INTO usuarios(nome_usuario,sobrenome_usuario,data_nasc_usuario,email_usuario,senha_usuario) VALUES(?,?,?,?,?)");
+    $stmt->bind_param('sssss', $nome_digitado, $sobrenome_digitado, $data_nasc_digitado, $email_digitado, $senha_digitado);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    header('Location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,27 +65,27 @@ include_once('config.php');
                 <form action="" method="POST" onsubmit="return verificarsenha()">
                     <div class="entrada">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+                        <input type="text" name="nome_cadastro" id="nome" placeholder="Digite seu nome" required>
                     </div>
                     <div class="entrada">
                         <label for="sobrenome">Sobrenome</label>
-                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                        <input type="text" name="sobrenome_cadastro" id="sobrenome" placeholder="Digite seu sobrenome" required>
                     </div>
                     <div class="entrada">
                         <label for="sobrenome">Data de Nascimento</label>
-                        <input type="date" name="data" id="data" placeholder="Digite sua data de Nascimento" required>
+                        <input type="date" name="data_cadastro" id="data" placeholder="Digite sua data de Nascimento" required>
                     </div>
                     <div class="entrada">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="@email.com" required>
+                        <input type="email" name="email_cadastro" id="email" placeholder="@email.com" required>
                     </div>
                     <div class="entrada">
                         <label for="password">Criar Senha</label>
-                        <input type="password" name="senha" id="senha" placeholder="*****" required>
+                        <input type="password" name="senha_cadastro" id="senha" placeholder="*****" required>
                     </div>
                     <div class="entrada">
                         <label for="password" style="margin:0;">Repetir senha</label>
-                        <input type="password" name="repetir-senha" id="repetir=senha" placeholder="*****" required >
+                        <input type="password" name="repetir-senha" id="repetir=senha" placeholder="*****" required>
                     </div>
                     <button type="submit" name="submit" id="submit">ENTRAR</button>
                 </form>

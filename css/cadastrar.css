@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
 }
 
 main {
@@ -38,6 +39,7 @@ main {
     text-align: center;
     color: #66257E;
     font-size: 30px;
+    margin-top: -20px;
 }
 
 .box1 p {

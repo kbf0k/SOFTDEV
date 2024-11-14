@@ -11,49 +11,73 @@ function menuShow() {
 }
 
 let slideIndex = 0;
-        let intervalo;
+let intervalo;
 
-        function mostrarSlides() {
-            const slides = document.querySelectorAll('.slide');
-            const indicadores = document.querySelectorAll('.indicador');
-            slides.forEach((slide, index) => {
-                slide.style.display = index === slideIndex ? 'block' : 'none';
-            });
-            indicadores.forEach((indicador, index) => {
-                indicador.classList.toggle('ativo', index === slideIndex);
-            });
-        }   
+function mostrarSlides() {
+    const slides = document.querySelectorAll('.slide');
+    const indicadores = document.querySelectorAll('.indicador');
+    slides.forEach((slide, index) => {
+        slide.style.display = index === slideIndex ? 'block' : 'none';
+    });
+    indicadores.forEach((indicador, index) => {
+        indicador.classList.toggle('ativo', index === slideIndex);
+    });
+}
 
-        function mudarSlide(n) {
-            slideIndex += n;
+function mudarSlide(n) {
+    slideIndex += n;
 
-            const slides = document.querySelectorAll('.slide');
-            if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
-            } else if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
+    const slides = document.querySelectorAll('.slide');
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    } else if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
 
-            mostrarSlides();
-            reiniciarCarrossel();
+    mostrarSlides();
+    reiniciarCarrossel();
+}
+
+function mudarParaSlide(n) {
+    slideIndex = n;
+    mostrarSlides();
+    reiniciarCarrossel();
+}
+
+function iniciarCarrossel() {
+    intervalo = setInterval(() => {
+        mudarSlide(1);
+    }, 3000);
+}
+
+function reiniciarCarrossel() {
+    clearInterval(intervalo);
+    iniciarCarrossel();
+}
+
+iniciarCarrossel();
+mostrarSlides();
+
+
+document.getElementById('logout').addEventListener('click', () => {
+    Swal.fire({
+        title: "Você deseja sair?",
+        text: "Não será possível reverter isso",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim, sair"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch('logout.php', {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "index.php";
+                }
+            })
         }
-
-        function mudarParaSlide(n) {
-            slideIndex = n;
-            mostrarSlides();
-            reiniciarCarrossel();
-        }
-
-        function iniciarCarrossel() {
-            intervalo = setInterval(() => {
-                mudarSlide(1);
-            }, 3000);
-        }
-
-        function reiniciarCarrossel() {
-            clearInterval(intervalo);
-            iniciarCarrossel();
-        }
-
-        iniciarCarrossel();
-        mostrarSlides();
+    });
+});

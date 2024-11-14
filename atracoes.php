@@ -1,3 +1,9 @@
+<?php
+include_once('config.php');
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,41 +11,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atrações</title>
-    <link rel="stylesheet" href="../css/atracoes.css">
-    <script src="../javascript/atracoes.js" defer></script>
+    <link rel="stylesheet" href="css/atracoes.css">
+    <script src="javascript/atracoes.js" defer></script>
     <script src="https://kit.fontawesome.com/6e028b1004.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
 
 <body>
     <header>
-        <nav id="nav">
-            <div class="mobile-icon" onclick="menuShow()">
-                <button><img class="icon" src="../img/menu_white_36dp.svg" alt="Menu"></button>
+        <nav>
+            <div onclick="menuShow()" class="mobile-icon">
+                <button><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
             </div>
-            <a href="inicio.html"><img id="logo-buffet" src="../img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
+            <a href="inicio.php"><img id="logo-buffet" src="img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
-            <div id="login-sign">
-                <a href="../index.php">
-                    <button type="button" id="login-button">Entrar</button>
-                </a>
-                <a href="../cadastrar.php">
-                    <button id="sign-button">Inscrever-se</button>
-                </a>
+            <div class="perfil">
+                <?php if (isset($_SESSION['nome_sessao'])): ?>
+                    <div class="user">
+                        <img id="user-logo" src="img/user-vector.png" alt="">
+                        <p><?= $_SESSION['nome_sessao'] ?></p>
+                    </div>
+                    <div class="logout">
+                        <img id="logout" src="img/logout.png" alt="">
+                    </div>
+                <?php else: ?>
+                    <div id="login-sign">
+                        <a href="index.php">
+                            <button type="button" id="login-button">Entrar</button>
+                        </a>
+                        <a href="cadastrar.php">
+                            <button id="sign-button">Inscrever-se</button>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
@@ -63,10 +82,10 @@
 
         <div class="carrossel-container">
             <div class="carrossel">
-                <div class="item"><img src="../img/atracao1.png" alt="Imagem 2"></div>
-                <div class="item"><img src="../img/atracao2.png" alt="Imagem 1"></div>
-                <div class="item"><img src="../img/atracao3.png" alt="Imagem 3"></div>
-                <div class="item"><img src="../img/atracao4.png" alt="Imagem 4"></div>
+                <div class="item"><img src="img/atracao1.png" alt="Imagem 2"></div>
+                <div class="item"><img src="img/atracao2.png" alt="Imagem 1"></div>
+                <div class="item"><img src="img/atracao3.png" alt="Imagem 3"></div>
+                <div class="item"><img src="img/atracao4.png" alt="Imagem 4"></div>
             </div>
             <div class="controladores">
                 <button class="setas" onclick="move(-1)" id="prev"><i class="fa fa-arrow-left"
@@ -85,11 +104,11 @@
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
-                        <img src="../img/brinquedo.png" alt="">
+                        <img src="img/brinquedo.png" alt="">
                         <h1>Brinquedos Infantis</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="../img/atracao2.png" alt="">
+                        <img src="img/atracao2.png" alt="">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
                             quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
                             esse
@@ -100,11 +119,11 @@
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
-                        <img src="../img/fliperama.png " alt="">
+                        <img src="img/fliperama.png " alt="">
                         <h1>Fliperama e Danças</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="../img/atracao2.png" alt="">
+                        <img src="img/atracao2.png" alt="">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
                             quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
                             esse
@@ -115,11 +134,11 @@
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
-                        <img src="../img/radical.png" alt="">
+                        <img src="img/radical.png" alt="">
                         <h1>Radical</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="../img/atracao2.png" alt="">
+                        <img src="img/atracao2.png" alt="">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
                             quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
                             esse
@@ -138,9 +157,9 @@
                 <a href="#atracoes2"><button type="button">Clique Aqui</button></a>
             </div>
             <div class="img">
-                <img src="../img/atracao1.png" alt="Atração 1" class="imagem-grande">
-                <img src="../img/atracao2.png" alt="Atração 2" class="imagem-pequena">
-                <img src="../img/atracao3.png" alt="Atração 3" class="imagem-pequena">
+                <img src="img/atracao1.png" alt="Atração 1" class="imagem-grande">
+                <img src="img/atracao2.png" alt="Atração 2" class="imagem-pequena">
+                <img src="img/atracao3.png" alt="Atração 3" class="imagem-pequena">
             </div>
         </div>
     </section>
@@ -155,9 +174,9 @@
                 <a href="#atracoes4"><button type="button">Clique Aqui</button></a>
             </div>
             <div class="img">
-                <img src="../img/atracao1.png" alt="Atração 1" class="imagem-grande">
-                <img src="../img/atracao2.png" alt="Atração 2" class="imagem-pequena">
-                <img src="../img/atracao3.png" alt="Atração 3" class="imagem-pequena">
+                <img src="img/atracao1.png" alt="Atração 1" class="imagem-grande">
+                <img src="img/atracao2.png" alt="Atração 2" class="imagem-pequena">
+                <img src="img/atracao3.png" alt="Atração 3" class="imagem-pequena">
             </div>
         </div>
     </section>
@@ -167,7 +186,7 @@
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
+                <img src="img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>

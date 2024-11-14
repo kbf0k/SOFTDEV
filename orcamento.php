@@ -1,3 +1,8 @@
+<?php
+include_once('config.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,55 +10,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento</title>
-    <link rel="stylesheet" href="../css/orcamento.css">
-    <script src="../javascript/orçamento.js" defer></script>
+    <link rel="stylesheet" href="css/orcamento.css">
+    <script src="javascript/orcamento.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
             <div onclick="menuShow()" class="mobile-icon">
-                <button><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
+                <button><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
             </div>
-            <a href="inicio.html"><img id="logo-buffet" src="../img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
+            <a href="inicio.php"><img id="logo-buffet" src="img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
-            <div id="login-sign">
-                <a href="../index.php">
-                    <button type="button" id="login-button">Entrar</button>
-                </a>
-                <a href="../cadastrar.php">
-                    <button id="sign-button">Inscrever-se</button>
-                </a>
+            <div class="perfil">
+                <?php if (isset($_SESSION['nome_sessao'])): ?>
+                    <div class="user">
+                        <img id="user-logo" src="img/user-vector.png" alt="">
+                        <p><?= $_SESSION['nome_sessao'] ?></p>
+                    </div>
+                    <div class="logout">
+                        <img id="logout" src="img/logout.png" alt="">
+                    </div>
+                <?php else: ?>
+                    <div id="login-sign">
+                        <a href="index.php">
+                            <button type="button" id="login-button">Entrar</button>
+                        </a>
+                        <a href="cadastrar.php">
+                            <button id="sign-button">Inscrever-se</button>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
         </div>
     </header>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-            <defs>
-                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#66257E;" />
-                    <stop offset="50%" style="stop-color:#6334B1;" />
-                    <stop offset="100%" style="stop-color:#B843E4;" />
-                </linearGradient>
-            </defs>
-            <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
-        </svg>
-        <div id="main-real">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+        <defs>
+            <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#66257E;" />
+                <stop offset="50%" style="stop-color:#6334B1;" />
+                <stop offset="100%" style="stop-color:#B843E4;" />
+            </linearGradient>
+        </defs>
+        <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
+    </svg>
+    <div id="main-real">
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Realize a Festa dos Seus Sonhos!</h2>
@@ -134,15 +152,15 @@
                         <input type="checkbox" id="termos" name="termos" required>
                         <label for="termos">Concordo com os <a href="#">Termos e Condições</a></label>
                     </div>
-                    </form>
+                </form>
             </div>
             <button type="button" class="submit-btn" onclick="enviarFormulario()">Enviar</button>
-        </div>
-        </section>
+    </div>
+    </section>
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
+                <img src="img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>

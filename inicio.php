@@ -24,10 +24,10 @@ session_start();
             <a href="inicio.php"><img id="logo-buffet" src="img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
             <ul>
                 <li><a href="inicio.php">INÍCIO</a></li>
-                <li><a href="html/cardapio.html">CARDÁPIO</a></li>
-                <li><a href="html/atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="html/orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="html/feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
             <div class="perfil">
                 <?php if (isset($_SESSION['nome_sessao'])): ?>
@@ -52,11 +52,11 @@ session_start();
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li><a href="html/inicio.html">INÍCIO</a></li>
-                <li><a href="html/cardapio.html">CARDÁPIO</a></li>
-                <li><a href="html/atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="html/orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="html/feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
         </div>
     </header>

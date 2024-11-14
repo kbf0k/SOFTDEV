@@ -1,3 +1,8 @@
+<?php
+include_once('config.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,42 +10,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedbacks</title>
-    <link rel="stylesheet" href="../css/feedbacks.css">
-    <script src="../javascript/feedbacks.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/feedbacks.css">
+    <script src="javascript/feedbacks.js" defer></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
+
 <body>
     <header>
         <nav>
             <div onclick="menuShow()" class="mobile-icon">
-                <button><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
+                <button><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
             </div>
-            <a href="inicio.html"><img id="logo-buffet" src="../img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
+            <a href="inicio.php"><img id="logo-buffet" src="img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
-            <div id="login-sign">
-                <a href="../index.php">
-                    <button type="button" id="login-button">Entrar</button>
-                </a>
-                <a href="../cadastrar.php">
-                    <button id="sign-button">Inscrever-se</button>
-                </a>
+            <div class="perfil">
+                <?php if (isset($_SESSION['nome_sessao'])): ?>
+                    <div class="user">
+                        <img id="user-logo" src="img/user-vector.png" alt="">
+                        <p><?= $_SESSION['nome_sessao'] ?></p>
+                    </div>
+                    <div class="logout">
+                        <img id="logout" src="img/logout.png" alt="">
+                    </div>
+                <?php else: ?>
+                    <div id="login-sign">
+                        <a href="index.php">
+                            <button type="button" id="login-button">Entrar</button>
+                        </a>
+                        <a href="cadastrar.php">
+                            <button id="sign-button">Inscrever-se</button>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
-
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
         </div>
     </header>
@@ -65,7 +83,7 @@
                     <div id="caixas-superiores">
                         <div class="caixa" id="caixa1">
                             <div class="feedback-content">
-                                <img class="imagemcontato" src="../img/user.png" alt="Imagem de contato">
+                                <img class="imagemcontato" src="img/user.png" alt="Imagem de contato">
                                 <div class="feedback-text">
                                     <h4 id="nomeExibido1">Juliana Souza</h4>
                                     <p id="mensagemExibida1">
@@ -79,7 +97,7 @@
                         </div>
                         <div class="caixa" id="caixa2">
                             <div class="feedback-content">
-                                <img class="imagemcontato" src="../IMG/user.png" alt="">
+                                <img class="imagemcontato" src="IMG/user.png" alt="">
                                 <div class="feedback-text">
                                     <h4 id="nomeExibido2">Maurício</h4>
                                     <p id="mensagemExibida2">Estou maravilhado com o serviço do buffet! A decoração estava impecável, os
@@ -93,7 +111,7 @@
                     <div id="caixas-inferiores">
                         <div class="caixa" id="caixa3">
                             <div class="feedback-content">
-                                <img class="imagemcontato" src="../IMG/user.png" alt="">
+                                <img class="imagemcontato" src="IMG/user.png" alt="">
                                 <div class="feedback-text">
                                     <h4 id="nomeExibido3">Carla Gonçalves</h4>
                                     <p id="mensagemExibida3">Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se divertiram
@@ -105,7 +123,7 @@
                         </div>
                         <div class="caixa" id="caixa4">
                             <div class="feedback-content">
-                                <img class="imagemcontato" src="../IMG/user.png" alt="">
+                                <img class="imagemcontato" src="IMG/user.png" alt="">
                                 <div class="feedback-text">
                                     <h4 id="nomeExibido4">Ana Carolina</h4>
                                     <p id="mensagemExibida4">Gostaria de agradecer o carinho e a atenção na realização da festa do nosso
@@ -118,7 +136,7 @@
                     </div>
                 </div>
             </section>
-            
+
 
             <section id="faq">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -141,19 +159,19 @@
                                         <input type="text" class="form-control" id="recipient-name" maxlength="25"
                                             placeholder="Escreva seu primeiro nome" required>
                                     </div>
-                                
+
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Mensagem:</label>
                                         <textarea class="form-control" id="message-text"
                                             placeholder="Escreva aqui seu depoimento" required></textarea>
                                         <small id="message-warning" class="text-danger"></small> <!-- Mensagem de aviso -->
                                     </div>
-                                
+
                                     <div class="form-group mb-3">
                                         <label for="data">Data:</label>
                                         <input type="date" class="form-control" id="data" name="data" required>
                                     </div>
-                                    
+
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                                         <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
@@ -167,7 +185,7 @@
             <section id="duvidas">
                 <h3 id="titleDuvidas">Dúvidas Frequentes</h3>
                 <div class="duvidas-comentarios">
-                    
+
                     <!-- Acordeão de Dúvidas -->
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
@@ -248,24 +266,24 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <!-- Seção de Comentários -->
                     <div id="contato">
                         <h3 id="contatotitle">Entre em Contato</h3>
-                       <div class="comment-section">
-                           <h3>Escreva seu comentário</h3>
-                           <textarea placeholder="Eu não entendi como funciona..."></textarea>
-                           <button type="button" class="btn btn-primary">Enviar</button>
-                       </div>
+                        <div class="comment-section">
+                            <h3>Escreva seu comentário</h3>
+                            <textarea placeholder="Eu não entendi como funciona..."></textarea>
+                            <button type="button" class="btn btn-primary">Enviar</button>
+                        </div>
                     </div>
-                    
+
                 </div>
             </section>
     </main>
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
+                <img src="img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
 
             </div>
             <div class="footer-section">
@@ -291,10 +309,10 @@
               <h3>Siga-nos</h3>
               <div class="social">
                   <a href="https://linkedin.com/company/tdasmartlight" target="_blank">
-                      <img src="../img/linkedin.webp" alt="LinkedIn">
+                      <img src="img/linkedin.webp" alt="LinkedIn">
                   </a>
                   <a href="https://instagram.com/tdasmartlight" target="_blank">
-                      <img src="../img/insta 2.png" alt="Instagram">
+                      <img src="img/insta 2.png" alt="Instagram">
                   </a>
               </div>
           </div> -->

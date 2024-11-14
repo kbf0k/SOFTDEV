@@ -414,11 +414,6 @@ main {
     border-radius: 5px;
 }
 
-
-
-
-
-
 #section-lazer {
     display: flex;
     justify-content: center;
@@ -480,10 +475,6 @@ main {
     border-radius: 5px;
 }
 
-
-
-
-
 #section-orcfeed {
     display: flex;
     justify-content: center;
@@ -536,7 +527,6 @@ footer {
     position: relative;
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
     color: white;
-    margin-top: -150px;
 }
 
 footer .container {
@@ -585,7 +575,9 @@ footer .bottom {
 
 .footer-logo {
     width: 150px;
+
 }
+
 
 @keyframes fadeIn {
     from {

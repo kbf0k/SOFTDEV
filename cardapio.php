@@ -1,5 +1,5 @@
 <?php
-include_once('../config.php');
+include_once('config.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -9,43 +9,27 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio</title>
-    <!-- CSS BOOTSTRAP -->     
+    <!-- CSS BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/cardapio.css">
-    <script src="../javascript/cardapio.js" defer></script>
+    <link rel="stylesheet" href="css/cardapio.css">
+    <script src="javascript/cardapio.js" defer></script>
     <script src="https://kit.fontawesome.com/6e028b1004.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
+
 <body>
     <header>
         <nav>
             <div onclick="menuShow()" class="mobile-icon">
-                <button><img class="icon" src="../img/menu_white_36dp.svg" alt=""></button>
+                <button><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
             </div>
-            <a href="inicio.html"><img id="logo-buffet" src="../img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
+            <a href="inicio.php"><img id="logo-buffet" src="img/partynet_img.png" alt="Logo do PartyNet Buffet"></a>
             <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
-            </ul>
-            <div id="login-sign">
-                <a href="../index.php">
-                    <button type="button" id="login-button">Entrar</button>
-                </a>
-                <a href="../cadastrar.php">
-                    <button id="sign-button">Inscrever-se</button>
-                </a>
-            </div>
-
-        </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="inicio.html">INÍCIO</a></li>
-                <li><a href="cardapio.html">CARDÁPIO</a></li>
-                <li><a href="atracoes.html">ATRAÇÕES</a></li>
-                <li><a href="orcamento.html">ORÇAMENTO</a></li>
-                <li><a href="feedbacks.html">FEEDBACKS</a></li>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
             </ul>
             <div class="perfil">
                 <?php if (isset($_SESSION['nome_sessao'])): ?>
@@ -67,6 +51,15 @@ session_start();
                     </div>
                 <?php endif; ?>
             </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="inicio.php">INÍCIO</a></li>
+                <li><a href="cardapio.php">CARDÁPIO</a></li>
+                <li><a href="atracoes.php">ATRAÇÕES</a></li>
+                <li><a href="orcamento.php">ORÇAMENTO</a></li>
+                <li><a href="feedbacks.php">FEEDBACKS</a></li>
+            </ul>
         </div>
     </header>
     <main>
@@ -89,11 +82,11 @@ session_start();
 
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Clássico'";
                     $resultado = $conexao->query($sql);
-                    
+
                     if ($resultado->num_rows > 0) {
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
-                            
+
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
                             foreach ($itens as $item) {
@@ -116,16 +109,16 @@ session_start();
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem1.jpg" alt="Primeiro Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem1.jpg" alt="Primeiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem2.jpg" alt="Segundo Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem2.jpg" alt="Segundo Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem3.jpg" alt="Terceiro Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem3.jpg" alt="Terceiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem4.jpg" alt="Quarto Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem4.jpg" alt="Quarto Slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselCardapio1" role="button" data-slide="prev">
@@ -137,23 +130,23 @@ session_start();
                             <span class="sr-only">Próximo</span>
                         </a>
                     </div>
-                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>";?>
+                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
                     <button class="choose-menu">Escolher Cardápio</button>
                 </div>
-        
+
                 <!-- Cardápio 2 -->
                 <div class="menu-card">
-                <?php
+                    <?php
                     // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Gourmet'";
                     $resultado = $conexao->query($sql);
-                    
+
                     // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
                         // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
-                            
+
                             // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
@@ -177,16 +170,16 @@ session_start();
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem5.jpg" alt="Primeiro Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem5.jpg" alt="Primeiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem6.jpg" alt="Segundo Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem6.jpg" alt="Segundo Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem7.jpg" alt="Terceiro Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem7.jpg" alt="Terceiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image d-block w-100" src="../img/cardapioitem8.webp" alt="Quarto Slide">
+                                <img class="menu-image d-block w-100" src="img/cardapioitem8.webp" alt="Quarto Slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselCardapio2" role="button" data-slide="prev">
@@ -198,23 +191,23 @@ session_start();
                             <span class="sr-only">Próximo</span>
                         </a>
                     </div>
-                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>";?>
+                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
                     <button class="choose-menu">Escolher Cardápio</button>
                 </div>
-        
+
                 <!-- Cardápio 3 -->
                 <div class="menu-card">
-                <?php
+                    <?php
                     // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Diversão'";
                     $resultado = $conexao->query($sql);
-                    
+
                     // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
                         // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
-                            
+
                             // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
@@ -237,16 +230,16 @@ session_start();
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem9.jpg" alt="Primeiro Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem9.jpg" alt="Primeiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem1.jpg" alt="Segundo Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem1.jpg" alt="Segundo Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem2.jpg" alt="Terceiro Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem2.jpg" alt="Terceiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem3.jpg" alt="Quarto Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem3.jpg" alt="Quarto Slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselCardapio3" role="button" data-slide="prev">
@@ -258,23 +251,23 @@ session_start();
                             <span class="sr-only">Próximo</span>
                         </a>
                     </div>
-                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>";?>
+                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
                     <button class="choose-menu">Escolher Cardápio</button>
                 </div>
-        
+
                 <!-- Cardápio 4 -->
                 <div class="menu-card">
-                <?php
+                    <?php
                     // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Prime'";
                     $resultado = $conexao->query($sql);
-                    
+
                     // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
                         // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
-                            
+
                             // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
@@ -297,16 +290,16 @@ session_start();
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem4.jpg" alt="Primeiro Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem4.jpg" alt="Primeiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem5.jpg" alt="Segundo Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem5.jpg" alt="Segundo Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem6.jpg" alt="Terceiro Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem6.jpg" alt="Terceiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem7.jpg" alt="Quarto Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem7.jpg" alt="Quarto Slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselCardapio4" role="button" data-slide="prev">
@@ -318,16 +311,16 @@ session_start();
                             <span class="sr-only">Próximo</span>
                         </a>
                     </div>
-                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>";?>
+                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
                     <button class="choose-menu">Escolher Cardápio</button>
                 </div>
-        
+
                 <!-- Cardápio 5: Personalizado -->
                 <!-- <div class="menu-card"> -->
-                    <!-- Botão para abrir o modal -->
-                    <button id="open-modal" class="card">Personalizar Cardápio</button>
+                <!-- Botão para abrir o modal -->
+                <button id="open-modal" class="card">Personalizar Cardápio</button>
                 <!-- </div> -->
-    
+
                 <!-- Modal para o cardápio personalizado -->
                 <div id="custom-menu-modal" class="modal">
                     <div class="modal-content">
@@ -340,52 +333,52 @@ session_start();
                                 <option value="Bolinhas de queijo">Bolinhas de queijo</option>
                                 <option value="Risole">Risole</option>
                             </select>
-    
+
                             <label for="sorvetes">Escolha um Sorvete:</label>
                             <select id="sorvetes" name="sorvetes">
                                 <option value="Chocolate">Chocolate</option>
                                 <option value="Flocos">Flocos</option>
                                 <option value="Morango">Morango</option>
                             </select>
-    
+
                             <label for="bebidas">Escolha uma Bebida:</label>
                             <select id="bebidas" name="bebidas">
                                 <option value="Refrigerante">Refrigerante</option>
                                 <option value="Suco">Suco</option>
                                 <option value="Água">Água</option>
                             </select>
-    
+
                             <label for="sobremesas">Escolha uma Sobremesa:</label>
                             <select id="sobremesas" name="sobremesas">
                                 <option value="Pudim">Pudim</option>
                                 <option value="Bolo de Cenoura">Bolo de Cenoura</option>
                                 <option value="Mini-tortas">Mini-tortas</option>
                             </select>
-    
+
                             <label for="acompanhamento">Escolha seu Acompanhamento:</label>
                             <select id="acompanhamento" name="acompanhamento">
                                 <option value="Pipoca">Pipoca</option>
                                 <option value="Algodão Doce">Algodão Doce</option>
                                 <option value="Gelatina">Gelatina</option>
                             </select>
-    
+
                             <button type="button" id="save-custom-menu">Salvar Cardápio</button>
                         </form>
                     </div>
                 </div>
                 <!-- Cardápio 6 -->
                 <div class="menu-card">
-                <?php
+                    <?php
                     // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Festa'";
                     $resultado = $conexao->query($sql);
-                    
+
                     // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
                         // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
-                            
+
                             // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
@@ -408,16 +401,16 @@ session_start();
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem8.webp" alt="Primeiro Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem8.webp" alt="Primeiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem9.jpg" alt="Segundo Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem9.jpg" alt="Segundo Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem2.jpg" alt="Terceiro Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem2.jpg" alt="Terceiro Slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="menu-image" class="d-block w-100" src="../img/cardapioitem4.jpg" alt="Quarto Slide">
+                                <img class="menu-image" class="d-block w-100" src="img/cardapioitem4.jpg" alt="Quarto Slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselCardapio6" role="button" data-slide="prev">
@@ -429,7 +422,7 @@ session_start();
                             <span class="sr-only">Próximo</span>
                         </a>
                     </div>
-                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>";?>
+                    <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
                     <button class="choose-menu">Escolher Cardápio</button>
                 </div>
             </div>
@@ -438,12 +431,12 @@ session_start();
                 <p>Cardápios diferenciados, para atender diferentes tipos de clientes, com qualidade e excelência.</p>
                 <div class="carrossel-container">
                     <div class="carrossel-slide">
-                        <img src="../img/cardapioitem1.jpg" alt="Comida 1">
-                        <img src="../img/cardapioitem2.jpg" alt="Comida 2">
-                        <img src="../img/cardapioitem3.jpg" alt="Comida 3">
-                        <img src="../img/cardapioitem4.jpg" alt="Comida 4">
-                        <img src="../img/cardapioitem5.jpg" alt="Comida 5">
-                        <img src="../img/cardapioitem6.jpg" alt="Comida 6">
+                        <img src="img/cardapioitem1.jpg" alt="Comida 1">
+                        <img src="img/cardapioitem2.jpg" alt="Comida 2">
+                        <img src="img/cardapioitem3.jpg" alt="Comida 3">
+                        <img src="img/cardapioitem4.jpg" alt="Comida 4">
+                        <img src="img/cardapioitem5.jpg" alt="Comida 5">
+                        <img src="img/cardapioitem6.jpg" alt="Comida 6">
                     </div>
                 </div>
                 <div class="carrossel-indicators">
@@ -461,7 +454,7 @@ session_start();
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="../img/partynet_img.png" alt="TDA Logo" class="footer-logo">
+                <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>

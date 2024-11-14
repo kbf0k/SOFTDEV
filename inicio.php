@@ -138,7 +138,7 @@ session_start();
                             pensado especialmente para agradar o paladar dos pequenos e encantar os adultos. De lanches divertidos a
                             opções mais saudáveis, cada prato é preparado com carinho e ingredientes de qualidade, garantindo uma
                             experiência saborosa para toda a família. Conheça nossas opções e escolha o que mais combina com sua festa!</p>
-                        <a href="cardapio.html"><button>Visitar Cardápio</button></a>
+                        <a href="cardapio.php"><button>Visitar Cardápio</button></a>
                     </div>
                     <div id="img-cardapio">
                         <img src="img/cardapioitem3.jpg" alt="">
@@ -155,7 +155,7 @@ session_start();
                             seguros, modernos e atrações interativas, pensados para transformar o seu evento em um momento inesquecível. De áreas de
                             jogos a espaços criativos, cada detalhe é planejado para que as crianças aproveitem ao máximo, enquanto os adultos podem
                             relaxar e curtir junto. Venha viver momentos mágicos e surpreender seus convidados com uma experiência de lazer única!</p>
-                        <a href="atracoes.html"><button>Visitar Atrações</button></a>
+                        <a href="atracoes.php"><button>Visitar Atrações</button></a>
                     </div>
                 </section>
                 <div class="hr-gradiente"></div>
@@ -165,14 +165,14 @@ session_start();
                         <p>Solicitar um orçamento é o primeiro passo para tornar sua festa inesquecível! Na PartyNet, oferecemos pacotes
                             personalizados que se ajustam ao seu estilo e ao tema dos sonhos da criançada. Preencha o formulário e ajudaremos você a
                             planejar cada detalhe dessa data tão especial!</p>
-                        <a href="orcamento.html"><button>Visitar Orçamento</button></a>
+                        <a href="orcamento.php"><button>Visitar Orçamento</button></a>
                     </div>
                     <div id="textos-feed">
                         <h2>Avaliações Positivas</h2>
                         <p>Nosso compromisso é oferecer momentos inesquecíveis e a melhor experiência possível. Sua opinião é essencial para
                             continuarmos aprimorando nossos serviços e garantindo sempre clientes satisfeitos. Compartilhe suas impressões e
                             ajude-nos a fazer cada festa ainda mais mágica e divertida!</p>
-                        <a href="feedbacks.html"><button>Visitar Feedbacks</button></a>
+                        <a href="feedbacks.php"><button>Visitar Feedbacks</button></a>
                     </div>
                 </section>
                 <div class="hr-gradiente"></div>
@@ -182,43 +182,28 @@ session_start();
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="img/partynet_img.png" alt="Party Net Logo" class="footer-logo">
-
+                <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
-                <h4>PartNet Buffet</h4>
-                <p>O Partynet Buffet convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
-                    garantirão a
-                    diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável,
-                    cuidadoso
-                    e de alta qualidade, atendendo às suas expectativas com excelência.</p>
+                <h4>Buffet Fun Farra</h4>
+                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                    garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
+                    responsável,
+                    cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
             </div>
-
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
                     Caçapava - SP, 12285-050<br>
-                    <strong>Email:</strong> <a href="contato@partynet.com" target="_blank">contato@partynet.com</a>
+                    <strong>Email:</strong> <a href="mailto:contato@funfarra.com"
+                        target="_blank">contato@funfarra.com</a>
                     <br>
                     <strong>Telefone:</strong> (12) 1234-5678
                 </p>
             </div>
-
-            <!-- <div class="footer-section">
-            <h3>Siga-nos</h3>
-            <div class="social">
-                <a href="https://linkedin.com/company/tdasmartlight" target="_blank">
-                    <img src="../img/linkedin.webp" alt="LinkedIn">
-                </a>
-                <a href="https://instagram.com/tdasmartlight" target="_blank">
-                    <img src="../img/insta 2.png" alt="Instagram">
-                </a>
-            </div>
-        </div> -->
         </div>
-
         <div class="bottom">
-            &copy; Buffet Infantil PARTYNET. Todos os direitos reservados.
+            &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
         </div>
     </footer>
 </body>

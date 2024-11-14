@@ -160,17 +160,15 @@ session_start();
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
+                <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
                 <h4>Buffet Fun Farra</h4>
                 <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
-                    garantirão a
-                    diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço responsável,
-                    cuidadoso
-                    e de alta qualidade, atendendo às suas expectativas com excelência.</p>
+                    garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
+                    responsável,
+                    cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
             </div>
-
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p><strong>Endereço:</strong> Rua Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira,
@@ -182,7 +180,6 @@ session_start();
                 </p>
             </div>
         </div>
-
         <div class="bottom">
             &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
         </div>

@@ -13,7 +13,6 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/cardapio.css">
     <script src="javascript/cardapio.js" defer></script>
-    <script src="https://kit.fontawesome.com/6e028b1004.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
 

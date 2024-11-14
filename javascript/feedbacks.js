@@ -85,4 +85,42 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+// script.js
+
+const feedbacks = [
+    {
+        name: "Tiago de Souza Barbosa",
+        date: "2023-12-13",
+        rating: 5,
+        review: "Espaço muito legal para crianças, com atividades criativas e educativas. É uma opção muito boa para o contra-turno escolar e colônia de férias."
+    },
+    {
+        name: "Julia Travasso",
+        date: "2023-10-30",
+        rating: 5,
+        review: "Excelente espaço, monitoras super carinhosas e atenciosas! Meu filho ama estar lá ❤️"
+    }
+];
+
+function loadFeedbacks() {
+    const feedbackContainer = document.querySelector('.feedbacks');
+    feedbackContainer.innerHTML = '';
+
+    feedbacks.forEach(feedback => {
+        const card = document.createElement('div');
+        card.classList.add('feedback-card');
+
+        card.innerHTML = `
+            <h3>${feedback.name}</h3>
+            <p>${feedback.date}</p>
+            <div class="stars">${'&#9733;'.repeat(feedback.rating)}</div>
+            <p>${feedback.review}</p>
+        `;
+
+        feedbackContainer.appendChild(card);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', loadFeedbacks);
+
 

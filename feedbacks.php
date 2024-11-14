@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
-
 <body>
     <header>
         <nav>
@@ -266,7 +265,7 @@
     <footer>
         <div class="container">
             <div class="footer-section">
-                <img src="../img/partynet_img.png" alt="TDA Logo" class="footer-logo">
+                <img src="../img/funfarrakids.png" alt="TDA Logo" class="footer-logo">
 
             </div>
             <div class="footer-section">

@@ -96,11 +96,11 @@ session_start();
         </div>
     </main>
 
-    <section id="atracoes2">
+    <section id="atracoes1">
         <div class="titulo">
             <h1>ATRAÇÕES PRINCIPAIS</h1>
         </div>
-        <div class="container">
+        <div class="container_atracoes1">
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
@@ -149,30 +149,24 @@ session_start();
         </div>
     </section>
 
-    <section id="atracoes1">
-        <div class="container_atracoes1">
-            <div class="destaque">
-                <h2>Equipe de Recreação</h2>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cupiditate iure voluptatum animi quaerat ratione aperiam ipsam, tempora cum est ab ad architecto quasi adipisci nesciunt ut totam veritatis. Necessitatibus!</p>
-                <a href="#atracoes2"><button type="button">Clique Aqui</button></a>
-            </div>
-            <div class="img">
-                <img src="img/atracao1.png" alt="Atração 1" class="imagem-grande">
-                <img src="img/atracao2.png" alt="Atração 2" class="imagem-pequena">
-                <img src="img/atracao3.png" alt="Atração 3" class="imagem-pequena">
+    <section id="atracoes2">
+        <div class="titulo">
+            <h1>EQUIPE DE RECREAÇÃO</h1>
+        </div>
+        <div class="container">
+            <img src="img/atracao2.png" alt="">
+            <div class="content">
+                <p>A equipe de recreação do Buffet Party Net é formada por profissionais dedicados a criar momentos inesquecíveis e seguros para crianças e adultos. Com atividades criativas e adaptadas para todas as idades, nossos recreadores proporcionam um ambiente acolhedor e alegre em qualquer evento, garantindo diversão e interação para todos os convidados. </p>
             </div>
         </div>
     </section>
 
 
     <section id="atracoes3">
+        <div class="titulo">
+            <h1>OUTRAS ATIVIDADES ATRAÇÕES DIVERSAS</h1>
+        </div>
         <div class="container_atracoes3">
-            <h1>Outras Atividades</h1>
-            <div class="destaque">
-                <h2>Outras Atividades</h2>
-                <p>Um dos favoritos das crianças, a piscina de bolinhas é segura, colorida e cheia de diversão!</p>
-                <a href="#atracoes4"><button type="button">Clique Aqui</button></a>
-            </div>
             <div class="img">
                 <img src="img/atracao1.png" alt="Atração 1" class="imagem-grande">
                 <img src="img/atracao2.png" alt="Atração 2" class="imagem-pequena">
@@ -180,8 +174,6 @@ session_start();
             </div>
         </div>
     </section>
-
-    <!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer --><!-- footer -->
 
     <footer>
         <div class="container">

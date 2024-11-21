@@ -177,6 +177,42 @@ session_start();
                 </section>
                 <div class="hr-gradiente"></div>
             </section>
+            <section>
+            <h2 id="exp-mais">Explore mais</h2>
+        <div id="banners">
+            <div class="caixa-banner">
+                <div class="banner" id="banner1">
+                    <h5 class="mini-title" id="mini-title-gerenc">Missão</h5>
+                    <img src="img/alvo.jpg" alt="">
+                    <h5 class="mini-text" id="mini-text-gerenc">Proporcionar momentos inesquecíveis para crianças e famílias, oferecendo festas personalizadas com diversão, qualidade e segurança.</h5>
+                    <a href=""></a>
+                </div>
+            </div>
+            
+            <div class="caixa-banner">
+                <div class="banner" id="banner3">
+                    <span style="font-size: 4em">
+                        <i class="fa-solid fa-graduation-cap"></i>  
+                    </span>
+                    <h5 class="mini-title" id="mini-title-edu">Visão</h5>
+                    <img src="img/olho.png" alt="">
+                    <h5 class="mini-text" id="mini-text-edu">Ser reconhecido como o buffet infantil mais inovador e encantador da região, criando experiências únicas que deixem memórias felizes e duradouras para cada cliente.</h5>
+                </div>
+            </div>
+            
+            <div class="caixa-banner">
+                <div class="banner" id="banner2">
+                    <span style="font-size: 4em">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </span>
+                    <h5 class="mini-title" id="mini-title-sim">Valores</h5>
+                    <img src="img/diamante.png" alt="">
+                    <h5 class="mini-text" id="mini-text-sim">Criatividade<br>Segurança<br>Qualidade<br>Empatia<br>Sustentabilidade<br>Diversão</h5>
+                </div>
+            </div>
+            
+        </div>
+            </section>
         </div>
     </main>
     <footer>

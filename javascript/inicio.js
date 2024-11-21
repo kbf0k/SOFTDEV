@@ -47,7 +47,7 @@ function mudarParaSlide(n) {
 function iniciarCarrossel() {
     intervalo = setInterval(() => {
         mudarSlide(1);
-    }, 3000);
+    }, 7000);
 }
 
 function reiniciarCarrossel() {

@@ -17,7 +17,7 @@ session_start();
 </head>
 
 <body>
-    <header>
+<header>
         <nav>
             <div onclick="menuShow()" class="mobile-icon">
                 <button><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>

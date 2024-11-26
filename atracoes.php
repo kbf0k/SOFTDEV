@@ -75,7 +75,7 @@ session_start();
 
     <main>
         <div class="titulo-atracoes">
-            <h1>Nossas Atrações</h1>
+            <h1>NOSSAS ATRAÇÕES</h1>
             <p>Venha conhecer as nossas principais atrações e despertar a festa do seu filho.</p>
             <a href="#atracoes1"><button type="button">Clique Aqui</button></a>
         </div>
@@ -154,7 +154,7 @@ session_start();
             <h1>EQUIPE DE RECREAÇÃO</h1>
         </div>
         <div class="container">
-            <img src="img/atracao2.png" alt="">
+            <img src="img/equipe_recreacao.png" alt="">
             <div class="content">
                 <p>A equipe de recreação do Buffet Party Net é formada por profissionais dedicados a criar momentos inesquecíveis e seguros para crianças e adultos. Com atividades criativas e adaptadas para todas as idades, nossos recreadores proporcionam um ambiente acolhedor e alegre em qualquer evento, garantindo diversão e interação para todos os convidados. </p>
             </div>
@@ -168,9 +168,10 @@ session_start();
         </div>
         <div class="container_atracoes3">
             <div class="img">
-                <img src="img/atracao1.png" alt="Atração 1" class="imagem-grande">
-                <img src="img/atracao2.png" alt="Atração 2" class="imagem-pequena">
-                <img src="img/atracao3.png" alt="Atração 3" class="imagem-pequena">
+                <img src="img/atracao1.png" id="img_atracao1 "alt="Atração 1" class="imagem-grande">
+                <img src="img/atracao2.png" id="img_atracao2 "alt="Atração 2" class="imagem-pequena">
+                <img src="img/atracao3.png" id="img_atracao3 "alt="Atração 3" class="imagem-pequena">
+                <img src="img/atracao3.png" id="img_atracao3 "alt="Atração 3" class="imagem-pequena">
             </div>
         </div>
     </section>

@@ -136,17 +136,15 @@ session_start();
                 <!-- Cardápio 2 -->
                 <div class="menu-card">
                     <?php
-                    // Consultar o cardápio específico
+
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Gourmet'";
                     $resultado = $conexao->query($sql);
 
-                    // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
-                        // Exibir o cardápio
+
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
 
-                            // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
                             foreach ($itens as $item) {
@@ -159,7 +157,6 @@ session_start();
                         echo "Cardápio não encontrado.";
                     }
                     ?>
-                    <!-- Alterei o id do carrossel -->
                     <div id="carouselCardapio2" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselCardapio2" data-slide-to="0" class="active"></li>
@@ -197,17 +194,13 @@ session_start();
                 <!-- Cardápio 3 -->
                 <div class="menu-card">
                     <?php
-                    // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Diversão'";
                     $resultado = $conexao->query($sql);
 
-                    // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
-                        // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
 
-                            // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
                             foreach ($itens as $item) {
@@ -257,17 +250,13 @@ session_start();
                 <!-- Cardápio 4 -->
                 <div class="menu-card">
                     <?php
-                    // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Prime'";
                     $resultado = $conexao->query($sql);
 
-                    // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
-                        // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
 
-                            // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
                             foreach ($itens as $item) {
@@ -325,60 +314,47 @@ session_start();
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <h2>Personalize seu Cardápio</h2>
-                        <form id="custom-menu-form">
-                            <label for="massas">Escolha uma Massa:</label>
-                            <select id="massas" name="massas">
-                                <option value="Coxinha">Coxinha</option>
-                                <option value="Bolinhas de queijo">Bolinhas de queijo</option>
-                                <option value="Risole">Risole</option>
-                            </select>
-
-                            <label for="sorvetes">Escolha um Sorvete:</label>
-                            <select id="sorvetes" name="sorvetes">
-                                <option value="Chocolate">Chocolate</option>
-                                <option value="Flocos">Flocos</option>
-                                <option value="Morango">Morango</option>
-                            </select>
-
-                            <label for="bebidas">Escolha uma Bebida:</label>
-                            <select id="bebidas" name="bebidas">
-                                <option value="Refrigerante">Refrigerante</option>
-                                <option value="Suco">Suco</option>
-                                <option value="Água">Água</option>
-                            </select>
-
-                            <label for="sobremesas">Escolha uma Sobremesa:</label>
-                            <select id="sobremesas" name="sobremesas">
-                                <option value="Pudim">Pudim</option>
-                                <option value="Bolo de Cenoura">Bolo de Cenoura</option>
-                                <option value="Mini-tortas">Mini-tortas</option>
-                            </select>
-
-                            <label for="acompanhamento">Escolha seu Acompanhamento:</label>
-                            <select id="acompanhamento" name="acompanhamento">
-                                <option value="Pipoca">Pipoca</option>
-                                <option value="Algodão Doce">Algodão Doce</option>
-                                <option value="Gelatina">Gelatina</option>
-                            </select>
-
-                            <button type="button" id="save-custom-menu">Salvar Cardápio</button>
+                        <form id="custom-menu-form" method="POST" action="salvar_cardapio.php">
+                            <div id="selections-container">
+                                <!-- Seleção inicial -->
+                                <div class="menu-item">
+                                    <label for="item-1">Escolha um Item:</label>
+                                    <select name="itens[]" class="menu-select">
+                                        <option value="massas|Coxinha">Massa - Coxinha</option>
+                                        <option value="massas|Bolinhas de queijo">Massa - Bolinhas de queijo</option>
+                                        <option value="massas|Risole">Massa - Risole</option>
+                                        <option value="sorvetes|Chocolate">Sorvete - Chocolate</option>
+                                        <option value="sorvetes|Flocos">Sorvete - Flocos</option>
+                                        <option value="sorvetes|Morango">Sorvete - Morango</option>
+                                        <option value="bebidas|Refrigerante">Bebida - Refrigerante</option>
+                                        <option value="bebidas|Suco">Bebida - Suco</option>
+                                        <option value="bebidas|Água">Bebida - Água</option>
+                                        <option value="sobremesas|Pudim">Sobremesa - Pudim</option>
+                                        <option value="sobremesas|Bolo de Cenoura">Sobremesa - Bolo de Cenoura</option>
+                                        <option value="sobremesas|Mini-tortas">Sobremesa - Mini-tortas</option>
+                                        <option value="acompanhamento|Pipoca">Acompanhamento - Pipoca</option>
+                                        <option value="acompanhamento|Algodão Doce">Acompanhamento - Algodão Doce</option>
+                                        <option value="acompanhamento|Gelatina">Acompanhamento - Gelatina</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="button" id="add-item">Adicionar Mais</button>
+                            <button type="submit" id="save-custom-menu">Salvar Cardápio</button>
                         </form>
+
                     </div>
                 </div>
                 <!-- Cardápio 6 -->
                 <div class="menu-card">
                     <?php
-                    // Consultar o cardápio específico
                     $sql = "SELECT nome, descricao, preco FROM cardapio WHERE nome = 'Cardápio Kids Festa'";
                     $resultado = $conexao->query($sql);
 
-                    // Verificar se encontrou o cardápio
                     if ($resultado->num_rows > 0) {
-                        // Exibir o cardápio
                         while ($linha = $resultado->fetch_assoc()) {
                             echo "<h2>" . $linha["nome"] . "</h2>";
 
-                            // Quebrar a descrição em itens e exibir como lista
                             $itens = explode(",", $linha["descricao"]);
                             echo "<ul>";
                             foreach ($itens as $item) {

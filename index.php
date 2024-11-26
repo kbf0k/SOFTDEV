@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows == 1) {
         $usuario_logado = $result->fetch_assoc();
         $_SESSION['nome_sessao'] = $usuario_logado['nome_usuario'];
+        $_SESSION['id_sessao'] = $usuario_logado['id_usuario'];
         header('Location: inicio.php');
         exit();
     }

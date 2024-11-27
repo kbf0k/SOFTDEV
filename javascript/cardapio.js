@@ -43,43 +43,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Salvar o cardápio personalizado
-    if (saveButton) {
-        saveButton.addEventListener('click', () => {
-            const selectedMassas = document.getElementById('massas').value;
-            const selectedSorvetes = document.getElementById('sorvetes').value;
-            const selectedBebidas = document.getElementById('bebidas').value;
-            const selectedSobremesas = document.getElementById('sobremesas').value;
-
-            const customMenu = {
-                massas: selectedMassas,
-                sorvetes: selectedSorvetes,
-                bebidas: selectedBebidas,
-                sobremesas: selectedSobremesas
-            };
-
-            // Salvar no localStorage
-            localStorage.setItem('customMenu', JSON.stringify(customMenu));
-
-            alert('Cardápio salvo com sucesso!');
-            modal.style.display = 'none';
-        });
-    }
-
-    // Carregar o cardápio salvo ao recarregar a página
-    function loadCustomMenu() {
-        const savedMenu = localStorage.getItem('customMenu');
-        if (savedMenu) {
-            const menu = JSON.parse(savedMenu);
-            document.getElementById('massas').value = menu.massas;
-            document.getElementById('sorvetes').value = menu.sorvetes;
-            document.getElementById('bebidas').value = menu.bebidas;
-            document.getElementById('sobremesas').value = menu.sobremesas;
-        }
-    }
-
-    // Carregar o cardápio salvo quando a página for carregada
-    loadCustomMenu();
+    document.getElementById('add-item').addEventListener('click', function() {
+        const container = document.getElementById('selections-container');
+        const newItem = document.createElement('div');
+        newItem.classList.add('menu-item');
+        newItem.innerHTML = `
+            <label for="new-item">Escolha um Item:</label>
+            <select name="itens[]" class="menu-select">
+                <option value="massas|Coxinha">Massa - Coxinha</option>
+                <option value="massas|Bolinhas de queijo">Massa - Bolinhas de queijo</option>
+                <option value="massas|Risole">Massa - Risole</option>
+                <option value="sorvetes|Chocolate">Sorvete - Chocolate</option>
+                <option value="sorvetes|Flocos">Sorvete - Flocos</option>
+                <option value="sorvetes|Morango">Sorvete - Morango</option>
+                <option value="bebidas|Refrigerante">Bebida - Refrigerante</option>
+                <option value="bebidas|Suco">Bebida - Suco</option>
+                <option value="bebidas|Água">Bebida - Água</option>
+                <option value="sobremesas|Pudim">Sobremesa - Pudim</option>
+                <option value="sobremesas|Bolo de Cenoura">Sobremesa - Bolo de Cenoura</option>
+                <option value="sobremesas|Mini-tortas">Sobremesa - Mini-tortas</option>
+                <option value="acompanhamento|Pipoca">Acompanhamento - Pipoca</option>
+                <option value="acompanhamento|Algodão Doce">Acompanhamento - Algodão Doce</option>
+                <option value="acompanhamento|Gelatina">Acompanhamento - Gelatina</option>
+            </select>
+        `;
+        container.appendChild(newItem);
+    });
 });
 
 
@@ -94,67 +83,3 @@ function menuShow() {
         document.querySelector('.icon').src = "../img/close_white_36dp.svg"
     }
 }
-
-const carouselSlide = document.querySelector('.carousel-slide');
-const images = document.querySelectorAll('.carousel-slide img');
-
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
-const dots = document.querySelectorAll('.dot');
-
-let counter = 1; // Começamos em 1, já que a primeira imagem agora é a última duplicada
-const size = images[0].clientWidth;
-
-// Inicializa a posição correta
-carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-// Função que atualiza a posição do carrossel
-function updateCarousel() {
-    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-    // Atualiza os dots corretamente
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (counter >= 1 && counter <= dots.length) {
-        dots[counter - 1].classList.add('active');
-    }
-}
-
-// Função que remove a transição e teleporta para a imagem correta
-function teleportCarousel() {
-    carouselSlide.style.transition = 'none'; // Remove a animação
-    if (counter === images.length - 1) {
-        counter = 1; // Teleporta para a primeira imagem
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-    if (counter === 0) {
-        counter = images.length - 2; // Teleporta para a última imagem
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-}
-
-// Avançar no carrossel
-nextButton.addEventListener('click', () => {
-    if (counter >= images.length - 1) return;
-    counter++;
-    updateCarousel();
-});
-
-// Retroceder no carrossel
-prevButton.addEventListener('click', () => {
-    if (counter <= 0) return;
-    counter--;
-    updateCarousel();
-});
-
-// Checa quando a transição acaba para fazer o teleporte
-carouselSlide.addEventListener('transitionend', teleportCarousel);
-
-// Controle de dots
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        counter = index + 1; // Ajusta para a nova estrutura de imagens
-        updateCarousel();
-    });
-});
-

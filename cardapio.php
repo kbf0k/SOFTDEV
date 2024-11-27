@@ -1,6 +1,22 @@
 <?php
 include_once('config.php');
 session_start();
+
+if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
+    echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Cardápio salvo com sucesso!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+    ";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -308,7 +324,7 @@ session_start();
                 <!-- Botão para abrir o modal -->
                 <button id="open-modal" class="card">Personalizar Cardápio</button>
                 <!-- </div> -->
-
+                    <a href="select-cardapio-por-no-orcamento.php">aaa</a>
                 <!-- Modal para o cardápio personalizado -->
                 <div id="custom-menu-modal" class="modal">
                     <div class="modal-content">

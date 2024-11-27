@@ -113,22 +113,6 @@ session_start();
                 </div>
             </div>
 
-            <section id="section-pos-grid">
-                <div id="caixa-qs">
-                    <h1>Quem somos?</h1>
-                    <hr>
-                    <p>Bem-vindos ao PartyNet, o lugar onde a magia das festas infantis ganha vida! Somos um buffet especializado
-                        em transformar sonhos em realidade, criando momentos inesquecíveis para crianças e suas famílias. Nossa missão é
-                        garantir que cada detalhe da festa seja especial, com muita diversão, segurança e, claro, muita farra!<br><br>
-                        Com anos de experiência no mercado de eventos, oferecemos uma estrutura completa para festas de todos os tamanhos.
-                        Desde decoração temática encantadora até atividades e brincadeiras personalizadas, nossa equipe dedica-se a
-                        planejar e realizar a festa perfeita para cada pequeno aniversariante. No PartyNet, o sorriso das crianças
-                        é nossa maior recompensa!<br><br>
-                        Venha conhecer o nosso espaço, feito para crianças de todas as idades se divertirem com conforto e segurança, e
-                        para os pais relaxarem sabendo que seus filhos estão nas melhores mãos. Vamos criar juntos momentos de pura
-                        alegria e diversão!</p>
-                </div>
-            </section>
             <section id="resumos-outras-pags">
                 <div class="hr-gradiente"></div>
                 <section id="section-cardapio">
@@ -177,8 +161,23 @@ session_start();
                 </section>
                 <div class="hr-gradiente"></div>
             </section>
-            <section>
-            <h2 id="exp-mais">Explore mais</h2>
+            <section id="section-pos-grid">
+                <div id="caixa-qs">
+                    <h1>Quem somos?</h1>
+                    <hr>
+                    <p>Bem-vindos ao PartyNet, o lugar onde a magia das festas infantis ganha vida! Somos um buffet especializado
+                        em transformar sonhos em realidade, criando momentos inesquecíveis para crianças e suas famílias. Nossa missão é
+                        garantir que cada detalhe da festa seja especial, com muita diversão, segurança e, claro, muita farra!<br><br>
+                        Com anos de experiência no mercado de eventos, oferecemos uma estrutura completa para festas de todos os tamanhos.
+                        Desde decoração temática encantadora até atividades e brincadeiras personalizadas, nossa equipe dedica-se a
+                        planejar e realizar a festa perfeita para cada pequeno aniversariante. No PartyNet, o sorriso das crianças
+                        é nossa maior recompensa!<br><br>
+                        Venha conhecer o nosso espaço, feito para crianças de todas as idades se divertirem com conforto e segurança, e
+                        para os pais relaxarem sabendo que seus filhos estão nas melhores mãos. Vamos criar juntos momentos de pura
+                        alegria e diversão!</p>
+                </div>
+            </section>
+            <section id="mis-vis-val">
         <div id="banners">
             <div class="caixa-banner">
                 <div class="banner" id="banner1">

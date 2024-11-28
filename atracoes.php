@@ -171,8 +171,8 @@ session_start();
                 <img src="img/atracao1.png" id="img_atracao1 "alt="Atração 1" class="imagem-grande">
                 <img src="img/atracao2.png" id="img_atracao2 "alt="Atração 2" class="imagem-pequena">
                 <img src="img/atracao3.png" id="img_atracao3 "alt="Atração 3" class="imagem-pequena">
-                <img src="img/atracao3.png" id="img_atracao3 "alt="Atração 3" class="imagem-pequena">
             </div>
+            <img src="img/atracao3.png" id="img_atracao4 "alt="Atração 3" class="imagem-pequena">
         </div>
     </section>
 

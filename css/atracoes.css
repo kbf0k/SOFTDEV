@@ -423,11 +423,11 @@ main {
 }
 
 #atracoes2 p {
+    color: white;
     text-align: center;
-    max-width: 520px;
-    background-color: white;
+    max-width: 600px;
     border-radius: 20px;
-    box-shadow: 0 0 40px black;
+    box-shadow: 0 0 100px black;
     padding: 30px;
 }
 
@@ -464,10 +464,17 @@ main {
 }
 
 
+
 #atracoes3 img {
     max-width: 450px;
     border-radius: 20px;
     padding: 10px;
+    transition: .2s ease-in-out;
+}
+
+#atracoes3 img:hover{
+    box-shadow: 0 0 90px white;
+    transform: scale(1.05);
 }
 
 #atracoes3 #img_atracao3{
@@ -477,6 +484,7 @@ main {
 .container_atracoes3 .destaque button:hover {
     background-color: #B843E4;
 } 
+
 
 
 /* FOOTER CABEÇALHO */

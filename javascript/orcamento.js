@@ -41,3 +41,40 @@ document.getElementById('logout').addEventListener('click', () => {
         }
     });
 });
+
+document.querySelector('form').addEventListener('submit', function(e) {
+    const terms = document.getElementById('terms');
+    if (!terms.checked) {
+        alert("Você deve aceitar os Termos e Condições para enviar o formulário.");
+        e.preventDefault();
+    }
+});
+const express = require("express");
+const axios = require("axios"); // Para fazer requisições HTTP
+const app = express();
+
+app.use(express.json());
+
+app.post("/gerar-boleto", async (req, res) => {
+    const { nome, cpf, valor } = req.body;
+
+    try {
+        const response = await axios.post("https://api.gerencianet.com.br/v1/boleto", {
+            nome,
+            cpf,
+            valor: parseInt(valor * 100), // Valor em centavos
+        }, {
+            headers: {
+                Authorization: "Bearer SEU_TOKEN_DE_AUTENTICACAO",
+            },
+        });
+
+        const boleto_url = response.data.data.boleto_url;
+        res.json({ boleto_url });
+    } catch (error) {
+        console.error(error.response?.data || error.message);
+        res.status(500).json({ message: "Erro ao gerar o boleto." });
+    }
+});
+
+app.listen(3000, () => console.log("Servidor rodando na porta 3000"));

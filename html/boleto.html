@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleto Gerado</title>
+</head>
+<body>
+    <h1>Boleto Gerado</h1>
+    <p>Descrição: <span id="descricao"></span></p>
+    <p>Valor: R$<span id="valor"></span></p>
+
+    <p>
+        Seu boleto está sendo gerado. Clique no botão abaixo para acessar o link do boleto:
+    </p>
+    <a id="boletoLink" href="pagamento-real.html" target="_blank">Acessar Boleto</a>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const descricao = params.get('descricao');
+        const valor = params.get('valor');
+
+        document.getElementById('descricao').textContent = descricao;
+        document.getElementById('valor').textContent = valor;
+
+        // Supondo que uma API seja usada para gerar o boleto
+        fetch('https://api.sua-plataforma.com/gerar-boleto', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ descricao, valor })
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('boletoLink').href = data.boleto_url;
+            })
+            .catch(error => console.error('Erro ao gerar boleto:', error));
+            
+    </script>
+</body>
+</html>

@@ -71,14 +71,14 @@ session_start();
         </defs>
         <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
     </svg>
-    <div id="main-real">
-        <section class="cta-section">
+    <section class="cta-section">
             <div class="cta-content">
                 <h2>Realize a Festa dos Seus Sonhos!</h2>
                 <p>Deixe que cuidamos de tudo para que seu evento seja inesquecível. Oferecemos pacotes personalizados e decoração exclusiva.</p>
-                <a href="#orcamento" class="cta-button">Solicitar Orçamento</a>
+                <a href="#tudomesmo" class="cta-button">Solicitar Orçamento</a>
             </div>
         </section>
+    <div id="main-real">
         <section id="tudomesmo">
             <h1 id="titlePage">Faça seu Orçamento!</h1>
             <div class="form-container">
@@ -188,8 +188,20 @@ session_start();
     <script>
         function exibirBotaoCartao() {
             const pagamento = document.getElementById('pagamento').value;
-            // Exibir ou ocultar os contêineres de pagamento
+            const submitBtn = document.querySelector('.submit-btn');
+            const valorInput = document.getElementById('valor');
+            
+            if (pagamento === 'cartao') {
+                submitBtn.textContent = 'Continuar para Cartão de Crédito';
+            } else if (pagamento === 'boleto') {
+                submitBtn.textContent = 'Gerar Boleto';
+            } else if (pagamento === 'pix') {
+                submitBtn.textContent = 'Gerar QR Code PIX';
+            } else {
+                submitBtn.textContent = 'Enviar';
+            }
         }
+
 
         function enviarFormulario() {
             const pagamento = document.getElementById('pagamento').value;
@@ -197,9 +209,11 @@ session_start();
             const descricao = "Pagamento Orçamento";
 
             if (pagamento === 'pix') {
-                window.location.href = `pix.html?valor=${valor}&descricao=${descricao}`;
+                window.location.href = `./html/pix.html?valor=${valor}&descricao=${descricao}`;
             } else if (pagamento === 'cartao') {
-                window.location.href = 'cartao.html'; // Redirecionar para a página de cartão
+                window.location.href = './html/cartao.html';
+            } else if (pagamento === 'boleto') {
+                window.location.href = `./html/boleto.html?valor=${valor}&descricao=${descricao}`;
             } else {
                 alert('Por favor, selecione uma forma de pagamento válida.');
             }

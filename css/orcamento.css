@@ -147,14 +147,14 @@ li:hover {
 #main-real {
     animation: fadeIn 1s ease-in-out;
 }
-/* Seção de Propaganda */
+
 .cta-section {
-    background-color: #b930a0; /* Cor de fundo vibrante */
+    background-color: #b930a0; 
     color: #fff;
     text-align: center;
     padding: 60px 20px;
     width: 70%; 
-    margin: 0; 
+    margin-top: -0; 
     border-radius: 10px;
     display: flex;
     justify-content: center;

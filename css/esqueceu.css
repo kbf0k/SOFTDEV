@@ -133,6 +133,7 @@ main {
     box-shadow: 0 0 25px 1px #66257E;
     transition: all 0.2s ease-in-out;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 .container button:hover {

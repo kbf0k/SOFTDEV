@@ -105,14 +105,11 @@ session_start();
                 <div class="conteudo">
                     <div class="fronteira">
                         <img src="img/brinquedo.png" alt="">
-                        <h1>Brinquedos Infantis</h1>
+                        <h1>BRINQUEDOS INFANTIS</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="img/atracao2.png" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
-                            quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
-                            esse
-                            quidem fuga quas architecto suscipit vitae.</p>
+                        <img src="img/brinquedos_infantis.jpg" alt="">
+                        <p>Os brinquedos infantis da Party Net garantem diversão com playgrounds temáticos, piscinas de bolinhas, escorregadores e infláveis gigantes. Há também jogos interativos e circuitos que estimulam a criatividade e o desenvolvimento motor.</p>
                     </div>
                 </div>
             </div>
@@ -120,14 +117,11 @@ session_start();
                 <div class="conteudo">
                     <div class="fronteira">
                         <img src="img/fliperama.png " alt="">
-                        <h1>Fliperama e Danças</h1>
+                        <h1>FLIPERAMA E DANÇAS</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="img/atracao2.png" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
-                            quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
-                            esse
-                            quidem fuga quas architecto suscipit vitae.</p>
+                        <img src="img/fliperama_dança.jpg" alt="">
+                        <p>Os fliperamas da Party Net oferecem jogos interativos que desafiam e divertem, enquanto as pistas de dança, com luzes vibrantes e músicas animadas, garantem momentos de pura alegria para as crianças.</p>
                     </div>
                 </div>
             </div>
@@ -135,14 +129,11 @@ session_start();
                 <div class="conteudo">
                     <div class="fronteira">
                         <img src="img/radical.png" alt="">
-                        <h1>Radical</h1>
+                        <h1>RADICAL</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="img/atracao2.png" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro praesentium consequatur
-                            quibusdam ratione, reprehenderit saepe numquam minus accusamus eaque harum excepturi alias
-                            esse
-                            quidem fuga quas architecto suscipit vitae.</p>
+                        <img src="img/brinquedo_radical.jpg" alt="">
+                        <p>Os brinquedos radicais da Party Net são perfeitos para crianças que adoram aventura e adrenalina. Todas as atrações são supervisionadas por profissionais treinados para garantir a segurança e o bem-estar durante as atividades.</p>
                     </div>
                 </div>
             </div>
@@ -167,12 +158,30 @@ session_start();
             <h1>OUTRAS ATIVIDADES ATRAÇÕES DIVERSAS</h1>
         </div>
         <div class="container_atracoes3">
-            <div class="img">
-                <img src="img/atracao1.png" id="img_atracao1 "alt="Atração 1" class="imagem-grande">
-                <img src="img/atracao2.png" id="img_atracao2 "alt="Atração 2" class="imagem-pequena">
-                <img src="img/atracao3.png" id="img_atracao3 "alt="Atração 3" class="imagem-pequena">
+            <div class="item-atracoes3">
+                <img src="img/outras_atracoes1.png" id="img_atracao1 " alt="Atração 1" class="imagem-grande">
+                <div class="conteudo-item">
+                    <h1>RADICAIS</h1>
+                </div>
             </div>
-            <img src="img/atracao3.png" id="img_atracao4 "alt="Atração 3" class="imagem-pequena">
+            <div class="item-atracoes3">
+                <img src="img/outras_atracoes2.png" id="img_atracao2 " alt="Atração 2" class="imagem-pequena">
+                <div class="conteudo-item">
+                    <h1>BRINQUEDOS INFANTIS</h1>
+                </div>
+            </div>
+            <div class="item-atracoes3">
+                <img src="img/outras_atracoes3.png" id="img_atracao3 " alt="Atração 3" class="imagem-pequena">
+                <div class="conteudo-item">
+                    <h1>RODA GIRA-GIRA</h1>
+                </div>
+            </div>
+            <div class="item-atracoes3">
+                <img src="img/palhaço.png" id="img_atracao3 " alt="Atração 3" class="imagem-pequena">
+                <div class="conteudo-item">
+                    <h1>PALHAÇOS E BRINCADEIRAS</h1>
+                </div>
+            </div>
         </div>
     </section>
 

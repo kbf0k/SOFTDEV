@@ -2,14 +2,23 @@ function voltar() {
     window.history.back();
 }
 
-function verificarsenha() {
+document.getElementById('cadastrar').addEventListener('submit', function(event){
     const senha = document.getElementById('senha').value;
-    const repetirSenha = document.getElementById('repetir-senha').value;
-    const mensagemErro = document.getElementById('mensagem-erro');
-
-    if (senha !== repetirSenha) {
-        mensagemErro.textContent = "As senhas não se coincidem";
+    const repetir = document.getElementById('repetir_senha').value;
+    if (senha !== repetir){
+        event.preventDefault(); 
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "As senhas não se coincidem",
+            confirmButtonColor: "#6334B1"
+          });
+    } else {
+        Swal.fire({
+            title: "Usuario Cadastrado com sucesso",
+            text: "Você será redirecionado para o login",
+            icon: "success",
+            confirmButtonColor: "#6334B1"
+          })
     }
-    mensagemErro.textContent = '';
-    return true;
-}
+});

@@ -334,7 +334,7 @@ main {
 }
 
 .trazeira {
-    background-color: #151515;
+    background-color: rgba(0, 0, 0, 0.2);
     transform: rotateY(180deg);
     opacity: 0;
 }
@@ -459,32 +459,57 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
     margin-top: 50px;
+    position: sticky;
 }
 
-
-
 #atracoes3 img {
-    max-width: 450px;
     border-radius: 20px;
-    padding: 10px;
+    transition: .2s ease-in-out;
+    max-width: 450px;
     transition: .2s ease-in-out;
 }
 
-#atracoes3 img:hover{
-    box-shadow: 0 0 90px white;
+#atracoes3 .item-atracoes3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    width: 100%;
+    margin: 15px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: .2s ease-in-out;
+}
+
+#atracoes3 .item-atracoes3:hover {
+    box-shadow: 0 0 90px #B843E4;
     transform: scale(1.05);
 }
 
-#atracoes3 #img_atracao3{
+#atracoes3 .item-atracoes3 .conteudo-item {
+    position: absolute;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    pointer-events: none;
 }
 
-.container_atracoes3 .destaque button:hover {
-    background-color: #B843E4;
-} 
-
+#atracoes3 .item-atracoes3:hover .conteudo-item {
+    opacity: 1;
+    transform: scale(1.05);
+}
 
 
 /* FOOTER CABEÇALHO */

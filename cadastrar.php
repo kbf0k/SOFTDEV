@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param('sssss', $nome_digitado, $sobrenome_digitado, $data_nasc_digitado, $email_digitado, $senha_digitado);
     $stmt->execute();
     $result = $stmt->get_result();
+    sleep(4);
     header('Location: index.php');
 }
 ?>
@@ -24,13 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre-se</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="css/cadastrar.css">
     <script src="javascript/cadastrar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
 
 <body>
@@ -42,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <img id="voltar-icone2" src="img/voltar.png" alt="icone de voltar">
                     </a>
                 </div>
-                <h1>Bem vindo ao</h1>
+                <h1>BEM-VINDO AO</h1>
                 <h1>PARTY NET</h1>
                 <p><b>Cadastre-se agora para criar momentos mágicos e inesquecíveis.</b></p>
                 <p id="p2">Ao se cadastrar, você terá acesso exclusivo às nossas promoções, poderá agendar festas com
@@ -61,8 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </a>
                 </div>
                 <h1>CADASTRAR</h1>
-                <p>Digite os seus dados de acesso no campo abaixo</p>
-                <form action="" method="POST" onsubmit="return verificarsenha()">
+                <form action="" method="POST" id="cadastrar">
                     <div class="entrada">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome_cadastro" id="nome" placeholder="Digite seu nome" required>
@@ -85,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                     <div class="entrada">
                         <label for="password" style="margin:0;">Repetir senha</label>
-                        <input type="password" name="repetir-senha" id="repetir=senha" placeholder="*****" required>
+                        <input type="password" name="repetir-senha" id="repetir_senha" placeholder="*****" required>
                     </div>
                     <button type="submit" name="submit" id="submit">ENTRAR</button>
                 </form>

@@ -74,7 +74,10 @@ li:hover {
     color: white;
     text-transform: capitalize;
 }
-
+.user a {
+    text-decoration: none; /* Remover o sublinhado dos links */
+    margin-top: 5px;
+}
 
 .logout img{
     max-width: 40px;

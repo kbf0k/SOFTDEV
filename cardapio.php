@@ -49,8 +49,10 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
             <div class="perfil">
                 <?php if (isset($_SESSION['nome_sessao'])): ?>
                     <div class="user">
+                    <a href="perfil.php">
                         <img id="user-logo" src="img/user-vector.png" alt="">
                         <p><?= $_SESSION['nome_sessao'] ?></p>
+                    </a>
                     </div>
                     <div class="logout">
                         <img id="logout" src="img/logout.png" alt="">

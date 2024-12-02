@@ -125,7 +125,7 @@ session_start();
                         <a href="cardapio.php"><button>Visitar Cardápio</button></a>
                     </div>
                     <div id="img-cardapio">
-                        <img src="img/cardapioitem3.jpg" alt="">
+                        <img src="img/cardapio_inicio.jpg" alt="">
                     </div>
                 </section>
                 <div class="hr-gradiente"></div>
@@ -182,7 +182,7 @@ session_start();
             <div class="caixa-banner">
                 <div class="banner" id="banner1">
                     <h5 class="mini-title" id="mini-title-gerenc">Missão</h5>
-                    <img src="img/alvo.jpg" alt="">
+                    <img src="img/alvo.png" alt="">
                     <h5 class="mini-text" id="mini-text-gerenc">Proporcionar momentos inesquecíveis para crianças e famílias, oferecendo festas personalizadas com diversão, qualidade e segurança.</h5>
                     <a href=""></a>
                 </div>

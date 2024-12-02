@@ -1,6 +1,9 @@
 <?php
 include_once('config.php');
 session_start();
+if (!isset($_SESSION['nome_sessao'])) {
+    $usuario_logado = false;
+}
 
 if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
     echo "
@@ -30,6 +33,75 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
     <link rel="stylesheet" href="css/cardapio.css">
     <script src="javascript/cardapio.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script>
+        const usuarioLogado = <?php echo json_encode($usuario_logado); ?>;
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('custom-menu-modal');
+    const openModalBtn = document.getElementById('open-modal');
+    const closeModalBtn = document.getElementsByClassName('close')[0];
+    const usuarioLogado = <?php echo json_encode($usuario_logado); ?>; // Recebendo o valor do PHP
+
+    // Função para abrir o modal
+    openModalBtn.onclick = function () {
+        if (!usuarioLogado) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Acesso restrito',
+                text: 'Você precisa de uma conta para personalizar um cardápio.'
+            });
+            return;
+        }
+        modal.style.display = 'block';
+    };
+
+    // Função para fechar o modal
+    closeModalBtn.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Fechar o modal se o usuário clicar fora do conteúdo do modal
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    document.querySelectorAll('.choose-menu').forEach(button => {
+        button.addEventListener('click', () => {
+            if (!usuarioLogado) { // Comparação correta para verificar se está logado
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Acesso restrito',
+                    text: 'Você precisa de uma conta para escolher um cardápio.'
+                });
+                return;
+            }
+
+            const idCardapio = button.getAttribute('data-id');
+
+            // Enviar a escolha para o PHP
+            fetch('escolher_cardapio.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id_cardapio: idCardapio })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "sucesso") {
+                        Swal.fire("Sucesso", data.mensagem, "success");
+                    } else {
+                        Swal.fire("Erro", data.mensagem, "error");
+                    }
+                })
+                .catch(error => {
+                    Swal.fire("Erro", "Houve um problema ao processar a sua solicitação.", "error");
+                });
+        });
+    });
+});
+
+    </script>
 </head>
 
 <body>

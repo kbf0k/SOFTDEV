@@ -33,27 +33,27 @@ document.getElementById('logout').addEventListener('click', () => {
     });
 });
 document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById('custom-menu-modal');
-    var openModalBtn = document.getElementById('open-modal');
-    var closeModalBtn = document.getElementsByClassName('close')[0];
-    var saveButton = document.getElementById('save-custom-menu');
+    const modal = document.getElementById('custom-menu-modal');
+    const openModalBtn = document.getElementById('open-modal');
+    const closeModalBtn = document.getElementsByClassName('close')[0];
+    const saveButton = document.getElementById('save-custom-menu');
 
     // Função para abrir o modal
     openModalBtn.onclick = function () {
         modal.style.display = 'block';
-    }
+    };
 
     // Função para fechar o modal
     closeModalBtn.onclick = function () {
         modal.style.display = 'none';
-    }
+    };
 
     // Fechar o modal se o usuário clicar fora do conteúdo do modal
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
-    }
+    };
 
     document.getElementById('add-item').addEventListener('click', function () {
         const container = document.getElementById('selections-container');
@@ -102,28 +102,29 @@ document.addEventListener('DOMContentLoaded', function () {
         // Adiciona o novo item ao contêiner
         container.appendChild(newItem);
     });
-});
 
-document.querySelectorAll('.choose-menu').forEach(button => {
-    button.addEventListener('click', () => {
-        const idCardapio = button.getAttribute('data-id');
-        
-        // Enviar a escolha para o PHP
-        fetch('escolher_cardapio.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id_cardapio: idCardapio })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "sucesso") {
-                Swal.fire("Sucesso", data.mensagem, "success");
-            } else {
-                Swal.fire("Erro", data.mensagem, "error");
-            }
-        })
-        .catch(error => {
-            Swal.fire("Erro", "Houve um problema ao processar a sua solicitação.", "error");
+    document.querySelectorAll('.choose-menu').forEach(button => {
+        button.addEventListener('click', () => {
+
+            const idCardapio = button.getAttribute('data-id');
+
+            // Enviar a escolha para o PHP
+            fetch('escolher_cardapio.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id_cardapio: idCardapio })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "sucesso") {
+                        Swal.fire("Sucesso", data.mensagem, "success");
+                    } else {
+                        Swal.fire("Erro", data.mensagem, "error");
+                    }
+                })
+                .catch(error => {
+                    Swal.fire("Erro", "Houve um problema ao processar a sua solicitação.", "error");
+                });
         });
     });
 });

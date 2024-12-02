@@ -78,3 +78,34 @@ app.post("/gerar-boleto", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+
+// Função para iniciar o contador
+function startCountdown(duration) {
+    const timerElement = document.getElementById('timer');
+    let time = duration; // Tempo inicial em segundos
+
+    const interval = setInterval(() => {
+        const hours = Math.floor(time / 3600); // Calcular horas
+        const minutes = Math.floor((time % 3600) / 60); // Calcular minutos
+        const seconds = time % 60; // Calcular segundos
+
+        // Exibir o timer no formato: hh:mm:ss
+        timerElement.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+
+        time--;
+
+        // Se o tempo acabar, pare o contador
+        if (time < 0) {
+            clearInterval(interval);
+            timerElement.textContent = "Oferta Expirada!";
+        }
+    }, 1000);
+}
+
+// Função para adicionar zero à frente se o número for menor que 10
+function pad(number) {
+    return number < 10 ? `0${number}` : number;
+}
+
+// Iniciar o contador com 20 horas, 9 minutos e 10 segundos
+startCountdown(20 * 3600 + 9 * 60 + 10); // 20:09:10 em segundos

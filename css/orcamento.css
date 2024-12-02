@@ -6,6 +6,13 @@
     box-sizing: border-box;
     font-family: 'Poppins';
 }
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,120,1) 100%);
+    margin: 0;
+    padding: 0;
+    height: 280vh;
+}
 
 nav {
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
@@ -137,71 +144,123 @@ li:hover {
     display: none;
 }
 
+/* Seção de Benefícios */
+.benefits-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.benefits-section h3 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 70px;
+    font-weight: bold;
+}
+
+.benefits-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.benefits-section li {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: white;
+    line-height: 1.5;
+}
+
+.benefits-section li span {
+    font-weight: bold;
+}
+
+.benefits-section li:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Seção do Cronômetro */
+#countdown-timer {
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+#countdown-timer p {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#timer {
+    font-size: 48px; 
+    font-family: 'Courier New', monospace; 
+    font-weight: bold;
+    letter-spacing: 3px;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+timer:hover {
+    transform: translateY(-5px); 
+}
+
+timer:active {
+        transform: translateY(0); 
+}
+
+/* Seção de Chamada para Ação (CTA) */
+.cta-header {
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-top: 170px;
+}
+
+.cta-header p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 90px;
+}
+
+.cta-button:hover {
+    background-color: purple; 
+    color: white;
+    transform: translateY(-5px); 
+}
+
+.cta-button:active {
+    transform: translateY(0); 
+}
+
 #tudomesmo {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #f0f0f0;
 }
 
 #main-real {
     animation: fadeIn 1s ease-in-out;
-}
-
-.cta-section {
-    background-color: #b930a0; 
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-    width: 70%; 
-    margin-top: -0; 
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.cta-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.cta-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.cta-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: #f7e5f3;
-}
-
-.cta-button {
-    background-color: #7c00a2; /* Cor do botão */
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #9c12ba; /* Cor do botão ao passar o mouse */
-}
-
-#titlePage{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
 }
 
 h2 {
@@ -291,7 +350,6 @@ textarea {
 #botao:hover {
     background-color: #0056b3;
 }
-
 
 @media screen and (max-width:500px) {
     nav {

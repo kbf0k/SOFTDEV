@@ -64,25 +64,36 @@ session_start();
         </div>
     </header>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-        <defs>
-            <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#66257E;" />
-                <stop offset="50%" style="stop-color:#6334B1;" />
-                <stop offset="100%" style="stop-color:#B843E4;" />
-            </linearGradient>
-        </defs>
-        <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
-    </svg>
-    <section class="cta-section">
-            <div class="cta-content">
-                <h2>Realize a Festa dos Seus Sonhos!</h2>
-                <p>Deixe que cuidamos de tudo para que seu evento seja inesquecível. Oferecemos pacotes personalizados e decoração exclusiva.</p>
-                <a href="#tudomesmo" class="cta-button">Solicitar Orçamento</a>
-            </div>
-        </section>
+            <defs>
+                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#66257E;" />
+                    <stop offset="50%" style="stop-color:#6334B1;" />
+                    <stop offset="100%" style="stop-color:#B843E4;" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
+        </svg>
+    <section class="benefits-section">
+        <h3>Por que fazer seu orçamento agora?</h3>
+        <ul>
+            <li>🎉 *Desconto exclusivo de 10% para orçamentos realizados hoje!*</li>
+            <li>🎁 Brinde especial ao fechar seu pacote conosco.</li>
+            <li>🌟 Planejamento totalmente personalizado para sua festa.</li>
+        </ul>
+    </section>
+
+    <div id="countdown-timer">
+        <p>Garanta condições exclusivas! Oferta termina em:</p>
+        <span id="timer">20:09:10</span>
+    </div>
+
+    <div class="cta-header">
+        <p>🎈 Planeje agora a festa perfeita! Clique abaixo para começar. 🎈</p>
+        <a href="#tudomesmo" class="cta-button">Solicitar Orçamento</a>
+    </div>
+
     <div id="main-real">
         <section id="tudomesmo">
-            <h1 id="titlePage">Faça seu Orçamento!</h1>
             <div class="form-container">
                 <form id="orcamentoForm" action="#" method="post">
                     <div class="form-group">

@@ -139,7 +139,7 @@ main {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,120,1) 100%);
     margin: 0;
     padding: 0;
-    height: 350vh;
+    height: 280vh;
 }
 #main-real {
     animation: fadeIn 1s ease-in-out;
@@ -471,6 +471,27 @@ footer .bottom {
 }
 
 #add-item:active {
+    transform: scale(0.95);
+}
+
+.remove-item {
+    background-color: #c50000;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-item:hover {
+    background-color: #940707;
+    transform: scale(1.05);
+}
+
+.remove-item:active {
     transform: scale(0.95);
 }
 

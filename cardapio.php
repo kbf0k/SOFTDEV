@@ -146,7 +146,7 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                         </a>
                     </div>
                     <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
-                    <button class="choose-menu">Escolher Cardápio</button>
+                    <button class="choose-menu" data-id="1">Escolher Cardápio</button>
                 </div>
 
                 <!-- Cardápio 2 -->
@@ -204,7 +204,7 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                         </a>
                     </div>
                     <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
-                    <button class="choose-menu">Escolher Cardápio</button>
+                    <button class="choose-menu" data-id="2">Escolher Cardápio</button>
                 </div>
 
                 <!-- Cardápio 3 -->
@@ -260,7 +260,7 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                         </a>
                     </div>
                     <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
-                    <button class="choose-menu">Escolher Cardápio</button>
+                    <button class="choose-menu" data-id="3">Escolher Cardápio</button>
                 </div>
 
                 <!-- Cardápio 4 -->
@@ -316,7 +316,7 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                         </a>
                     </div>
                     <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
-                    <button class="choose-menu">Escolher Cardápio</button>
+                    <button class="choose-menu" data-id="4">Escolher Cardápio</button>
                 </div>
 
                 <!-- Cardápio 5: Personalizado -->
@@ -324,7 +324,7 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                 <!-- Botão para abrir o modal -->
                 <button id="open-modal" class="card">Personalizar Cardápio</button>
                 <!-- </div> -->
-                    <a href="select-cardapio-por-no-orcamento.php">aaa</a>
+                    <!-- <a href="select-cardapio-por-no-orcamento.php">aaa</a> -->
                 <!-- Modal para o cardápio personalizado -->
                 <div id="custom-menu-modal" class="modal">
                     <div class="modal-content">
@@ -414,32 +414,9 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                         </a>
                     </div>
                     <?php echo "<p class='menu-price'>R$ " . $preco . "</p>"; ?>
-                    <button class="choose-menu">Escolher Cardápio</button>
+                    <button class="choose-menu" data-id="6">Escolher Cardápio</button>
                 </div>
             </div>
-            <!-- <div class="carrossel">
-                <h2>Cardápios</h2>
-                <p>Cardápios diferenciados, para atender diferentes tipos de clientes, com qualidade e excelência.</p>
-                <div class="carrossel-container">
-                    <div class="carrossel-slide">
-                        <img src="img/cardapioitem1.jpg" alt="Comida 1">
-                        <img src="img/cardapioitem2.jpg" alt="Comida 2">
-                        <img src="img/cardapioitem3.jpg" alt="Comida 3">
-                        <img src="img/cardapioitem4.jpg" alt="Comida 4">
-                        <img src="img/cardapioitem5.jpg" alt="Comida 5">
-                        <img src="img/cardapioitem6.jpg" alt="Comida 6">
-                    </div>
-                </div>
-                <div class="carrossel-indicators">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <div class="controladores">
-                    <button class="setas" id="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-                    <button class="setas" id="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                </div>
-            </div> -->
         </div>
     </main>
     <footer>

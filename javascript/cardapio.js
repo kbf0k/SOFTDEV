@@ -43,8 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.getElementById('add-item').addEventListener('click', function() {
+    document.getElementById('add-item').addEventListener('click', function () {
         const container = document.getElementById('selections-container');
+        const currentItemCount = container.querySelectorAll('.menu-item').length;
+
+        // Verifica se o limite de 7 itens foi atingido
+        if (currentItemCount >= 7) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Limite atingido',
+                text: 'Você só pode adicionar até 7 itens.'
+            });
+            return;
+        }
+
+        // Cria um novo item
         const newItem = document.createElement('div');
         newItem.classList.add('menu-item');
         newItem.innerHTML = `
@@ -66,8 +79,40 @@ document.addEventListener('DOMContentLoaded', function () {
                 <option value="acompanhamento|Algodão Doce">Acompanhamento - Algodão Doce</option>
                 <option value="acompanhamento|Gelatina">Acompanhamento - Gelatina</option>
             </select>
+            <button type="button" class="remove-item">Remover</button>
         `;
+
+        // Adiciona evento de remoção ao botão de exclusão
+        newItem.querySelector('.remove-item').addEventListener('click', function () {
+            container.removeChild(newItem);
+        });
+
+        // Adiciona o novo item ao contêiner
         container.appendChild(newItem);
+    });
+});
+
+document.querySelectorAll('.choose-menu').forEach(button => {
+    button.addEventListener('click', () => {
+        const idCardapio = button.getAttribute('data-id');
+        
+        // Enviar a escolha para o PHP
+        fetch('escolher_cardapio.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id_cardapio: idCardapio })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "sucesso") {
+                Swal.fire("Sucesso", data.mensagem, "success");
+            } else {
+                Swal.fire("Erro", data.mensagem, "error");
+            }
+        })
+        .catch(error => {
+            Swal.fire("Erro", "Houve um problema ao processar a sua solicitação.", "error");
+        });
     });
 });
 

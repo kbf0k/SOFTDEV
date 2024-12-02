@@ -7,12 +7,21 @@ if (!isset($_SESSION['id_sessao'])) {
 }
 
 $id_usuario = $_SESSION['id_sessao'];
+echo "ID do usuário logado: " . $id_usuario;
 
 $query = "
-    SELECT id_cardapio, nome FROM cardapio WHERE id = ? 
+    SELECT c.id_cardapio, c.nome 
+    FROM usuario_cardapio u
+    JOIN cardapio c ON u.id_cardapio = c.id_cardapio
+    WHERE u.id_usuario = ?
+    
     UNION
-    SELECT id, 'Cardápio Personalizado' FROM cardapio_personalizado WHERE id_usuario = ?
+    
+    SELECT NULL AS id_cardapio, 'Cardápio Personalizado' AS nome
+    FROM cardapio_personalizado u
+    WHERE u.id_usuario = ?
 ";
+
 $stmt = $conexao->prepare($query);
 
 if ($stmt === false) {
@@ -34,8 +43,9 @@ if ($result->num_rows == 0) {
         <option value="">Selecione...</option>
         <?php
         while ($row = $result->fetch_assoc()) {
-            $nome = $row['nome'] ?: 'Cardápio Personalizado ' . $_SESSION['nome_sessao'];
-            echo "<option value='" . $row['id_cardapio'] . "'>$nome</option>";
+            $nome = $row['nome'];
+            $id_cardapio = $row['id_cardapio']; // ID do cardápio ou NULL se for "Cardápio Personalizado"
+            echo "<option value='" . ($id_cardapio ? $id_cardapio : '') . "'>$nome</option>";
         }
         ?>
     </select>

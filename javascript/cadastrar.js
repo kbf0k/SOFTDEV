@@ -10,7 +10,7 @@ document.getElementById('cadastrar').addEventListener('submit', function(event){
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "As senhas não se coincidem",
+            text: "As senhas não se coincidem.",
             confirmButtonColor: "#6334B1"
           });
     } else {

@@ -168,6 +168,7 @@ main {
     flex-direction: column;
     animation: fadeIn 1s ease-in-out;
     margin-top: -5px;
+    background-color: #b943e4;
 }
 
 
@@ -234,7 +235,7 @@ main {
 
 .item img {
     max-width: 100%;
-    margin-bottom: 90px;
+    margin-bottom: 124px;
 }
 
 .setas {
@@ -272,6 +273,7 @@ main {
 #atracoes1 {
     height: 140vh;
     background: linear-gradient(#b943e4, #6434b1);
+    margin-top: -50px;
 }
 
 .titulo {

@@ -253,7 +253,7 @@ footer {
     position: relative;
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
     color: white;
-    margin-top: 0;
+    margin-top: -250px;
     padding: 20px 0;
 }
 

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </a>
                 </div>
                 <h1>BEM-VINDO AO</h1>
-                <h1>PARTY NET</h1>
+                <h1>PARTYNET!</h1>
                 <p><b>Cadastre-se agora para criar momentos mágicos e inesquecíveis.</b></p>
                 <p id="p2">Ao se cadastrar, você terá acesso exclusivo às nossas promoções, poderá agendar festas com
                     facilidade e

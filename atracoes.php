@@ -100,7 +100,7 @@ session_start();
 
     <section id="atracoes1">
         <div class="titulo">
-            <h1>O que oferecemos?</h1>
+            <h1 id="oq-oferecemos">O que oferecemos?</h1>
         </div>
         <div class="container_atracoes1">
             <div class="card">
@@ -193,8 +193,8 @@ session_start();
                 <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
-                <h4>Buffet PARTY NET</h4>
-                <p>O Buffet PARTY NET convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                <h4>Buffet PartyNet</h4>
+                <p>O Buffet PartyNet convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
                     garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
                     responsável,
                     cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
@@ -211,7 +211,7 @@ session_start();
             </div>
         </div>
         <div class="bottom">
-            &copy; Buffet Infantil PARTY NET. Todos os direitos reservados.
+            &copy; Buffet Infantil PartyNet. Todos os direitos reservados.
         </div>
     </footer>
 </body>

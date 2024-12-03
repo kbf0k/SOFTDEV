@@ -410,21 +410,21 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                                 <div class="menu-item">
                                     <label for="item-1">Escolha um Item:</label>
                                     <select name="itens[]" class="menu-select">
-                                        <option value="massas|Coxinha">Massa - Coxinha</option>
-                                        <option value="massas|Bolinhas de queijo">Massa - Bolinhas de queijo</option>
-                                        <option value="massas|Risole">Massa - Risole</option>
-                                        <option value="sorvetes|Chocolate">Sorvete - Chocolate</option>
-                                        <option value="sorvetes|Flocos">Sorvete - Flocos</option>
-                                        <option value="sorvetes|Morango">Sorvete - Morango</option>
-                                        <option value="bebidas|Refrigerante">Bebida - Refrigerante</option>
-                                        <option value="bebidas|Suco">Bebida - Suco</option>
-                                        <option value="bebidas|Água">Bebida - Água</option>
-                                        <option value="sobremesas|Pudim">Sobremesa - Pudim</option>
-                                        <option value="sobremesas|Bolo de Cenoura">Sobremesa - Bolo de Cenoura</option>
-                                        <option value="sobremesas|Mini-tortas">Sobremesa - Mini-tortas</option>
-                                        <option value="acompanhamento|Pipoca">Acompanhamento - Pipoca</option>
-                                        <option value="acompanhamento|Algodão Doce">Acompanhamento - Algodão Doce</option>
-                                        <option value="acompanhamento|Gelatina">Acompanhamento - Gelatina</option>
+                                        <option value="massas|Coxinha">Coxinha</option>
+                                        <option value="massas|Bolinhas de queijo">Bolinha de queijo</option>
+                                        <option value="massas|Risole">Risole</option>
+                                        <option value="sorvetes|Chocolate">Sorvete de Chocolate</option>
+                                        <option value="sorvetes|Flocos">Sorvete de Flocos</option>
+                                        <option value="sorvetes|Morango">Sorvete de Morango</option>
+                                        <option value="bebidas|Refrigerante">Refrigerante</option>
+                                        <option value="bebidas|Suco">Suco</option>
+                                        <option value="bebidas|Água">Água</option>
+                                        <option value="sobremesas|Pudim">Pudim</option>
+                                        <option value="sobremesas|Bolo de Cenoura">Bolo de Cenoura</option>
+                                        <option value="sobremesas|Mini-tortas">Mini-tortas</option>
+                                        <option value="acompanhamento|Pipoca">Pipoca</option>
+                                        <option value="acompanhamento|Algodão Doce">Algodão Doce</option>
+                                        <option value="acompanhamento|Gelatina">Gelatina</option>
                                     </select>
                                 </div>
                             </div>
@@ -499,8 +499,8 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
                 <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
-                <h4>Buffet PARTY NET</h4>
-                <p>O Buffet PARTY NET convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                <h4>Buffet PartyNet</h4>
+                <p>O Buffet PartyNet convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
                     garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
                     responsável,
                     cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
@@ -517,7 +517,7 @@ if (isset($_GET['salvo']) && $_GET['salvo'] === 'sucesso') {
             </div>
         </div>
         <div class="bottom">
-            &copy; Buffet Infantil PARTY NET. Todos os direitos reservados.
+            &copy; Buffet Infantil PartyNet. Todos os direitos reservados.
         </div>
     </footer>
     <!-- JavaScript do Bootstrap -->

@@ -576,3 +576,159 @@ footer .bottom {
         transition: all 2s ease-in-out;
     }
 }
+/* Responsividade */
+@media (max-width: 1024px) {
+    #duvidas {
+        margin-left: 30px;
+    }
+
+    #titleDuvidas {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .duvidas-comentarios {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .accordion,
+    .comment-section {
+        max-width: 90%;
+        width: 100%;
+    }
+
+    .comment-section {
+        margin-top: 0;
+    }
+
+    #contato {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #contatotitle {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 10px; /* Ajustado para reduzir o espaço acima do título */
+    }
+}
+
+@media (max-width: 768px) {
+    #duvidas {
+        padding: 15px;
+        margin-left: 0;
+    }
+
+    .duvidas-comentarios {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .accordion,
+    .comment-section {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .comment-section {
+        height: auto;
+        margin-top: 0; /* Remove o espaçamento extra */
+    }
+
+    #contato {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .comment-section textarea {
+        max-width: 100%;
+    }
+
+    #contatotitle {
+        margin-left: 0;
+        margin-top: 10px; /* Ajustado para reduzir o espaço */
+    }
+}
+
+@media (max-width: 480px) {
+    .duvidas-comentarios {
+        gap: 10px;
+    }
+
+    .accordion,
+    .comment-section {
+        width: 100%;
+    }
+
+    #contato {
+        width: 100%;
+    }
+
+    #contatotitle {
+        margin-left: 0;
+        margin-top: 10px; /* Ajustado para reduzir o espaço no título */
+    }
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    #pageTitle {
+        margin-top: -20px;
+        margin-bottom: -40px;
+    }
+
+    #pageSubtitle {
+        margin-top: 10px;
+        margin-bottom: -40px;
+    }
+
+    #caixas {
+        padding-top: 40px;
+    }
+
+    .caixa {
+        width: 90%;
+        height: auto;
+        margin: 15px 0;
+    }
+
+    .feedback-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .feedback-text {
+        max-height: 120px;
+    }
+
+    .depoimento-container {
+        margin-top: 30%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #buttondepoiment {
+        margin-left: 0;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caixa {
+        width: 100%;
+    }
+
+    #buttondepoiment {
+        margin-left: 0;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .depoimento-container {
+        margin-top: 30%;
+        padding: 10px;
+    }
+}

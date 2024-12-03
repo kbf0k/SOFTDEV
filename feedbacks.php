@@ -1,8 +1,16 @@
 <?php
 include_once('config.php');
 session_start();
-?>
 
+// Recupera os 4 depoimentos mais recentes
+$sql = "SELECT * FROM depoimentos ORDER BY id DESC LIMIT 4"; // Ordena pelos IDs, mais recente primeiro
+$stmt = $conexao->query($sql);
+$depoimentos = [];
+
+while ($row = $stmt->fetch_assoc()) {
+    $depoimentos[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -76,114 +84,123 @@ session_start();
             <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
         </svg>
         <div id="main-real">
-            <div id="pageTitle">
-                <h1>Contato e Feedbacks</h1>
-                <h4>Avalie nosso espaço e confira nossas melhores avaliações!</h4>
+    <div id="pageTitle">
+        <h1>Contato e Feedbacks</h1>
+        <h4>Avalie nosso espaço e confira nossas melhores avaliações!</h4>
+    </div>
+    <section id="feedbacks">
+        <div id="caixas">
+            <div id="caixas-superiores">
+                <!-- Caixa 1 -->
+                <div class="caixa" id="caixa1">
+                    <div class="feedback-content">
+                        <img class="imagemcontato" src="img/user.png" alt="Imagem de contato">
+                        <div class="feedback-text">
+                            <h4 id="nomeExibido1"><?= isset($depoimentos[0]) ? htmlspecialchars($depoimentos[0]['nome']) : 'Juliana Souza' ?></h4>
+                            <p id="mensagemExibida1"><?= isset($depoimentos[0]) ? htmlspecialchars($depoimentos[0]['mensagem']) : 'Foi tudo excelente desde o atendimento, pré venda, a festa, os monitores excelentes e minha filha amou!!! Parabéns pelo atendimento e cuidado de todos vocês!' ?></p>
+                            <h3 id="dataExibida1"><?= isset($depoimentos[0]) ? htmlspecialchars($depoimentos[0]['data']) : '2024-12-02' ?></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caixa 2 -->
+                <div class="caixa" id="caixa2">
+                    <div class="feedback-content">
+                        <img class="imagemcontato" src="img/user.png" alt="">
+                        <div class="feedback-text">
+                            <h4 id="nomeExibido2"><?= isset($depoimentos[1]) ? htmlspecialchars($depoimentos[1]['nome']) : 'Maurício' ?></h4>
+                            <p id="mensagemExibida2"><?= isset($depoimentos[1]) ? htmlspecialchars($depoimentos[1]['mensagem']) : 'Estou maravilhado com o serviço do buffet! A decoração estava impecável, os animadores foram incríveis e a comida estava deliciosa! Meu filho e seus amiguinhos se divertiram muito.' ?></p>
+                            <h3 id="dataExibida2"><?= isset($depoimentos[1]) ? htmlspecialchars($depoimentos[1]['data']) : '2024-11-29' ?></h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <section id="feedbacks">
-                <div id="caixas">
-                    <div id="caixas-superiores">
-                        <div class="caixa" id="caixa1">
-                            <div class="feedback-content">
-                                <img class="imagemcontato" src="img/user.png" alt="Imagem de contato">
-                                <div class="feedback-text">
-                                    <h4 id="nomeExibido1">Juliana Souza</h4>
-                                    <p id="mensagemExibida1">
-                                        Foi tudo excelente desde o atendimento, pré venda, a festa, os monitores
-                                        excelentes e minha filha amou!!! Parabéns pelo atendimento e cuidado de todos
-                                        vocês!
-                                    </p>
-                                    <h3 id="dataExibida1">15/08/2024</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="caixa" id="caixa2">
-                            <div class="feedback-content">
-                                <img class="imagemcontato" src="IMG/user.png" alt="">
-                                <div class="feedback-text">
-                                    <h4 id="nomeExibido2">Maurício</h4>
-                                    <p id="mensagemExibida2">Estou maravilhado com o serviço do buffet! A decoração estava impecável, os
-                                        animadores foram incríveis e a comida estava deliciosa! Meu filho e seus
-                                        amiguinhos se divertiram muito.</p>
-                                    <h3 id="dataExibida2">13/08/2024</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="caixas-inferiores">
-                        <div class="caixa" id="caixa3">
-                            <div class="feedback-content">
-                                <img class="imagemcontato" src="IMG/user.png" alt="">
-                                <div class="feedback-text">
-                                    <h4 id="nomeExibido3">Carla Gonçalves</h4>
-                                    <p id="mensagemExibida3">Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se divertiram
-                                        muito, a estrutura é perfeita e a comida estava deliciosa. Foi uma experiência
-                                        incrível. Muito obrigado!</p>
-                                    <h3 id="dataExibida3">10/07/2024</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="caixa" id="caixa4">
-                            <div class="feedback-content">
-                                <img class="imagemcontato" src="IMG/user.png" alt="">
-                                <div class="feedback-text">
-                                    <h4 id="nomeExibido4">Ana Carolina</h4>
-                                    <p id="mensagemExibida4">Gostaria de agradecer o carinho e a atenção na realização da festa do nosso
-                                        filho, foi tudo impecável!!! Ficamos muito satisfeitos com a dedicação e empenho
-                                        de todos!!</p>
-                                    <h3 id="dataExibida4">30/07/2024</h3>
-                                </div>
-                            </div>
+
+            <div id="caixas-inferiores">
+                <!-- Caixa 3 -->
+                <div class="caixa" id="caixa3">
+                    <div class="feedback-content">
+                        <img class="imagemcontato" src="img/user.png" alt="">
+                        <div class="feedback-text">
+                            <h4 id="nomeExibido3"><?= isset($depoimentos[2]) ? htmlspecialchars($depoimentos[2]['nome']) : 'Carla Gonçalves' ?></h4>
+                            <p id="mensagemExibida3"><?= isset($depoimentos[2]) ? htmlspecialchars($depoimentos[2]['mensagem']) : 'Que festa maravilhosa! Fizeram um trabalho incrível. As crianças se divertiram muito, a estrutura é perfeita e a comida estava deliciosa. Foi uma experiência incrível. Muito obrigado!' ?></p>
+                            <h3 id="dataExibida3"><?= isset($depoimentos[2]) ? htmlspecialchars($depoimentos[2]['data']) : '2024-11-10' ?></h3>
                         </div>
                     </div>
                 </div>
-            </section>
 
-
-            <section id="faq">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    id="buttondepoiment">
-                    Faça seu Depoimento
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Faça seu Depoimento</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="depoimentoForm">
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Nome:</label>
-                                        <input type="text" class="form-control" id="recipient-name" maxlength="25"
-                                            placeholder="Escreva seu primeiro nome" required>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">Mensagem:</label>
-                                        <textarea class="form-control" id="message-text"
-                                            placeholder="Escreva aqui seu depoimento" required></textarea>
-                                        <small id="message-warning" class="text-danger"></small> <!-- Mensagem de aviso -->
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <label for="data">Data:</label>
-                                        <input type="date" class="form-control" id="data" name="data" required>
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                        <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
-                                    </div>
-                                </form>
-                            </div>
+                <!-- Caixa 4 -->
+                <div class="caixa" id="caixa4">
+                    <div class="feedback-content">
+                        <img class="imagemcontato" src="img/user.png" alt="">
+                        <div class="feedback-text">
+                            <h4 id="nomeExibido4"><?= isset($depoimentos[3]) ? htmlspecialchars($depoimentos[3]['nome']) : 'Ana Carolina' ?></h4>
+                            <p id="mensagemExibida4"><?= isset($depoimentos[3]) ? htmlspecialchars($depoimentos[3]['mensagem']) : 'Gostaria de agradecer o carinho e a atenção na realização da festa do nosso filho, foi tudo impecável!!! Ficamos muito satisfeitos com a dedicação e empenho de todos!!' ?></p>
+                            <h3 id="dataExibida4"><?= isset($depoimentos[3]) ? htmlspecialchars($depoimentos[3]['data']) : '2024-10-21' ?></h3>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <?php if (isset($_SESSION['nome_sessao'])): ?>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="buttondepoiment">
+                Faça seu Depoimento
+            </button>
+        <?php else: ?>
+            <button type="button" class="btn btn-primary" onclick="alertLogin()" id="buttondepoiment">Faça seu Depoimento</button>
+        <?php endif; ?>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Faça seu Depoimento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="depoimentoForm" action="salvar_depoimento.php" method="POST">
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Nome:</label>
+                                <input type="text" class="form-control" id="recipient-name" name="nome" maxlength="25" placeholder="Escreva seu primeiro nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Mensagem:</label>
+                                <textarea class="form-control" id="message-text" name="mensagem" placeholder="Escreva aqui seu depoimento" required></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="data">Data da Festa:</label>
+                                <input type="date" class="form-control" id="data" name="data" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Depoimento</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function alertLogin() {
+        Swal.fire({
+            title: 'Você precisa estar logado para fazer um depoimento!',
+            text: 'Por favor, faça login ou se cadastre.',
+            icon: 'warning',
+            showCancelButton: true, // Mostra o botão de cancelamento
+            confirmButtonText: 'Ir para o login', // Botão de confirmação
+            cancelButtonText: 'Fechar', // Botão de cancelamento
+            confirmButtonColor: '#66257E',
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "index.php";  // Redireciona para a página de login
+            }
+        });
+    }
+</script>
             <section id="duvidas">
                 <h3 id="titleDuvidas">Dúvidas Frequentes</h3>
                 <div class="duvidas-comentarios">
@@ -271,16 +288,43 @@ session_start();
 
                     <!-- Seção de Comentários -->
                     <div id="contato">
-                        <h3 id="contatotitle">Entre em Contato</h3>
+                    <h3 id="contatotitle">Entre em Contato</h3>
                         <div class="comment-section">
-                            <h3>Escreva seu comentário</h3>
-                            <textarea placeholder="Eu não entendi como funciona..."></textarea>
-                            <button type="button" class="btn btn-primary">Enviar</button>
+                            <h3>Deixe aqui sua dúvida</h3>
+                            <form action="salvar-comentario.php" method="POST" id="commentForm">
+                                <input type="hidden" name="id_usuario" value="<?php echo isset($_SESSION['id_sessao']) ? htmlspecialchars($_SESSION['id_sessao'], ENT_QUOTES, 'UTF-8') : ''; ?>">
+
+                                <textarea name="comentario" placeholder="Eu não entendi como funciona..." required></textarea>
+                                
+                                <?php if (isset($_SESSION['id_sessao'])): ?>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                <?php else: ?>
+                                    <button type="button" class="btn btn-primary" onclick="alertNaoLogado()">Enviar</button>
+                                <?php endif; ?>
+                            </form>
                         </div>
                     </div>
-
-                </div>
-            </section>
+    <script>
+        // Função que emite o alerta caso o usuário não esteja logado
+        function alertNaoLogado() {
+            Swal.fire({
+            title: 'Você precisa estar logado para fazer um comentário!',
+            text: 'Por favor, faça login.',
+            icon: 'warning',
+            showCancelButton: true, // Mostra o botão de cancelamento
+            confirmButtonText: 'Ir para o login', // Botão de confirmação
+            cancelButtonText: 'Fechar', // Botão de cancelamento
+            confirmButtonColor: '#66257E',
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "index.php";  // Redireciona para a página de login
+            }
+        });
+        }
+    </script>
+</div>
+</section>
     </main>
     <footer>
         <div class="container">

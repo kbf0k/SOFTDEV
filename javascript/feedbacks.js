@@ -1,129 +1,119 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var depoimentoForm = document.getElementById('depoimentoForm');
-  var nomeExibido1 = document.getElementById('nomeExibido1'); 
-  var mensagemExibida1 = document.getElementById('mensagemExibida1');
-  var dataExibida1 = document.getElementById('dataExibida1');
-  var nomeExibido2 = document.getElementById('nomeExibido2'); 
-  var mensagemExibida2 = document.getElementById('mensagemExibida2');
-  var dataExibida2 = document.getElementById('dataExibida2');
-  var nomeExibido3 = document.getElementById('nomeExibido3');
-  var mensagemExibida3 = document.getElementById('mensagemExibida3');
-  var dataExibida3 = document.getElementById('dataExibida3');
-  var nomeExibido4 = document.getElementById('nomeExibido4');
-  var mensagemExibida4 = document.getElementById('mensagemExibida4');
-  var dataExibida4 = document.getElementById('dataExibida4');
-  var exampleModal = document.getElementById('exampleModal'); 
-  var messageWarning = document.getElementById('message-warning'); 
+    var depoimentoForm = document.getElementById('depoimentoForm');
+    var exampleModal = document.getElementById('exampleModal'); 
+    var messageWarning = document.getElementById('message-warning'); 
 
-  depoimentoForm.addEventListener('submit', function(event) {
-      event.preventDefault(); 
+    // Carregar depoimentos quando a página for carregada
+    loadFeedbacks();
 
-      // Captura os valores do formulário
-      var nome = document.getElementById('recipient-name').value;
-      var mensagem = document.getElementById('message-text').value;
-      var data = document.getElementById('data').value;
+    function loadFeedbacks() {
+        const feedbackContainer = document.querySelector('.feedbacks');
+        feedbackContainer.innerHTML = ''; // Limpa os depoimentos existentes
 
-      if (nome.trim() !== '' && mensagem.trim() !== '' && data !== '') {
-          const minLength = 70;
-          const maxLength = 200;
+        fetch('buscar_depoimentos.php')
+            .then(response => response.json())
+            .then(data => {
+                // Caso não haja depoimentos
+                if (data.length === 0) {
+                    feedbackContainer.innerHTML = '<p>Nenhum depoimento encontrado.</p>';
+                } else {
+                    // Para cada depoimento, cria um card e adiciona no container
+                    data.forEach(feedback => {
+                        const card = document.createElement('div');
+                        card.classList.add('feedback-card');
 
-          if (mensagem.length < minLength || mensagem.length > maxLength) {
-              messageWarning.textContent = `O depoimento deve ter entre ${minLength} e ${maxLength} caracteres.`;
-              return; 
-          } else {
-              messageWarning.textContent = ""; 
-          }
+                        card.innerHTML = `
+                            <h3>${feedback.nome}</h3>
+                            <p>${feedback.data}</p>
+                            <p>${feedback.mensagem}</p>
+                        `;
 
-        
-          const regex = /^[A-Za-zÀ-ÖØ-ÿ0-9\s,.?!'";:-]+$/;
-
-          if (!regex.test(mensagem)) {
-              messageWarning.textContent = "Por favor, insira apenas letras, números e espaços.";
-              return; 
-          } else {
-              messageWarning.textContent = ""; 
-          }
-
-          // Verifica se há uma palavra com mais de 20 caracteres consecutivos
-          const longWordRegex = /\b\w{21,}\b/; // Palavra com mais de 20 caracteres
-
-          if (longWordRegex.test(mensagem)) {
-              messageWarning.textContent = "Nenhuma palavra pode ter mais de 20 caracteres consecutivos.";
-              return; 
-          } else {
-              messageWarning.textContent = ""; 
-          }
-
-          // Formata a data para o formato desejado
-          var dataFormatada = new Date(data);
-          var opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
-          var dataString = dataFormatada.toLocaleDateString('pt-BR', opcoes); // Formato: dd/mm/yyyy
-
-          // Desloca os depoimentos existentes
-          nomeExibido4.textContent = nomeExibido3.textContent;
-          mensagemExibida4.textContent = mensagemExibida3.textContent;
-          dataExibida4.textContent = dataExibida3.textContent;
-
-          nomeExibido3.textContent = nomeExibido2.textContent;
-          mensagemExibida3.textContent = mensagemExibida2.textContent;
-          dataExibida3.textContent = dataExibida2.textContent;
-
-          nomeExibido2.textContent = nomeExibido1.textContent;
-          mensagemExibida2.textContent = mensagemExibida1.textContent;
-          dataExibida2.textContent = dataExibida1.textContent;
-
-          nomeExibido1.textContent = nome;
-          mensagemExibida1.textContent = mensagem;
-          dataExibida1.textContent = dataString;
-
-          var modalInstance = bootstrap.Modal.getInstance(exampleModal);
-          modalInstance.hide();
-
-          depoimentoForm.reset();
-      } else {
-          alert('Por favor, preencha todos os campos.');
-      }
-  });
-});
-// script.js
-
-const feedbacks = [
-    {
-        name: "Tiago de Souza Barbosa",
-        date: "2023-12-13",
-        rating: 5,
-        review: "Espaço muito legal para crianças, com atividades criativas e educativas. É uma opção muito boa para o contra-turno escolar e colônia de férias."
-    },
-    {
-        name: "Julia Travasso",
-        date: "2023-10-30",
-        rating: 5,
-        review: "Excelente espaço, monitoras super carinhosas e atenciosas! Meu filho ama estar lá ❤️"
+                        feedbackContainer.appendChild(card);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao carregar depoimentos:', error);
+            });
     }
-];
 
-function loadFeedbacks() {
-    const feedbackContainer = document.querySelector('.feedbacks');
-    feedbackContainer.innerHTML = '';
+    // Envio de depoimento
+    depoimentoForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
 
-    feedbacks.forEach(feedback => {
-        const card = document.createElement('div');
-        card.classList.add('feedback-card');
+        // Captura os valores do formulário
+        var nome = document.getElementById('recipient-name').value;
+        var mensagem = document.getElementById('message-text').value;
+        var data = document.getElementById('data').value;
 
-        card.innerHTML = `
-            <h3>${feedback.name}</h3>
-            <p>${feedback.date}</p>
-            <div class="stars">${'&#9733;'.repeat(feedback.rating)}</div>
-            <p>${feedback.review}</p>
-        `;
+        if (nome.trim() !== '' && mensagem.trim() !== '' && data !== '') {
+            const minLength = 40;
+            const maxLength = 200;
 
-        feedbackContainer.appendChild(card);
+            if (mensagem.length < minLength || mensagem.length > maxLength) {
+                messageWarning.textContent = `O depoimento deve ter entre ${minLength} e ${maxLength} caracteres.`;
+                return; 
+            } else {
+                messageWarning.textContent = ""; 
+            }
+
+            const regex = /^[A-Za-zÀ-ÖØ-ÿ0-9\s,.?!'";:-]+$/;
+
+            if (!regex.test(mensagem)) {
+                messageWarning.textContent = "Por favor, insira apenas letras, números e espaços.";
+                return; 
+            } else {
+                messageWarning.textContent = ""; 
+            }
+
+            const longWordRegex = /\b\w{21,}\b/;
+
+            if (longWordRegex.test(mensagem)) {
+                messageWarning.textContent = "Nenhuma palavra pode ter mais de 20 caracteres consecutivos.";
+                return; 
+            } else {
+                messageWarning.textContent = ""; 
+            }
+
+            var dataFormatada = new Date(data);
+            var opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            var dataString = dataFormatada.toLocaleDateString('pt-BR', opcoes); 
+
+            // Envia os dados do formulário para o servidor (PHP)
+            const formData = new FormData();
+            formData.append('nome', nome);
+            formData.append('mensagem', mensagem);
+            formData.append('data', data);
+
+            fetch('inserir_depoimento.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Atualiza os depoimentos após inserção
+                    loadFeedbacks();
+
+                    var modalInstance = bootstrap.Modal.getInstance(exampleModal);
+                    modalInstance.hide();
+
+                    depoimentoForm.reset();
+                } else {
+                    messageWarning.textContent = 'Erro ao inserir depoimento.';
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao enviar depoimento:', error);
+                messageWarning.textContent = 'Erro ao enviar depoimento.';
+            });
+        } else {
+            alert('Por favor, preencha todos os campos.');
+        }
     });
-}
+});
 
-document.addEventListener('DOMContentLoaded', loadFeedbacks);
-
-
+// Função de logout
 document.getElementById('logout').addEventListener('click', () => {
     Swal.fire({
         title: "Você deseja sair?",
@@ -146,3 +136,4 @@ document.getElementById('logout').addEventListener('click', () => {
         }
     });
 });
+

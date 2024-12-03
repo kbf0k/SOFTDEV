@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $novo_nome = $_POST['nome'];
     $novo_sobrenome = $_POST['sobrenome'];
     $novo_email = $_POST['email'];
+    $_SESSION['nome_sessao'] = $novo_nome;
 
     // Verifica se houve alguma alteração
     if ($novo_nome == $nome && $novo_sobrenome == $sobrenome && $novo_email == $email) {

@@ -6,9 +6,10 @@
     box-sizing: border-box;
     font-family: 'Poppins';
 }
+
 body {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,120,1) 100%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 120, 1) 100%);
     margin: 0;
     padding: 0;
     height: 280vh;
@@ -58,14 +59,14 @@ li:hover {
     transform: scale(1.10);
 }
 
-.perfil{
+.perfil {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.user{
+.user {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,19 +74,22 @@ li:hover {
     margin-top: 30px;
 }
 
-.user #user-logo{
+.user #user-logo {
     max-width: 50px;
 }
 
-.user p{
+.user p {
     color: white;
     text-transform: capitalize;
 }
+
 .user a {
-    text-decoration: none; /* Remover o sublinhado dos links */
+    text-decoration: none;
+    /* Remover o sublinhado dos links */
     margin-top: 5px;
 }
-.logout img{
+
+.logout img {
     max-width: 40px;
     margin-left: 30px;
     cursor: pointer;
@@ -195,8 +199,8 @@ li:hover {
 }
 
 #timer {
-    font-size: 48px; 
-    font-family: 'Courier New', monospace; 
+    font-size: 48px;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
     letter-spacing: 3px;
     background-color: black;
@@ -205,11 +209,11 @@ li:hover {
 }
 
 timer:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
 timer:active {
-        transform: translateY(0); 
+    transform: translateY(0);
 }
 
 /* Seção de Chamada para Ação (CTA) */
@@ -242,13 +246,13 @@ timer:active {
 }
 
 .cta-button:hover {
-    background-color: purple; 
+    background-color: purple;
     color: white;
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
 .cta-button:active {
-    transform: translateY(0); 
+    transform: translateY(0);
 }
 
 #tudomesmo {
@@ -270,7 +274,7 @@ h2 {
     font-size: 40px
 }
 
-  .form-container {
+.form-container {
     background-color: #8A2BE2;
     border-radius: 25px;
     padding: 20px;
@@ -296,18 +300,21 @@ form {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
 }
+
 .termos {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
 }
+
 textarea {
     resize: none;
     grid-column: span 2;
@@ -336,6 +343,7 @@ textarea {
 .form-group input[type="checkbox"] {
     margin-right: 10px;
 }
+
 #botao {
     padding: 10px 20px;
     font-size: 16px;
@@ -446,6 +454,18 @@ textarea {
     .logout img {
         margin-top: 0;
     }
+
+    form {
+        display: block !important;
+    }
+
+    .form-container {
+        width: 350px !important;
+    }
+
+    #pagamento {
+        width: auto !important;
+    }
 }
 
 #pagamento {
@@ -462,13 +482,15 @@ textarea {
     border-radius: 10px;
     margin-top: 40px;
 }
+
 .form-container {
     background-color: #8A2BE2;
     border-radius: 25px;
     padding: 20px;
     width: 900px;
     margin-bottom: 100px;
-    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+    text-align: center;
+    /* Centraliza o conteúdo dentro do contêiner */
 }
 
 .form-container {
@@ -477,7 +499,8 @@ textarea {
     padding: 20px;
     width: 900px;
     margin-bottom: 50px;
-    text-align: center; /* Adiciona centralização para o botão */
+    text-align: center;
+    /* Adiciona centralização para o botão */
 }
 
 .submit-btn {
@@ -497,6 +520,7 @@ textarea {
     background-color: darkgreen;
     transform: translateY(-2px);
 }
+
 footer {
     position: relative;
     background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);

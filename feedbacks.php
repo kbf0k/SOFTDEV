@@ -332,8 +332,8 @@ while ($row = $stmt->fetch_assoc()) {
                 <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
-                <h4>Buffet Fun Farra</h4>
-                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                <h4>Buffet PARTY NET</h4>
+                <p>O Buffet PARTY NET convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
                     garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
                     responsável,
                     cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
@@ -350,7 +350,7 @@ while ($row = $stmt->fetch_assoc()) {
             </div>
         </div>
         <div class="bottom">
-            &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
+            &copy; Buffet Infantil PARTY NET. Todos os direitos reservados.
         </div>
     </footer>
 </body>

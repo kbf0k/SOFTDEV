@@ -95,7 +95,6 @@ $conexao->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <!-- CSS BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/perfil.css">
     <script src="javascript/perfil.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -113,7 +112,7 @@ $conexao->close();
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
+                cancelButtonColor: "#6334B1",
                 confirmButtonText: "Sim, excluir!",
                 cancelButtonText: "Cancelar"
             }).then((result) => {
@@ -130,7 +129,7 @@ $conexao->close();
                 title: "Perfil atualizado!",
                 text: "O perfil foi atualizado com sucesso.",
                 icon: "success",
-                confirmButtonColor: "#4b3f35"
+                confirmButtonColor: "#6334B1"
             }).then(() => {
                 <?php unset($_SESSION['success_message']); ?>
                 location.href = location.href;
@@ -140,7 +139,7 @@ $conexao->close();
                 title: "Conta deletada!",
                 text: "Sua conta foi deletada com sucesso.",
                 icon: "success",
-                confirmButtonColor: "#4b3f35"
+                confirmButtonColor: "#6334B1"
             }).then(() => {
                 <?php unset($_SESSION['success_message']); ?>
                 window.location.href = 'inicio.php';  // Redireciona após a exclusão
@@ -240,10 +239,10 @@ $conexao->close();
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>" required>
                 </div>
+                <button id="att-profile" type="submit" name="update" class="btn">Atualizar perfil</button>
                 <div class="form-group">
                 <a href="esqueceu.php"><button type="button" class="btn">Redefinir Senha</button></a>
                 </div>
-                <button id="att-profile" type="submit" name="update" class="btn">Atualizar perfil</button>
             </form>
 
             <h2>Excluir conta</h2>
@@ -261,8 +260,8 @@ $conexao->close();
                 <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
-                <h4>Buffet Fun Farra</h4>
-                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                <h4>Buffet PARTY NET</h4>
+                <p>O Buffet PARTY NET convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
                     garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
                     responsável,
                     cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
@@ -279,7 +278,7 @@ $conexao->close();
             </div>
         </div>
         <div class="bottom">
-            &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
+            &copy; Buffet Infantil PARTY NET. Todos os direitos reservados.
         </div>
     </footer>
     <!-- JavaScript do Bootstrap -->

@@ -4,7 +4,7 @@ document.getElementById('logout').addEventListener('click', () => {
         text: "Não será possível reverter isso",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
+        confirmButtonColor: "#6334B1",
         cancelButtonColor: "#d33",
         confirmButtonText: "Sim, sair"
     }).then((result) => {

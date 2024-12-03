@@ -1,4 +1,3 @@
-
 document.getElementById('logout').addEventListener('click', () => {
     Swal.fire({
         title: "Você deseja sair?",
@@ -12,25 +11,42 @@ document.getElementById('logout').addEventListener('click', () => {
         if (result.isConfirmed) {
             fetch('logout.php', {
                 method: 'POST'
-            })
-                .then(response => {
-                    if (response.ok) {
-                        window.location.href = "index.php";
-                    }
-                })
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = "index.php";
+                }
+            });
         }
     });
 });
 
+document.getElementById('button-enviar').addEventListener('click', () => {
+    Swal.fire({
+        title: 'Você precisa estar logado para realizar o orçamento',
+        text: 'Não será possível fazer isso',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#6334B1',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ir para o login'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'index.php';
+        }
+    });
+});
+
+
 function menuShow() {
     let menuMobile = document.querySelector('.mobile-menu');
+    const icon = document.querySelector('.icon');
+
     if (menuMobile.classList.contains('open')) {
-        menuMobile.classList.remove('open')
-        document.querySelector('.icon').src = "img/menu_white_36dp.svg"
-    }
-    else {
-        menuMobile.classList.add('open')
-        document.querySelector('.icon').src = "img/close_white_36dp.svg"
+        menuMobile.classList.remove('open');
+        icon.src = "img/menu_white_36dp.svg";
+    } else {
+        menuMobile.classList.add('open');
+        icon.src = "img/close_white_36dp.svg";
     }
 }
 
@@ -40,18 +56,8 @@ function exibirBotaoCartao() {
     const pixContainer = document.getElementById('pix-container');
     const cartaoContainer = document.getElementById('cartao-container');
 
-    if (selectedValue === 'pix') {
-        pixContainer.style.display = 'block';
-    } else {
-        pixContainer.style.display = 'none';
-    }
-
-    // Esconder ou mostrar o container do cartão, se necessário
-    if (selectedValue === 'cartao') {
-        cartaoContainer.style.display = 'block';
-    } else {
-        cartaoContainer.style.display = 'none';
-    }
+    pixContainer.style.display = selectedValue === 'pix' ? 'block' : 'none';
+    cartaoContainer.style.display = selectedValue === 'cartao' ? 'block' : 'none';
 }
 
 document.querySelector('form').addEventListener('submit', function (e) {
@@ -61,8 +67,10 @@ document.querySelector('form').addEventListener('submit', function (e) {
         e.preventDefault();
     }
 });
+
+// Express Server
 const express = require("express");
-const axios = require("axios"); // Para fazer requisições HTTP
+const axios = require("axios");
 const app = express();
 
 app.use(express.json());
@@ -71,15 +79,19 @@ app.post("/gerar-boleto", async (req, res) => {
     const { nome, cpf, valor } = req.body;
 
     try {
-        const response = await axios.post("https://api.gerencianet.com.br/v1/boleto", {
-            nome,
-            cpf,
-            valor: parseInt(valor * 100), // Valor em centavos
-        }, {
-            headers: {
-                Authorization: "Bearer SEU_TOKEN_DE_AUTENTICACAO",
+        const response = await axios.post(
+            "https://api.gerencianet.com.br/v1/boleto",
+            {
+                nome,
+                cpf,
+                valor: parseInt(valor * 100), // Valor em centavos
             },
-        });
+            {
+                headers: {
+                    Authorization: "Bearer SEU_TOKEN_DE_AUTENTICACAO",
+                },
+            }
+        );
 
         const boleto_url = response.data.data.boleto_url;
         res.json({ boleto_url });
@@ -91,22 +103,19 @@ app.post("/gerar-boleto", async (req, res) => {
 
 app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
 
-// Função para iniciar o contador
+// Contador regressivo
 function startCountdown(duration) {
     const timerElement = document.getElementById('timer');
-    let time = duration; // Tempo inicial em segundos
+    let time = duration;
 
     const interval = setInterval(() => {
-        const hours = Math.floor(time / 3600); // Calcular horas
-        const minutes = Math.floor((time % 3600) / 60); // Calcular minutos
-        const seconds = time % 60; // Calcular segundos
+        const hours = Math.floor(time / 3600);
+        const minutes = Math.floor((time % 3600) / 60);
+        const seconds = time % 60;
 
-        // Exibir o timer no formato: hh:mm:ss
         timerElement.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-
         time--;
 
-        // Se o tempo acabar, pare o contador
         if (time < 0) {
             clearInterval(interval);
             timerElement.textContent = "Oferta Expirada!";
@@ -114,11 +123,9 @@ function startCountdown(duration) {
     }, 1000);
 }
 
-// Função para adicionar zero à frente se o número for menor que 10
 function pad(number) {
     return number < 10 ? `0${number}` : number;
 }
 
-// Iniciar o contador com 20 horas, 9 minutos e 10 segundos
-startCountdown(20 * 3600 + 9 * 60 + 10); // 20:09:10 em segundos
-
+// Iniciar contador com 20:09:10
+startCountdown(20 * 3600 + 9 * 60 + 10);

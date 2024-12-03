@@ -156,6 +156,7 @@ main {
 #main-real {
     animation: fadeIn 1s ease-in-out;
 }
+
 main {
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 120, 1) 100%);
@@ -197,30 +198,45 @@ main {
     padding: 20px;
     margin: 10px;
     width: 450px;
-    height: 250px; 
+    height: 250px;
     box-shadow: 0 0 10px rgba(11, 78, 5, 0.1);
     transition: all 0.5s ease-in-out;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative; /* Adicione esta linha */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave para transformação e opacidade */
+    position: relative;
+    /* Adicione esta linha */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Transição suave para transformação e opacidade */
 }
+
+#faq {
+    display: flex;
+    justify-content: center;
+}
+
 .fade-in {
-    opacity: 0; /* Começa invisível */
-    transform: translateY(-10px); /* Move um pouco para cima */
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateY(-10px);
+    /* Move um pouco para cima */
 }
 
 .fade-out {
-    opacity: 0; /* Fica invisível */
-    transform: translateY(10px); /* Move um pouco para baixo */
+    opacity: 0;
+    /* Fica invisível */
+    transform: translateY(10px);
+    /* Move um pouco para baixo */
 }
 
 .visible {
-    opacity: 1; /* Fica visível */
-    transform: translateY(0); /* Volta para a posição original */
+    opacity: 1;
+    /* Fica visível */
+    transform: translateY(0);
+    /* Volta para a posição original */
 }
+
 .feedback-content {
     display: flex;
     align-items: flex-start;
@@ -228,10 +244,12 @@ main {
 }
 
 .feedback-text {
-    max-height: 150px; 
-    word-wrap: break-word; 
-    margin-right: 5px; /* Adiciona um espaço à esquerda */
-    right: 10px; /* Distância da direita */
+    max-height: 150px;
+    word-wrap: break-word;
+    margin-right: 5px;
+    /* Adiciona um espaço à esquerda */
+    right: 10px;
+    /* Distância da direita */
 }
 
 .imagemcontato {
@@ -249,23 +267,28 @@ main {
 .caixa h3 {
     margin-top: 3px;
     color: #ffffff;
-    font-size: 17px; 
+    font-size: 17px;
     position: absolute;
-    bottom: 10px; /* Distância da parte inferior da caixa */
-    margin-left: -8.5px; /* Ajuste conforme necessário */
-   
+    bottom: 10px;
+    /* Distância da parte inferior da caixa */
+    margin-left: -8.5px;
+    /* Ajuste conforme necessário */
+
 }
 
 .caixa p {
     line-height: 1.6;
     margin: 10px 0;
     text-align: justify;
-    overflow-wrap: break-word; /* Quebra palavras para evitar que o texto ultrapasse a caixa */
-    white-space: normal; /* Permite que o texto quebre em múltiplas linhas */
+    overflow-wrap: break-word;
+    /* Quebra palavras para evitar que o texto ultrapasse a caixa */
+    white-space: normal;
+    /* Permite que o texto quebre em múltiplas linhas */
     max-width: 400px;
     margin-right: 5px;
     margin-left: -8.5px;
 }
+
 .feedback-content {
     display: flex;
     align-items: flex-start;
@@ -273,7 +296,7 @@ main {
 
 .depoimento-container {
     text-align: center;
-    margin-top:50%;
+    margin-top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -291,7 +314,6 @@ main {
     font-size: 16px;
     margin-bottom: 20px;
     margin-top: 30px;
-    margin-left: 652px;
 }
 
 .modal-footer button {
@@ -302,6 +324,7 @@ main {
     cursor: pointer;
     font-size: 16px;
 }
+
 .modal-footer button:hover {
     background-color: #501277;
     cursor: pointer;
@@ -341,7 +364,8 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.comment-section{
+
+.comment-section {
     flex: 1;
     width: 575px;
     height: 265px;
@@ -351,6 +375,7 @@ main {
     background-color: #fff;
     margin-top: -182px;
 }
+
 .comment-section h3 {
     font-weight: bold;
     color: #333;
@@ -358,18 +383,20 @@ main {
 }
 
 .comment-section textarea {
-    width: 100%;           
-    max-width: 600px;      
-    min-height: 140px;     
-    padding: 10px;          
+    width: 100%;
+    max-width: 600px;
+    min-height: 140px;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;     
-    font-size: 16px;       
-    color: #333;           
-    background-color: #f9f9f9; 
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
     transition: border-color 0.3s, box-shadow 0.3s;
-    resize: none; /* Remove o redimensionamento */
-    overflow: auto; /* Garante que o conteúdo rolável funcione */
+    resize: none;
+    /* Remove o redimensionamento */
+    overflow: auto;
+    /* Garante que o conteúdo rolável funcione */
 }
 
 .comment-section button {
@@ -378,18 +405,22 @@ main {
     background-color: #6334B1;
     border: 1px solid black;
 }
-.comment-section button:hover{
+
+.comment-section button:hover {
     background-color: #490961;
     cursor: pointer;
 }
-.comment-section button:active{
+
+.comment-section button:active {
     color: black;
 }
-#contato{
-   margin-right:-270px ;
-   width: 650px;
+
+#contato {
+    margin-right: -270px;
+    width: 650px;
 }
-#contatotitle{
+
+#contatotitle {
     color: white;
     margin-bottom: 200px;
     margin-top: -53px;
@@ -397,25 +428,25 @@ main {
 }
 
 .accordion-item {
-    border: none; 
-    margin-bottom: 0.5rem; 
-    border-radius: 0.5rem; 
-    overflow: hidden; 
+    border: none;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .accordion-button {
-    background-color: #a841ec !important; 
-    color: #ffffff !important; 
-    font-weight: bold; 
+    background-color: #a841ec !important;
+    color: #ffffff !important;
+    font-weight: bold;
     border: none;
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-    padding: 0.75rem 1.0rem; 
-    border-radius: 0; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0.75rem 1.0rem;
+    border-radius: 0;
 }
 
 .accordion-button:hover {
-    background-color: #9b59b6; 
-    transform: scale(1.02); 
+    background-color: #9b59b6;
+    transform: scale(1.02);
     cursor: pointer;
 }
 
@@ -424,29 +455,36 @@ main {
     background-color: #6f42c1;
     color: #ffffff;
     outline: 2px solid #9b59b6;
-    outline-offset: 2px; 
+    outline-offset: 2px;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #9b59b6 ; 
-    color: #ffffff; 
+    background-color: #9b59b6;
+    color: #ffffff;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .accordion-collapse {
     background-color: #f5c9e8;
-    border-top: 1px solid #e9e9e9; 
+    border-top: 1px solid #e9e9e9;
     transition: height 0.4s ease;
 }
 
 .accordion-body {
-    color: #333333; /* Torna o texto mais legível */
-    padding: 1rem; /* Mantém espaçamento interno padrão */
-    font-size: 0.95rem; /* Ajusta tamanho da fonte */
-    line-height: 1.5; /* Melhora legibilidade */
-    background-color: #fefefe; /* Contraste leve com o colapso */
-    border-radius: 0 0 0.5rem 0.5rem; /* Arredonda apenas os cantos inferiores */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento interno */
+    color: #333333;
+    /* Torna o texto mais legível */
+    padding: 1rem;
+    /* Mantém espaçamento interno padrão */
+    font-size: 0.95rem;
+    /* Ajusta tamanho da fonte */
+    line-height: 1.5;
+    /* Melhora legibilidade */
+    background-color: #fefefe;
+    /* Contraste leve com o colapso */
+    border-radius: 0 0 0.5rem 0.5rem;
+    /* Arredonda apenas os cantos inferiores */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Adiciona um leve sombreamento interno */
 }
 
 footer {
@@ -583,6 +621,8 @@ footer .bottom {
         display: block;
         text-align: center;
         transition: all 2s ease-in-out;
+        margin-bottom: 0 !important;
+
     }
 
     .mobile-menu li a {
@@ -601,11 +641,35 @@ footer .bottom {
     .logout img {
         margin-top: 0;
     }
+
+    main {
+        height: 305vh !important;
+    }
+
+    #contatotitle {
+        margin-bottom: 50px !important;
+        margin-top: 70px !important;
+    }
+
+    #caixas-superiores {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+    }
+
+    #caixas-inferiores {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+    }
 }
+
 /* Responsividade */
 @media (max-width: 1024px) {
     #duvidas {
-        margin-left: 30px;
+        margin-left: 0;
     }
 
     #titleDuvidas {
@@ -637,15 +701,12 @@ footer .bottom {
     #contatotitle {
         margin-left: 0;
         text-align: center;
-        margin-top: 10px; /* Ajustado para reduzir o espaço acima do título */
+        margin-top: 10px;
+        /* Ajustado para reduzir o espaço acima do título */
     }
 }
 
 @media (max-width: 768px) {
-    #duvidas {
-        padding: 15px;
-        margin-left: 0;
-    }
 
     .duvidas-comentarios {
         flex-direction: column;
@@ -661,7 +722,8 @@ footer .bottom {
 
     .comment-section {
         height: auto;
-        margin-top: 0; /* Remove o espaçamento extra */
+        margin-top: 0;
+        /* Remove o espaçamento extra */
     }
 
     #contato {
@@ -675,7 +737,8 @@ footer .bottom {
 
     #contatotitle {
         margin-left: 0;
-        margin-top: 10px; /* Ajustado para reduzir o espaço */
+        margin-top: 10px;
+        /* Ajustado para reduzir o espaço */
     }
 }
 
@@ -695,14 +758,16 @@ footer .bottom {
 
     #contatotitle {
         margin-left: 0;
-        margin-top: 10px; /* Ajustado para reduzir o espaço no título */
+        margin-top: 10px;
+        /* Ajustado para reduzir o espaço no título */
     }
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
     #pageTitle {
-        margin-top: -20px;
-        margin-bottom: -40px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 
     #pageSubtitle {
@@ -712,6 +777,10 @@ footer .bottom {
 
     #caixas {
         padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .caixa {
@@ -744,7 +813,8 @@ footer .bottom {
 
 @media (max-width: 480px) {
     .caixa {
-        width: 100%;
+        width: 85%;
+        height: 350px;
     }
 
     #buttondepoiment {

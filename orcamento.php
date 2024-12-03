@@ -1,6 +1,39 @@
 <?php
 include_once('config.php');
 session_start();
+
+if (!isset($_SESSION['id_sessao'])) {
+    die("Você precisa estar logado para acessar esta página.");
+}
+
+$id_usuario = $_SESSION['id_sessao'];
+
+$query = "
+    SELECT c.id_cardapio, c.nome 
+    FROM usuario_cardapio u
+    JOIN cardapio c ON u.id_cardapio = c.id_cardapio
+    WHERE u.id_usuario = ?
+    
+    UNION
+    
+    SELECT NULL AS id_cardapio, 'Cardápio Personalizado' AS nome
+    FROM cardapio_personalizado u
+    WHERE u.id_usuario = ?
+";
+
+$stmt = $conexao->prepare($query);
+
+if ($stmt === false) {
+    die("Erro na preparação da consulta: " . $conexao->error);
+}
+
+$stmt->bind_param("ii", $id_usuario, $id_usuario);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows == 0) {
+    echo "Nenhum cardápio encontrado para o usuário.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +66,10 @@ session_start();
             <div class="perfil">
                 <?php if (isset($_SESSION['nome_sessao'])): ?>
                     <div class="user">
-                    <a href="perfil.php">
-                        <img id="user-logo" src="img/user-vector.png" alt="">
-                        <p><?= $_SESSION['nome_sessao'] ?></p>
-                    </a>
+                        <a href="perfil.php">
+                            <img id="user-logo" src="img/user-vector.png" alt="">
+                            <p><?= $_SESSION['nome_sessao'] ?></p>
+                        </a>
                     </div>
                     <div class="logout">
                         <img id="logout" src="img/logout.png" alt="">
@@ -64,15 +97,15 @@ session_start();
         </div>
     </header>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-            <defs>
-                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#66257E;" />
-                    <stop offset="50%" style="stop-color:#6334B1;" />
-                    <stop offset="100%" style="stop-color:#B843E4;" />
-                </linearGradient>
-            </defs>
-            <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
-        </svg>
+        <defs>
+            <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#66257E;" />
+                <stop offset="50%" style="stop-color:#6334B1;" />
+                <stop offset="100%" style="stop-color:#B843E4;" />
+            </linearGradient>
+        </defs>
+        <path fill="url(#waveGradient1)" d="M0,0 H1440 V20 Q1200,70 960,30 Q720,-10 480,30 Q240,70 0,30 Z"></path>
+    </svg>
     <section class="benefits-section">
         <h3>Por que fazer seu orçamento agora?</h3>
         <ul>
@@ -132,8 +165,17 @@ session_start();
                     </div>
 
                     <div class="form-group">
-                        <label for="adicionais">Adicionais (lembrancinhas, etc.):</label>
-                        <input type="text" id="adicionais" name="adicionais">
+                        <label for="cardapio">Cardápio:</label>
+                        <select id="cardapio" name="cardapio" required>
+                            <option value="">Selecione...</option>
+                            <?php
+                            while ($row = $result->fetch_assoc()) {
+                                $nome = $row['nome'];
+                                $id_cardapio = $row['id_cardapio']; // ID do cardápio ou NULL se for "Cardápio Personalizado"
+                                echo "<option value='" . ($id_cardapio ? $id_cardapio : '') . "'>$nome</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -167,7 +209,33 @@ session_start();
                     </div>
                 </form>
             </div>
-            <button type="button" class="submit-btn" onclick="enviarFormulario()">Enviar</button>
+
+            <?php
+            if (isset($_SESSION['nome_sessao'])) {
+                echo '<button type="button" class="submit-btn" onclick="enviarFormulario()">Enviar</button>';
+            } else {
+                echo '<button type="button" class="submit-btn" id="button-enviar">Enviar</button>';
+                echo '<script>
+    document.getElementById("button-enviar").addEventListener("click", () => {
+        Swal.fire({
+            title: "Você precisa estar logado para realizar o orçamento",
+            text: "Não será possível fazer isso",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#6334B1",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ir para o login"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "index.php";
+            }
+        });
+    });
+    </script>';
+            }
+            ?>
+
+
     </div>
     </section>
     <footer>
@@ -176,8 +244,8 @@ session_start();
                 <img src="img/partynet_img.png" alt="TDA Logo" class="footer-logo">
             </div>
             <div class="footer-section">
-                <h4>Buffet Fun Farra</h4>
-                <p>O Buffet Fun Farra convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
+                <h4>Buffet PARTY NET</h4>
+                <p>O Buffet PARTY NET convida você a celebrar sua festa conosco. Oferecemos brinquedos incríveis que
                     garantirão a diversão da criançada. Nosso compromisso é proporcionar festas infantis com um serviço
                     responsável,
                     cuidadoso e de alta qualidade, atendendo às suas expectativas com excelência.</p>
@@ -194,7 +262,7 @@ session_start();
             </div>
         </div>
         <div class="bottom">
-            &copy; Buffet Infantil FUN FARRA. Todos os direitos reservados.
+            &copy; Buffet Infantil PARTY NET. Todos os direitos reservados.
         </div>
     </footer>
 
@@ -203,7 +271,7 @@ session_start();
             const pagamento = document.getElementById('pagamento').value;
             const submitBtn = document.querySelector('.submit-btn');
             const valorInput = document.getElementById('valor');
-            
+
             if (pagamento === 'cartao') {
                 submitBtn.textContent = 'Continuar para Cartão de Crédito';
             } else if (pagamento === 'boleto') {
@@ -228,7 +296,14 @@ session_start();
             } else if (pagamento === 'boleto') {
                 window.location.href = `./html/boleto.html?valor=${valor}&descricao=${descricao}`;
             } else {
-                alert('Por favor, selecione uma forma de pagamento válida.');
+                Swal.fire({
+                    title: "Por favor, selecione uma forma de pagamento válida.",
+                    text: "Escolha uma das opções abaixo",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#6334B1",
+                    cancelButtonColor: "#d33",
+                })
             }
         }
     </script>

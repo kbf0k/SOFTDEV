@@ -50,18 +50,18 @@ li a {
 li:hover {
     text-shadow:
         0 0 10px rgba(255, 255, 0, 0.8),
-        0 0 20px rgba(255, 255, 0, 0.6);
+        0 0 20px rgba(255, 255, 0, 0.6) !important;
     transform: scale(1.10);
 }
 
-.perfil {
+.perfil{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.user {
+.user{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,23 +69,20 @@ li:hover {
     margin-top: 30px;
 }
 
-.user #user-logo {
+.user #user-logo{
     max-width: 50px;
 }
 
-.user p {
+.user p{
     color: white;
     text-transform: capitalize;
 }
-
 .user a {
-    text-decoration: none;
-    /* Remover o sublinhado dos links */
-    margin-top: 5px;
-
+    text-decoration: none; /* Remover o sublinhado dos links */
+    margin-top: 20px;
 }
 
-.logout img {
+.logout img{
     max-width: 40px;
     margin-left: 30px;
     cursor: pointer;

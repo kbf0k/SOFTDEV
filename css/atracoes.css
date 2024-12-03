@@ -270,7 +270,7 @@ main {
 /* ATRAÇAO 1 */
 
 #atracoes1 {
-    height: 120vh;
+    height: 140vh;
     background: linear-gradient(#b943e4, #6434b1);
 }
 
@@ -283,7 +283,7 @@ main {
     padding-top: 30px;
     margin-bottom: 50px;
     font-size: 50px;
-    color: #66257e;
+    color: white;
     text-shadow: 0 0 100px white;
     margin-top: 20px;
 }
@@ -306,8 +306,7 @@ main {
     cursor: pointer;
     box-shadow: 0 0 50px #66257E;
     border-radius: 20px;
-    background-color: #f1cbff;
-    color: #66257e;
+    color: white;
     border: 5px solid #66257e;
 }
 

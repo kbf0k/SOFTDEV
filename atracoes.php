@@ -100,42 +100,42 @@ session_start();
 
     <section id="atracoes1">
         <div class="titulo">
-            <h1>ATRAÇÕES PRINCIPAIS</h1>
+            <h1>O que oferecemos?</h1>
         </div>
         <div class="container_atracoes1">
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
-                        <img src="img/brinquedo.png" alt="">
-                        <h1>BRINQUEDOS INFANTIS</h1>
+                        <img src="img/playground.png" alt="">
+                        <h1>Playgrounds</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="img/brinquedos_infantis.jpg" alt="">
-                        <p>Os brinquedos infantis da Party Net garantem diversão com playgrounds temáticos, piscinas de bolinhas, escorregadores e infláveis gigantes. Há também jogos interativos e circuitos que estimulam a criatividade e o desenvolvimento motor.</p>
+                        <img src="img/playground_gigante.webp" alt="">
+                        <p>Explore nossos incríveis playgrounds, repletos de brinquedões emocionantes e infláveis gigantes que garantem diversão sem limites para crianças de todas as idades! Uma experiência cheia de aventura, risadas e muita energia.</p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
-                        <img src="img/fliperama.png " alt="">
-                        <h1>FLIPERAMA E DANÇAS</h1>
+                        <img src="img/bolinhas.png " alt="">
+                        <h1>Brinquedos Clássicos</h1>
                     </div>
                     <div class="trazeira">
-                        <img src="img/fliperama_dança.jpg" alt="">
-                        <p>Os fliperamas da Party Net oferecem jogos interativos que desafiam e divertem, enquanto as pistas de dança, com luzes vibrantes e músicas animadas, garantem momentos de pura alegria para as crianças.</p>
+                        <img src="img/classicos.jpg" alt="">
+                        <p>Os clássicos não podem faltar! Pula-pulas, escorregadores e piscinas de bolinhas garantem a diversão que nunca sai de moda, encantando gerações e proporcionando momentos inesquecíveis.</p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="conteudo">
                     <div class="fronteira">
-                        <img src="img/radical.png" alt="">
-                        <h1>RADICAL</h1>
+                        <img src="img/tirolesa.png" alt="">
+                        <h1>Brinquedos Radicais</h1>
                     </div>
                     <div class="trazeira">
                         <img src="img/brinquedo_radical.jpg" alt="">
-                        <p>Os brinquedos radicais da Party Net são perfeitos para crianças que adoram aventura e adrenalina. Todas as atrações são supervisionadas por profissionais treinados para garantir a segurança e o bem-estar durante as atividades.</p>
+                        <p>Os brinquedos radicais da PartyNet são perfeitos para crianças que adoram aventura e adrenalina. Todas as atrações são supervisionadas por profissionais treinados para garantir a segurança e o bem-estar durante as atividades.</p>
                     </div>
                 </div>
             </div>
@@ -144,12 +144,12 @@ session_start();
 
     <section id="atracoes2">
         <div class="titulo">
-            <h1>EQUIPE DE RECREAÇÃO</h1>
+            <h1>Equipe de Recreação</h1>
         </div>
         <div class="container">
-            <img src="img/equipe_recreacao.png" alt="">
+            <img src="img/recreadores.JPG" alt="">
             <div class="content">
-                <p>A equipe de recreação do Buffet Party Net é formada por profissionais dedicados a criar momentos inesquecíveis e seguros para crianças e adultos. Com atividades criativas e adaptadas para todas as idades, nossos recreadores proporcionam um ambiente acolhedor e alegre em qualquer evento, garantindo diversão e interação para todos os convidados. </p>
+                <p>A equipe de recreação do Buffet PartyNet é formada por profissionais dedicados a criar momentos inesquecíveis e seguros para crianças e adultos. Com atividades criativas e adaptadas para todas as idades, nossos recreadores proporcionam um ambiente acolhedor e alegre em qualquer evento, garantindo diversão e interação para todos os convidados. </p>
             </div>
         </div>
     </section>
@@ -157,7 +157,7 @@ session_start();
 
     <section id="atracoes3">
         <div class="titulo">
-            <h1>OUTRAS ATIVIDADES ATRAÇÕES DIVERSAS</h1>
+            <h1>Outras Atividades</h1>
         </div>
         <div class="container_atracoes3">
             <div class="item-atracoes3">

@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="password" style="margin:0;">Repetir senha</label>
                         <input type="password" name="repetir-senha" id="repetir_senha" placeholder="*****" required>
                     </div>
-                    <button type="submit" name="submit" id="submit">ENTRAR</button>
+                    <button type="submit" name="submit" id="submit">CADASTRAR</button>
                 </form>
             </div>
         </div>

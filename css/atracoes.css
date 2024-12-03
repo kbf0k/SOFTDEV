@@ -167,6 +167,7 @@ main {
     align-items: center;
     flex-direction: column;
     animation: fadeIn 1s ease-in-out;
+    margin-top: -5px;
 }
 
 
@@ -282,8 +283,9 @@ main {
     padding-top: 30px;
     margin-bottom: 50px;
     font-size: 50px;
-    color: white;
+    color: #66257e;
     text-shadow: 0 0 100px white;
+    margin-top: 20px;
 }
 
 .container_atracoes1 {
@@ -302,8 +304,11 @@ main {
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
     cursor: pointer;
-    box-shadow: 0 0 50px black;
+    box-shadow: 0 0 50px #66257E;
     border-radius: 20px;
+    background-color: #f1cbff;
+    color: #66257e;
+    border: 5px solid #66257e;
 }
 
 .card:hover {
@@ -340,7 +345,7 @@ main {
 }
 
 .trazeira {
-    background-color: rgba(0, 0, 0, 0.2);
+    /* background-color: rgba(0, 0, 0, 0.2); */
     transform: rotateY(180deg);
     opacity: 0;
 }
@@ -367,7 +372,7 @@ main {
 .fronteira h1 {
     font-size: 28px;
     text-align: center;
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 .trazeira img {
@@ -376,13 +381,13 @@ main {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); */
     transition: transform 0.3s ease;
 }
 
 .trazeira p {
     text-align: center;
-    color: #e0e0e0;
+    /* color: #e0e0e0; */
     font-size: 16px;
     line-height: 1.6;
     padding: 10px;
@@ -407,6 +412,7 @@ main {
 #atracoes2 {
     height: 100vh;
     background-color: #6434b1;
+    margin-top: -120px;
 }
 
 .container {
@@ -421,6 +427,7 @@ main {
     font-size: 50px;
     text-align: center;
     text-shadow: 0 0 100px white;
+    margin-top: 20px;
 }
 
 #atracoes2 img {
@@ -451,6 +458,7 @@ main {
 #atracoes3 {
     height: 110vh;
     background-color: #6434b1;
+    margin-top: -120px;
 }
 
 #atracoes3 .titulo h1 {
@@ -800,10 +808,6 @@ footer .bottom {
         grid-template-columns: 1fr;
         gap: 20px;
         justify-items: center;
-    }
-
-    #atracoes3 img {
-        max-width: 350px;
     }
 
     footer {

@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+    scroll-behavior: smooth;
 }
 
 nav {
@@ -14,16 +15,18 @@ nav {
     justify-content: space-evenly;
     text-align: center;
     position: sticky;
+    z-index: 999;
 }
 
 #logo-buffet {
     width: 130px;
     height: 130px;
     margin-top: 10px;
-    cursor: pointer;
+    z-index: 5;
+    position: sticky;
 }
 
-header ul {
+ul {
     padding: 30px;
     display: flex;
     justify-content: space-around;
@@ -31,59 +34,62 @@ header ul {
     margin-top: 10px;
 }
 
-header ul li {
+li {
     margin-left: 30px;
     margin-right: 30px;
     transition: transform 0.2s ease, text-shadow 0.2s ease;
 }
 
-header ul li a {
-    text-decoration: none !important;
-    color: yellow !important;
-    font-family: 'Poppins', sans-serif;
+li a {
+    text-decoration: none;
+    color: yellow;
+    font-family: 'Poppins';
     font-size: 16px;
 }
 
-header ul li a:hover {
-    text-decoration: none !important;
-}
-
-header ul li:hover {
-    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6) !important;
-    transform: scale(1.1) !important;
+li:hover {
+    text-shadow:
+        0 0 10px rgba(255, 255, 0, 0.8),
+        0 0 20px rgba(255, 255, 0, 0.6);
+    transform: scale(1.10);
 }
 
 .perfil {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
 .user {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-top: 46px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .user #user-logo {
-    max-width: 50px !important;
+    max-width: 50px;
 }
 
 .user p {
     color: white;
     text-transform: capitalize;
 }
+
 .user a {
-    text-decoration: none; /* Remover o sublinhado dos links */
+    text-decoration: none;
+    /* Remover o sublinhado dos links */
     margin-top: 5px;
+
 }
+
 .logout img {
     max-width: 40px;
     margin-left: 30px;
     cursor: pointer;
-    margin-top: 24px !important;
+    margin-top: 30px;
 }
 
 #login-sign {
@@ -137,6 +143,12 @@ header ul li:hover {
 .mobile-menu {
     display: none;
 }
+
+svg {
+    z-index: 1;
+    position: relative;
+}
+
 main{
     height: 130vh;
 }
@@ -250,14 +262,7 @@ input:focus {
     margin-top: 15px;
     margin-bottom: 40px;
 }
-#att-profile{
-    margin-top: -25px;
-    width: 25%;
-}
-#delete-account-btn{
-    width: 25%;
-    margin-top: 5px;
-}
+
 .btn:hover {
     background-color: #be4cad; /* Cor mais escura para o hover */
     color: white;
@@ -285,6 +290,99 @@ input:focus {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+    header {
+        background: #6334B1;
+    }
+
+    nav {
+        background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    ul {
+        display: none;
+        margin-top: 0;
+    }
+
+    li {
+        display: table;
+        margin: auto;
+    }
+
+    #login-sign {
+        margin: 30px;
+    }
+
+    #logo-buffet {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+    }
+
+    .user a {
+        margin-top: -10px;
+    }
+
+
+    #login-button {
+        width: 80px;
+        height: 40px;
+    }
+
+    .mobile-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+        opacity: 0;
+    }
+
+    .mobile-menu.open {
+        display: block;
+        opacity: 1;
+    }
+
+    .mobile-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-icon .icon {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .mobile-menu ul {
+        display: block;
+        text-align: center;
+        transition: all 2s ease-in-out;
+    }
+
+    .mobile-menu li a {
+        display: block;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .open {
+        display: block;
+        background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
+        width: 100%;
+        transition: all 2s ease-in-out;
+    }
+
+    .logout img {
+        margin-top: 0;
+    }
+
     .container {
         padding: 15px;
     }

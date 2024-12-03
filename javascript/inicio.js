@@ -2,11 +2,11 @@ function menuShow() {
     let menuMobile = document.querySelector('.mobile-menu');
     if (menuMobile.classList.contains('open')) {
         menuMobile.classList.remove('open')
-        document.querySelector('.icon').src = "../img/menu_white_36dp.svg"
+        document.querySelector('.icon').src = "img/menu_white_36dp.svg"
     }
     else {
         menuMobile.classList.add('open')
-        document.querySelector('.icon').src = "../img/close_white_36dp.svg"
+        document.querySelector('.icon').src = "img/close_white_36dp.svg"
     }
 }
 
@@ -65,7 +65,7 @@ document.getElementById('logout').addEventListener('click', () => {
         text: "Não será possível reverter isso",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
+        confirmButtonColor: "#6334B1",
         cancelButtonColor: "#d33",
         confirmButtonText: "Sim, sair"
     }).then((result) => {

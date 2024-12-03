@@ -1,23 +1,3 @@
-function exibirBotaoCartao() {
-  const pagamentoSelect = document.getElementById('pagamento');
-  const selectedValue = pagamentoSelect.value;
-  const pixContainer = document.getElementById('pix-container');
-  const cartaoContainer = document.getElementById('cartao-container');
-
-  if (selectedValue === 'pix') {
-      pixContainer.style.display = 'block';
-  } else {
-      pixContainer.style.display = 'none';
-  }
-
-  // Esconder ou mostrar o container do cartão, se necessário
-  if (selectedValue === 'cartao') {
-      cartaoContainer.style.display = 'block';
-  } else {
-      cartaoContainer.style.display = 'none';
-  }
-}
-
 
 document.getElementById('logout').addEventListener('click', () => {
     Swal.fire({
@@ -25,7 +5,7 @@ document.getElementById('logout').addEventListener('click', () => {
         text: "Não será possível reverter isso",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
+        confirmButtonColor: "#6334B1",
         cancelButtonColor: "#d33",
         confirmButtonText: "Sim, sair"
     }).then((result) => {
@@ -33,16 +13,48 @@ document.getElementById('logout').addEventListener('click', () => {
             fetch('logout.php', {
                 method: 'POST'
             })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = "index.php";
-                }
-            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = "index.php";
+                    }
+                })
         }
     });
 });
 
-document.querySelector('form').addEventListener('submit', function(e) {
+function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open')) {
+        menuMobile.classList.remove('open')
+        document.querySelector('.icon').src = "img/menu_white_36dp.svg"
+    }
+    else {
+        menuMobile.classList.add('open')
+        document.querySelector('.icon').src = "img/close_white_36dp.svg"
+    }
+}
+
+function exibirBotaoCartao() {
+    const pagamentoSelect = document.getElementById('pagamento');
+    const selectedValue = pagamentoSelect.value;
+    const pixContainer = document.getElementById('pix-container');
+    const cartaoContainer = document.getElementById('cartao-container');
+
+    if (selectedValue === 'pix') {
+        pixContainer.style.display = 'block';
+    } else {
+        pixContainer.style.display = 'none';
+    }
+
+    // Esconder ou mostrar o container do cartão, se necessário
+    if (selectedValue === 'cartao') {
+        cartaoContainer.style.display = 'block';
+    } else {
+        cartaoContainer.style.display = 'none';
+    }
+}
+
+document.querySelector('form').addEventListener('submit', function (e) {
     const terms = document.getElementById('terms');
     if (!terms.checked) {
         alert("Você deve aceitar os Termos e Condições para enviar o formulário.");
@@ -109,3 +121,4 @@ function pad(number) {
 
 // Iniciar o contador com 20 horas, 9 minutos e 10 segundos
 startCountdown(20 * 3600 + 9 * 60 + 10); // 20:09:10 em segundos
+

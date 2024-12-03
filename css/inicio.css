@@ -599,6 +599,10 @@ footer .bottom {
 }
 
 @media screen and (max-width:500px) {
+    header {
+        background: #6334B1;
+    }
+
     nav {
         background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
         width: 100%;
@@ -609,6 +613,7 @@ footer .bottom {
 
     ul {
         display: none;
+        margin-top: 0;
     }
 
     li {
@@ -618,6 +623,20 @@ footer .bottom {
 
     #login-sign {
         margin: 30px;
+    }
+
+    #logo-buffet {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+    }
+
+    .user a {
+        margin-top: -20px;
+    }
+
+    .user p {
+        margin-top: -10px;
     }
 
     #login-button {
@@ -669,6 +688,15 @@ footer .bottom {
         background: linear-gradient(90deg, #66257E, #6334B1, #B943E4);
         width: 100%;
         transition: all 2s ease-in-out;
+    }
+
+    .logout img {
+        margin-top: 0;
+    }
+
+    #title-subtitle h1{
+        text-align: center;
+        margin-top: 40px;
     }
 }
 
